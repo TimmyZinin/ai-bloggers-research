@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modest Fashion — AI-инфлюенсер для Индонезии и MENA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+
+  :root {
+    --coral: #E8604C;
+    --coral-light: #F7A399;
+    --coral-dark: #C94535;
+    --gold: #F5A623;
+    --gold-light: #FFEAA7;
+    --gold-dark: #D4941C;
+    --emerald: #2ECC71;
+    --emerald-dark: #1A9B4B;
+    --teal: #1ABC9C;
+    --warm-white: #FFF9F5;
+    --cream: #FFF3E6;
+    --peach: #FFDAB9;
+    --sand: #F5E6CC;
+    --rose: #FFB3BA;
+    --lavender: #E8D5F5;
+    --mint: #D4F5E9;
+    --text-dark: #2D2D2D;
+    --text-mid: #5A5A5A;
+    --text-light: #8A8A8A;
+    --border: #E8E0D8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  .nav {
+    background: white;
+    padding: 12px 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    align-items: center;
+  }
+  .nav a {
+    text-decoration: none;
+    color: #5A5A5A;
+    font-weight: 500;
+    font-size: 0.9em;
+    padding: 4px 10px;
+    border-radius: 20px;
+    transition: background 0.2s;
+  }
+  .nav a:hover { background: var(--cream); }
+  .nav a.active {
+    background: var(--coral);
+    color: white;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #FF8E53 0%, #E8604C 30%, #C94535 60%, #F5A623 100%);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 25% 75%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 25%, rgba(255,255,255,0.1) 0%, transparent 50%);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2em;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    position: relative;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+  }
+  .hero .subtitle {
+    font-size: 1.3em;
+    color: rgba(255,255,255,0.9);
+    font-weight: 300;
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .hero .meta {
+    margin-top: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .hero .meta span {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 30px;
+    color: white;
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  /* SECTION */
+  .section { padding: 60px 0; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    font-weight: 800;
+    color: var(--coral-dark);
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+  .section-subtitle {
+    font-size: 1.05em;
+    color: var(--text-light);
+    margin-bottom: 35px;
+    font-weight: 300;
+  }
+  .section-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--coral), var(--gold));
+    border-radius: 2px;
+    margin-bottom: 15px;
+  }
+
+  /* KEY METRICS */
+  .key-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: -40px auto 0;
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    padding: 0 30px;
+  }
+  .metric-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+  }
+  .metric-card:hover { transform: translateY(-5px); }
+  .metric-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--coral), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+  }
+  .metric-label {
+    font-size: 0.82em;
+    color: var(--text-mid);
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  /* BRAND CARDS */
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 10px;
+  }
+  .brand-card {
+    background: white;
+    border-radius: 18px;
+    padding: 24px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid;
+  }
+  .brand-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+  .brand-card:nth-child(4n+1) { border-top-color: var(--coral); }
+  .brand-card:nth-child(4n+2) { border-top-color: var(--gold); }
+  .brand-card:nth-child(4n+3) { border-top-color: var(--emerald); }
+  .brand-card:nth-child(4n+4) { border-top-color: var(--teal); }
+  .brand-name {
+    font-weight: 800;
+    font-size: 1.05em;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+  .brand-country {
+    font-size: 0.78em;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .brand-revenue {
+    font-size: 0.82em;
+    color: var(--coral-dark);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .brand-desc {
+    font-size: 0.82em;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  /* LUXURY BRAND CARDS */
+  .luxury-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .luxury-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .luxury-card:hover { transform: translateY(-3px); }
+  .luxury-brand-name { font-weight: 800; font-size: 1em; color: var(--text-dark); }
+  .luxury-line { font-size: 0.8em; color: var(--coral-dark); font-weight: 600; }
+  .luxury-year { font-size: 0.75em; color: var(--text-light); }
+  .luxury-desc { font-size: 0.8em; color: var(--text-mid); line-height: 1.4; margin-top: 4px; }
+
+  /* TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    font-size: 0.88em;
+  }
+  .data-table th {
+    background: linear-gradient(135deg, var(--coral), #FF8E53);
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+    letter-spacing: 0.3px;
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-mid);
+    vertical-align: top;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--warm-white); }
+  .data-table td:first-child { font-weight: 600; color: var(--text-dark); }
+  .rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--coral), var(--gold));
+    color: white;
+    font-weight: 700;
+    font-size: 0.8em;
+  }
+
+  /* AI STATUS BOX */
+  .ai-status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .ai-box {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .ai-box h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .status-badge {
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .badge-free { background: #D4EDDA; color: #155724; }
+  .badge-occupied { background: #FFE0E0; color: var(--coral-dark); }
+  .ai-list { list-style: none; }
+  .ai-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9em;
+    color: var(--text-mid);
+    display: flex;
+    gap: 8px;
+  }
+  .ai-list li:last-child { border-bottom: none; }
+  .ai-list li strong { color: var(--text-dark); }
+
+  /* CULTURE RULES */
+  .culture-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .culture-card {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+  }
+  .culture-card:hover { transform: translateY(-3px); }
+  .culture-flag { font-size: 2em; margin-bottom: 12px; }
+  .culture-region { font-weight: 700; font-size: 1.05em; margin-bottom: 12px; color: var(--text-dark); }
+  .rule-item {
+    font-size: 0.84em;
+    color: var(--text-mid);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .rule-item:last-child { border-bottom: none; }
+  .rule-icon { flex-shrink: 0; margin-top: 2px; }
+
+  /* DO / DON'T */
+  .do-dont-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .do-box {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--emerald);
+  }
+  .dont-box {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--coral);
+  }
+  .do-box h3 { color: var(--emerald-dark); margin-bottom: 16px; font-size: 1.05em; }
+  .dont-box h3 { color: var(--coral-dark); margin-bottom: 16px; font-size: 1.05em; }
+  .rule-list { list-style: none; }
+  .rule-list li {
+    padding: 7px 0;
+    font-size: 0.88em;
+    color: var(--text-mid);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .rule-list li:last-child { border-bottom: none; }
+
+  /* PLATFORM GRID */
+  .platform-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .platform-card {
+    background: white;
+    border-radius: 18px;
+    padding: 26px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    text-align: center;
+  }
+  .platform-card:hover { transform: translateY(-4px); }
+  .platform-icon { font-size: 2.5em; margin-bottom: 10px; }
+  .platform-name { font-weight: 800; font-size: 1.1em; margin-bottom: 8px; color: var(--text-dark); }
+  .platform-priority {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .p1 { background: #FFE0E0; color: var(--coral-dark); }
+  .p2 { background: var(--gold-light); color: var(--gold-dark); }
+  .p3 { background: var(--mint); color: var(--emerald-dark); }
+  .platform-stats { font-size: 0.85em; color: var(--text-mid); line-height: 1.6; }
+  .platform-stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.84em;
+  }
+  .platform-stat-row:last-child { border-bottom: none; }
+  .platform-stat-row .lbl { color: var(--text-light); }
+  .platform-stat-row .val { font-weight: 600; color: var(--text-dark); }
+
+  /* UNIT ECONOMICS */
+  .economics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .econ-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .econ-card h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: var(--text-dark);
+  }
+  .econ-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88em;
+  }
+  .econ-row:last-child { border-bottom: none; }
+  .econ-label { color: var(--text-mid); }
+  .econ-value { font-weight: 700; color: var(--coral-dark); }
+  .econ-value.green { color: var(--emerald-dark); }
+
+  /* TIMELINE */
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 12%;
+    right: 12%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--coral), var(--gold), var(--emerald));
+    z-index: 0;
+  }
+  .timeline-item {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .timeline-dot {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-weight: 900;
+    font-size: 1.1em;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+  .dot-coral { background: linear-gradient(135deg, var(--coral), #FF8E53); }
+  .dot-gold { background: linear-gradient(135deg, var(--gold), #FFD93D); color: var(--text-dark); }
+  .dot-emerald { background: linear-gradient(135deg, var(--emerald), #6BCB77); }
+  .dot-teal { background: linear-gradient(135deg, var(--teal), #48DBFB); }
+  .timeline-label { font-weight: 700; font-size: 0.9em; margin-bottom: 6px; color: var(--text-dark); }
+  .timeline-desc { font-size: 0.8em; color: var(--text-mid); line-height: 1.5; }
+
+  /* BREAKEVEN */
+  .breakeven-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .breakeven-card {
+    background: white;
+    border-radius: 18px;
+    padding: 26px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  .breakeven-scenario { font-size: 0.8em; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .s-optimistic { color: var(--emerald-dark); }
+  .s-realistic { color: var(--gold-dark); }
+  .s-pessimistic { color: var(--coral-dark); }
+  .breakeven-months {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .breakeven-months.opt { color: var(--emerald); }
+  .breakeven-months.real { color: var(--gold); }
+  .breakeven-months.pess { color: var(--coral); }
+  .breakeven-sub { font-size: 0.82em; color: var(--text-mid); }
+  .breakeven-invest { font-size: 0.85em; font-weight: 600; color: var(--text-mid); margin-top: 10px; }
+
+  /* RECOMMENDATION BOX */
+  .recommendation {
+    background: linear-gradient(135deg, #FFF3E6, #FFF9F5);
+    border-radius: 20px;
+    padding: 35px;
+    border: 2px solid var(--peach);
+    margin-top: 40px;
+  }
+  .recommendation h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--coral-dark);
+    margin-bottom: 20px;
+  }
+  .rec-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .rec-step {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    font-weight: 900;
+    color: var(--coral-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .step-title { font-weight: 700; font-size: 0.92em; margin-bottom: 6px; color: var(--text-dark); }
+  .step-desc { font-size: 0.82em; color: var(--text-mid); line-height: 1.5; }
+
+  /* TAGS */
+  .tag {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tag-region { background: var(--cream); color: var(--gold-dark); }
+  .tag-niche { background: #FFE0E0; color: var(--coral-dark); }
+  .tag-type { background: var(--mint); color: var(--emerald-dark); }
+
+  /* SCORE BOX */
+  .score-box {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  .big-score {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--coral), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    font-weight: 900;
+    color: white;
+    box-shadow: 0 8px 30px rgba(232,96,76,0.3);
+  }
+  .score-label { font-size: 0.9em; color: var(--text-light); }
+  .score-text { font-weight: 700; color: var(--text-dark); font-size: 1.05em; }
+
+  /* SENTIMENT */
+  .sentiment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .sentiment-card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  .sentiment-card h4 { font-size: 1em; font-weight: 700; margin-bottom: 14px; }
+  .sentiment-positive h4 { color: var(--emerald-dark); }
+  .sentiment-negative h4 { color: var(--coral-dark); }
+  .sentiment-list { list-style: none; }
+  .sentiment-list li {
+    padding: 8px 0;
+    font-size: 0.86em;
+    color: var(--text-mid);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .sentiment-list li:last-child { border-bottom: none; }
+
+  /* QUOTE */
+  .quote-box {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin: 12px 0;
+    border-left: 4px solid var(--gold);
+    font-style: italic;
+    font-size: 0.88em;
+    color: var(--text-mid);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero h1 { font-size: 2.2em; }
+    .key-metrics { grid-template-columns: repeat(2, 1fr); }
+    .brand-grid { grid-template-columns: repeat(2, 1fr); }
+    .luxury-grid { grid-template-columns: repeat(2, 1fr); }
+    .culture-grid { grid-template-columns: repeat(2, 1fr); }
+    .do-dont-grid { grid-template-columns: 1fr; }
+    .platform-grid { grid-template-columns: repeat(2, 1fr); }
+    .economics-grid { grid-template-columns: 1fr; }
+    .timeline { grid-template-columns: repeat(2, 1fr); }
+    .timeline::before { display: none; }
+    .breakeven-grid { grid-template-columns: 1fr; }
+    .rec-steps { grid-template-columns: 1fr; }
+    .ai-status-grid { grid-template-columns: 1fr; }
+    .sentiment-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .hero { padding: 50px 20px 40px; }
+    .hero h1 { font-size: 1.8em; }
+    .key-metrics { grid-template-columns: repeat(2, 1fr); padding: 0 15px; }
+    .container { padding: 0 15px; }
+    .brand-grid { grid-template-columns: 1fr; }
+    .luxury-grid { grid-template-columns: 1fr; }
+    .culture-grid { grid-template-columns: 1fr; }
+    .platform-grid { grid-template-columns: 1fr; }
+    .timeline { grid-template-columns: 1fr; }
+    .breakeven-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html">Обзор</a>
+  <a href="saudi-luxury.html">Saudi Luxury</a>
+  <a href="satisfying-factory.html">Satisfying Factory</a>
+  <a href="modest-fashion.html" class="active">Modest Fashion</a>
+  <a href="india-deep-dive.html">Индия</a>
+  <a href="africa-opportunity.html">Африка</a>
+  <a href="ai-factory-model.html">AI Factory</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Modest Fashion</h1>
+  <p class="subtitle">AI-инфлюенсер для Индонезии и MENA — рынок $311 млрд с нулевой конкуренцией в AI-сегменте</p>
+  <div class="meta">
+    <span>Март 2026</span>
+    <span>Комплексное исследование</span>
+    <span>CAGR 5.7–6.2%</span>
+    <span>Ниша свободна</span>
+  </div>
+</div>
+
+<!-- METRICS STRIP -->
+<div class="key-metrics">
+  <div class="metric-card">
+    <div class="metric-value">$311B</div>
+    <div class="metric-label">Глобальный рынок Modest Fashion 2024</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">6.2%</div>
+    <div class="metric-label">CAGR до 2028 (Allied Market Research)</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">$25B</div>
+    <div class="metric-label">Рынок Индонезии — крупнейший целевой рынок</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">0</div>
+    <div class="metric-label">Успешных AI-инфлюенсеров в modest fashion</div>
+  </div>
+</div>
+
+<!-- MAIN BRANDS -->
+<div class="section container">
+  <div class="section-divider"></div>
+  <h2 class="section-title">Ключевые бренды: специализированный сегмент</h2>
+  <p class="section-subtitle">Топ-игроки рынка modest fashion — потенциальные рекламодатели для AI-инфлюенсера</p>
+  <div class="brand-grid">
+    <div class="brand-card">
+      <div class="brand-name">Modanisa</div>
+      <div class="brand-country">Турция</div>
+      <div class="brand-revenue">$200–300M выручка</div>
+      <div class="brand-desc">Крупнейший онлайн-ретейлер. 600+ брендов, доставка в 140+ стран, $200M+ инвестиций. Организатор Istanbul Modest Fashion Week.</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">Naelofar</div>
+      <div class="brand-country">Малайзия</div>
+      <div class="brand-revenue">$50–80M выручка</div>
+      <div class="brand-desc">Hijab-бренд #1 в Малайзии. Основан актрисой Neelofa (8M+ подписчиков). Пример слияния инфлюенсер + бренд.</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">DUCK Group</div>
+      <div class="brand-country">Малайзия</div>
+      <div class="brand-revenue">$30–50M выручка</div>
+      <div class="brand-desc">Premium hijab scarves. Основана Vivy Yusof (FashionValet). Активно работает с инфлюенсерами в ЮВА.</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">Hijup</div>
+      <div class="brand-country">Индонезия</div>
+      <div class="brand-revenue">$15–25M выручка</div>
+      <div class="brand-desc">Первый modest fashion marketplace в ЮВА (2011). Теряет долю Shopee/Tokopedia — нужны инфлюенсеры.</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">Haute Hijab</div>
+      <div class="brand-country">США</div>
+      <div class="brand-revenue">$10–20M выручка</div>
+      <div class="brand-desc">Premium hijab для diaspora. Работает с англоязычными инфлюенсерами. Высокий CPM аудитории.</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">Sefamerve</div>
+      <div class="brand-country">Турция</div>
+      <div class="brand-revenue">$50–80M выручка</div>
+      <div class="brand-desc">Онлайн-ретейлер, конкурент Modanisa. Активно инвестирует в инфлюенсер-маркетинг в СНГ и Турции.</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">Aab Collection</div>
+      <div class="brand-country">Великобритания</div>
+      <div class="brand-revenue">$5–10M выручка</div>
+      <div class="brand-desc">British modest fashion для Western Muslims. Нацелен на diaspora — высокие ставки за рекламу.</div>
+    </div>
+    <div class="brand-card">
+      <div class="brand-name">Annah Hariri</div>
+      <div class="brand-country">Онлайн (глобально)</div>
+      <div class="brand-revenue">$5–10M выручка</div>
+      <div class="brand-desc">Luxury modest dresses, глобальная доставка. Ищет инфлюенсеров с международной аудиторией.</div>
+    </div>
+  </div>
+</div>
+
+<!-- LUXURY BRANDS -->
+<div class="section" style="background: linear-gradient(135deg, #FFF3E6, #FFF9F5); padding: 60px 0;">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Luxury-бренды с Modest линейками</h2>
+    <p class="section-subtitle">Mainstream fashion дома, активно выходящие на Muslim-friendly аудиторию — большие рекламные бюджеты</p>
+    <div class="luxury-grid">
+      <div class="luxury-card">
+        <div class="luxury-brand-name">Dolce & Gabbana</div>
+        <div class="luxury-line">Abaya Collection</div>
+        <div class="luxury-year">С 2016 — ежегодно</div>
+        <div class="luxury-desc">Первая luxury abaya-коллекция. Таргетирует Gulf market с высоким доходом.</div>
+      </div>
+      <div class="luxury-card">
+        <div class="luxury-brand-name">Nike</div>
+        <div class="luxury-line">Pro Hijab ($35)</div>
+        <div class="luxury-year">С 2017</div>
+        <div class="luxury-desc">Спортивный хиджаб — бестселлер. Работает с хиджабистками-спортсменками глобально.</div>
+      </div>
+      <div class="luxury-card">
+        <div class="luxury-brand-name">H&M</div>
+        <div class="luxury-line">Modest Fashion / LTD</div>
+        <div class="luxury-year">С 2015+</div>
+        <div class="luxury-desc">Первая mainstream кампания с хиджабисткой (Mariah Idrissi). Регулярные capsule collections.</div>
+      </div>
+      <div class="luxury-card">
+        <div class="luxury-brand-name">UNIQLO</div>
+        <div class="luxury-line">Hana Tajima Collection</div>
+        <div class="luxury-year">С 2015+</div>
+        <div class="luxury-desc">Коллаборация с дизайнером Hana Tajima, ежесезонная. Успешна в ЮВА и Middle East.</div>
+      </div>
+      <div class="luxury-card">
+        <div class="luxury-brand-name">Mango</div>
+        <div class="luxury-line">Ramadan Collection</div>
+        <div class="luxury-year">С 2016+</div>
+        <div class="luxury-desc">Ежегодная Ramadan capsule. Высокий органический спрос каждый сезон.</div>
+      </div>
+      <div class="luxury-card">
+        <div class="luxury-brand-name">Tommy Hilfiger</div>
+        <div class="luxury-line">Ramadan Capsule</div>
+        <div class="luxury-year">С 2018+</div>
+        <div class="luxury-desc">Ежегодная капсула к Рамадану. Ориентирована на GCC и Young Muslims в USA.</div>
+      </div>
+      <div class="luxury-card">
+        <div class="luxury-brand-name">Oscar de la Renta</div>
+        <div class="luxury-line">Kaftan / Abaya</div>
+        <div class="luxury-year">Спорадически</div>
+        <div class="luxury-desc">Luxury pieces для GCC market. Высокие ставки за рекламу у luxury-сегмента.</div>
+      </div>
+      <div class="luxury-card">
+        <div class="luxury-brand-name">Zara</div>
+        <div class="luxury-line">Нет отдельной линии</div>
+        <div class="luxury-year">Ongoing</div>
+        <div class="luxury-desc">Включает modest-friendly items в основную линейку. Крупнейший клиент для инфлюенсеров.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOP INFLUENCERS TABLE -->
+<div class="section container">
+  <div class="section-divider"></div>
+  <h2 class="section-title">ТОП-15 Инфлюенсеров — Индонезия</h2>
+  <p class="section-subtitle">Конкурентный ландшафт — реальные инфлюенсеры, рядом с которыми будет AI-персонаж</p>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Имя</th>
+        <th>Instagram</th>
+        <th>Подписчики</th>
+        <th>Платформы</th>
+        <th>Ниша</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="rank-badge">1</span></td>
+        <td>Dian Pelangi</td>
+        <td>@dianpelangi</td>
+        <td>6.5M</td>
+        <td>IG, YT, TikTok</td>
+        <td>Дизайнер + инфлюенсер, пионер modest fashion</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">2</span></td>
+        <td>Zaskia Sungkar</td>
+        <td>@zaskiasungkar15</td>
+        <td>3M+</td>
+        <td>IG</td>
+        <td>Актриса + владелица бренда modest fashion</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">3</span></td>
+        <td>Shireen Sungkar</td>
+        <td>@shaborini</td>
+        <td>2.5M+</td>
+        <td>IG</td>
+        <td>Актриса + lifestyle</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">4</span></td>
+        <td>Ayana Jihye Moon</td>
+        <td>@xolovelyayana</td>
+        <td>1M+</td>
+        <td>IG, YT</td>
+        <td>Korean-Indonesian Muslim convert — уникальная ниша</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">5</span></td>
+        <td>Ria Miranda</td>
+        <td>@riamiranda</td>
+        <td>1.2M</td>
+        <td>IG</td>
+        <td>Дизайнер, Jakarta Fashion Week</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">6</span></td>
+        <td>Dwi Handayani</td>
+        <td>@dwihandaanda</td>
+        <td>600K</td>
+        <td>IG</td>
+        <td>Дизайнер, Jakarta-based</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">7</span></td>
+        <td>Mega Iskanti</td>
+        <td>@megaiskanti</td>
+        <td>500K</td>
+        <td>IG</td>
+        <td>Modest + modern style</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">8</span></td>
+        <td>Hamidah Rachmayanti</td>
+        <td>@hamidahrachmayanti</td>
+        <td>400K</td>
+        <td>IG, TT</td>
+        <td>Street style + modest</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">9</span></td>
+        <td>Indah Nada Puspita</td>
+        <td>@indahnadapuspita</td>
+        <td>800K</td>
+        <td>IG, YT</td>
+        <td>Travel + hijab fashion</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">10</span></td>
+        <td>Tantri Namirah</td>
+        <td>@tantrinamirah</td>
+        <td>300K</td>
+        <td>IG, YT</td>
+        <td>Fashion vlogger, relatable аудитория</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">11</span></td>
+        <td>Jenahara Nasution</td>
+        <td>@jenahara</td>
+        <td>300K</td>
+        <td>IG</td>
+        <td>Дизайнер, dark modest aesthetic</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">12</span></td>
+        <td>Dian Ayu Lestari</td>
+        <td>@difrfrst</td>
+        <td>250K</td>
+        <td>IG</td>
+        <td>CEO Hijup</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">13</span></td>
+        <td>Fitri Aulia</td>
+        <td>@fitriaulia_official</td>
+        <td>200K</td>
+        <td>IG</td>
+        <td>Дизайнер бренда "Kivitz"</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">14</span></td>
+        <td>Restu Anggraini</td>
+        <td>@restuanggraini</td>
+        <td>150K</td>
+        <td>IG</td>
+        <td>Denim + modest fashion designer</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge">15</span></td>
+        <td>Rani Hatta</td>
+        <td>@ranihatta</td>
+        <td>200K</td>
+        <td>IG</td>
+        <td>Bridal + modest</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- AI INFLUENCER STATUS -->
+<div class="section" style="background: linear-gradient(135deg, #FFF3E6, #FFF9F5); padding: 60px 0;">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">AI-инфлюенсеры в Modest Fashion</h2>
+    <p class="section-subtitle">Конкурентный вакуум подтверждён — ниша практически пуста на март 2026</p>
+    <div class="ai-status-grid">
+      <div class="ai-box">
+        <h3>Статус рынка <span class="status-badge badge-free">НИША СВОБОДНА</span></h3>
+        <ul class="ai-list">
+          <li><span style="color:var(--coral)">✗</span> <span><strong>AI-инфлюенсер в хиджабе с 100K+</strong> — не существует</span></li>
+          <li><span style="color:var(--coral)">✗</span> <span><strong>AI-инфлюенсер в modest fashion</strong> — не существует</span></li>
+          <li><span style="color:var(--gold)">~</span> <span><strong>Thalasya</strong> (Индонезия, ~400K) — НЕ modest, general Gen Z</span></li>
+          <li><span style="color:var(--gold)">~</span> <span><strong>Noor проекты</strong> — несколько попыток, max несколько тысяч подписчиков</span></li>
+          <li><span style="color:var(--gold)">~</span> <span><strong>AI-models в каталогах</strong> — Modanisa и другие используют, НЕ как инфлюенсеры</span></li>
+          <li><span style="color:var(--emerald)">✓</span> <span><strong>Конкурентная ниша</strong> — свободна, но требует культурной осторожности</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="sentiment-grid" style="gap:16px;">
+          <div class="sentiment-card sentiment-positive">
+            <h4>Аргументы ЗА из сообщества</h4>
+            <ul class="sentiment-list">
+              <li><span>+</span> Решает проблему awrah — AI-модель не реальная женщина</li>
+              <li><span>+</span> Инклюзивность без objectification</li>
+              <li><span>+</span> Бренды из консервативных регионов могут рекламировать без реальных моделей</li>
+            </ul>
+          </div>
+          <div class="sentiment-card sentiment-negative">
+            <h4>Критика сообщества</h4>
+            <ul class="sentiment-list">
+              <li><span>–</span> Обман (deception): не раскрыто — это харам</li>
+              <li><span>–</span> Нереалистичные стандарты красоты</li>
+              <li><span>–</span> Отнимает работу у реальных мусульманок</li>
+              <li><span>–</span> AI-хиджаб часто технически некорректен</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quote-box" style="margin-top:16px;">
+          "If you make an AI hijabi and don't tell people she's not real, that's literally lying about a Muslim woman's existence" — r/hijabis
+        </div>
+        <div style="background:white;border-radius:14px;padding:18px;margin-top:14px;box-shadow:0 2px 10px rgba(0,0,0,0.05);font-size:0.88em;color:var(--text-mid);">
+          <strong style="color:var(--coral-dark);">Вывод:</strong> Прозрачность — НЕ опция, а обязательство. Позиционировать как "AI fashion assistant", не "virtual Muslim woman".
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CULTURAL NAVIGATION -->
+<div class="section container">
+  <div class="section-divider"></div>
+  <h2 class="section-title">Культурная навигация по регионам</h2>
+  <p class="section-subtitle">Критически важные правила для каждого целевого рынка — нарушение = мгновенный cancellation</p>
+  <div class="culture-grid">
+    <div class="culture-card">
+      <div class="culture-flag">🇮🇩</div>
+      <div class="culture-region">Индонезия</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Kerudung/jilbab, лицо открыто</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Макияж ОК, яркие цвета, паттерны</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Turban style допустим</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Наиболее liberal — лучший старт</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Слишком открытая шея</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Очень облегающая одежда</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-flag">🇸🇦</div>
+      <div class="culture-region">Саудовская Аравия</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Abaya + shayla — безопасный формат</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Niqab-friendly контент = шире аудитория</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--gold)">~</span> Яркие цвета — с осторожностью</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Волосы, шея, облегающее</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Мужчины в кадре — риск</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Музыка с вокалом — спорно</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-flag">🇦🇪</div>
+      <div class="culture-region">ОАЭ</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Shayla (чёрная, элегантная)</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Modern hijab, luxury styling</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Лицо ОК, лёгкий макияж</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Modern silhouettes — OK</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Либеральнее чем SA</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Vulgarity любого рода</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-flag">🇲🇾</div>
+      <div class="culture-region">Малайзия</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Tudung (плотнее Indonesia)</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Pastel тона, умеренный макияж</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Лицо открыто, бренды ОК</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Turban менее толерантен чем в Indonesia</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> LGBTQ+ контент — extremely sensitive</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Религиозные советы без scholar</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-flag">🇹🇷</div>
+      <div class="culture-region">Турция</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Esarp, turban, modern styles</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Наиболее liberal styling</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Мост между East и West</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Минимальные ограничения</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--gold)">~</span> Политические темы — осторожно</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Алкоголь, тату</div>
+    </div>
+    <div class="culture-card">
+      <div class="culture-flag">🌍</div>
+      <div class="culture-region">Универсальные правила</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Волосы из-под хиджаба — никогда</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Прозрачные ткани</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Алкоголь даже фоном</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Собаки в кадре (кошки ОК)</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--coral)">✗</span> Quran цитаты без scholar</div>
+      <div class="rule-item"><span class="rule-icon" style="color:var(--emerald)">✓</span> Ramadan + Eid контент — обязательно</div>
+    </div>
+  </div>
+</div>
+
+<!-- DO / DON'T -->
+<div class="section" style="background: linear-gradient(135deg, #FFF3E6, #FFF9F5); padding: 60px 0;">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Правила AI-позиционирования</h2>
+    <p class="section-subtitle">Критические правила подачи AI-природы без культурного backlash</p>
+    <div class="do-dont-grid">
+      <div class="do-box">
+        <h3>Стратегия "Transparent AI Companion" — ДЕЛАТЬ</h3>
+        <ul class="rule-list">
+          <li><span style="color:var(--emerald)">✓</span> Bio: "AI-powered modest fashion companion | Not a real person, but real style inspiration"</li>
+          <li><span style="color:var(--emerald)">✓</span> Явно указывать AI-nature в каждом посте</li>
+          <li><span style="color:var(--emerald)">✓</span> Позиционирование: "Fashion assistant", не "Muslim woman"</li>
+          <li><span style="color:var(--emerald)">✓</span> Имя: нейтрально-модное (Nyla, Zara, Lina, Amira)</li>
+          <li><span style="color:var(--emerald)">✓</span> Community polls и Q&A — передавать agency реальным людям</li>
+          <li><span style="color:var(--emerald)">✓</span> Cultural advisors — мусульманки ревьюят контент до публикации</li>
+          <li><span style="color:var(--emerald)">✓</span> Возраст 22–26, ambiguous SEA/mixed этничность</li>
+          <li><span style="color:var(--emerald)">✓</span> Modern draped hijab — средний путь между niqab и turban</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h3>Анти-паттерны — ЗАПРЕЩЕНО</h3>
+        <ul class="rule-list">
+          <li><span style="color:var(--coral)">✗</span> Fake backstory: "родилась в Джакарте, учусь в..." — категорически нет</li>
+          <li><span style="color:var(--coral)">✗</span> Писать "Alhamdulillah" от первого лица</li>
+          <li><span style="color:var(--coral)">✗</span> Делать вид, что постится в Рамадан</li>
+          <li><span style="color:var(--coral)">✗</span> Давать религиозные советы</li>
+          <li><span style="color:var(--coral)">✗</span> Использовать реальные лица без согласия для LoRA</li>
+          <li><span style="color:var(--coral)">✗</span> Волосы, видимые из-под хиджаба</li>
+          <li><span style="color:var(--coral)">✗</span> Сексуализация любого рода</li>
+          <li><span style="color:var(--coral)">✗</span> Не участвовать в Ramadan/Eid контенте</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PLATFORMS -->
+<div class="section container">
+  <div class="section-divider"></div>
+  <h2 class="section-title">Платформенная стратегия</h2>
+  <p class="section-subtitle">Приоритизация каналов для максимального охвата и монетизации</p>
+  <div class="platform-grid">
+    <div class="platform-card">
+      <div class="platform-icon">📸</div>
+      <div class="platform-name">Instagram</div>
+      <div class="platform-priority p1">ПРИОРИТЕТ #1</div>
+      <div class="platform-stat-row"><span class="lbl">Индонезия</span><span class="val">95–100M MAU</span></div>
+      <div class="platform-stat-row"><span class="lbl">Саудовская Аравия</span><span class="val">25–27M MAU</span></div>
+      <div class="platform-stat-row"><span class="lbl">ОАЭ</span><span class="val">7–8M MAU</span></div>
+      <div class="platform-stat-row"><span class="lbl">Лучшие форматы</span><span class="val">Reels, Carousel</span></div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-icon">🎵</div>
+      <div class="platform-name">TikTok</div>
+      <div class="platform-priority p2">ПРИОРИТЕТ #2</div>
+      <div class="platform-stat-row"><span class="lbl">Индонезия</span><span class="val">125M+ users</span></div>
+      <div class="platform-stat-row"><span class="lbl">#modestfashion</span><span class="val">8–12B views</span></div>
+      <div class="platform-stat-row"><span class="lbl">#hijabstyle</span><span class="val">5–8B views</span></div>
+      <div class="platform-stat-row"><span class="lbl">TikTok Shop</span><span class="val">Прямые продажи</span></div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-icon">📌</div>
+      <div class="platform-name">Pinterest</div>
+      <div class="platform-priority p3">ПРИОРИТЕТ #3</div>
+      <div class="platform-stat-row"><span class="lbl">Modest wedding</span><span class="val">+300% за 3 года</span></div>
+      <div class="platform-stat-row"><span class="lbl">Purchase intent</span><span class="val">Высокий</span></div>
+      <div class="platform-stat-row"><span class="lbl">SEO</span><span class="val">Google Image rank</span></div>
+      <div class="platform-stat-row"><span class="lbl">Усилия</span><span class="val">Auto-cross-post</span></div>
+    </div>
+  </div>
+  <div style="margin-top:25px;background:white;border-radius:18px;padding:28px;box-shadow:0 4px 15px rgba(0,0,0,0.05);">
+    <h3 style="font-size:1em;font-weight:700;margin-bottom:14px;color:var(--text-dark);">Shopee Affiliate — Индонезия (прямая монетизация)</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div style="text-align:center;padding:16px;background:var(--warm-white);border-radius:12px;">
+        <div style="font-family:'Playfair Display',serif;font-size:1.8em;font-weight:900;color:var(--coral);">5–15%</div>
+        <div style="font-size:0.82em;color:var(--text-mid);margin-top:4px;">Shopee Affiliate</div>
+      </div>
+      <div style="text-align:center;padding:16px;background:var(--warm-white);border-radius:12px;">
+        <div style="font-family:'Playfair Display',serif;font-size:1.8em;font-weight:900;color:var(--gold);">8–12%</div>
+        <div style="font-size:0.82em;color:var(--text-mid);margin-top:4px;">Modanisa Affiliate</div>
+      </div>
+      <div style="text-align:center;padding:16px;background:var(--warm-white);border-radius:12px;">
+        <div style="font-family:'Playfair Display',serif;font-size:1.8em;font-weight:900;color:var(--emerald);">3–10%</div>
+        <div style="font-size:0.82em;color:var(--text-mid);margin-top:4px;">Tokopedia Affiliate</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- UNIT ECONOMICS -->
+<div class="section" style="background: linear-gradient(135deg, #FFF3E6, #FFF9F5); padding: 60px 0;">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Unit-экономика AI Modest Fashion инфлюенсера</h2>
+    <p class="section-subtitle">Реалистичная модель затрат и доходов с разбивкой по фазам</p>
+    <div class="economics-grid">
+      <div class="econ-card">
+        <h3>Создание персонажа (разовые затраты)</h3>
+        <div class="econ-row"><span class="econ-label">Midjourney / DALL-E 3</span><span class="econ-value">$30–60/мес</span></div>
+        <div class="econ-row"><span class="econ-label">LoRA training (consistency)</span><span class="econ-value">$0–100</span></div>
+        <div class="econ-row"><span class="econ-label">Character sheet (5–10 углов)</span><span class="econ-value">$50–200</span></div>
+        <div class="econ-row"><span class="econ-label">Brand identity (Canva Pro)</span><span class="econ-value">$13–15/мес</span></div>
+        <div class="econ-row" style="border-top:2px solid var(--border);margin-top:8px;"><span class="econ-label" style="font-weight:700">ИТОГО создание</span><span class="econ-value" style="font-size:1.1em;">$100–400</span></div>
+      </div>
+      <div class="econ-card">
+        <h3>Ежемесячные расходы на контент</h3>
+        <div class="econ-row"><span class="econ-label">12–15 IG feed posts (фото)</span><span class="econ-value">$30–150</span></div>
+        <div class="econ-row"><span class="econ-label">8–12 Reels (AI video)</span><span class="econ-value">$80–600</span></div>
+        <div class="econ-row"><span class="econ-label">TikTok videos</span><span class="econ-value">$80–600</span></div>
+        <div class="econ-row"><span class="econ-label">Подписки на инструменты</span><span class="econ-value">$80–110</span></div>
+        <div class="econ-row"><span class="econ-label">Cultural consultant</span><span class="econ-value">$50–200</span></div>
+        <div class="econ-row" style="border-top:2px solid var(--border);margin-top:8px;"><span class="econ-label" style="font-weight:700">ИТОГО реалистично</span><span class="econ-value" style="font-size:1.1em;">$500–1,000</span></div>
+      </div>
+    </div>
+
+    <!-- TIMELINE GROWTH -->
+    <h3 style="font-size:1.3em;font-weight:700;margin-top:50px;margin-bottom:30px;color:var(--text-dark);">Прогноз роста подписчиков</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot dot-coral">1–3</div>
+        <div class="timeline-label">мес</div>
+        <div class="timeline-desc">IG: 500–2K<br>TikTok: 1K–5K<br>Seed + хештеги</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot dot-gold">4–6</div>
+        <div class="timeline-label">мес</div>
+        <div class="timeline-desc">IG: 2K–8K<br>TikTok: 5K–20K<br>Первые viral reels</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot dot-emerald">7–9</div>
+        <div class="timeline-label">мес</div>
+        <div class="timeline-desc">IG: 8K–20K<br>TikTok: 20K–60K<br>Первые спонсорства</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot dot-teal">12–15</div>
+        <div class="timeline-label">мес</div>
+        <div class="timeline-desc">IG: 50K–100K<br>TikTok: 150K–300K<br>Brand deals активны</div>
+      </div>
+    </div>
+
+    <!-- BREAKEVEN -->
+    <h3 style="font-size:1.3em;font-weight:700;margin-top:50px;margin-bottom:25px;color:var(--text-dark);">Breakeven по сценариям</h3>
+    <div class="breakeven-grid">
+      <div class="breakeven-card">
+        <div class="breakeven-scenario s-optimistic">Оптимистичный</div>
+        <div class="breakeven-months opt">8–10</div>
+        <div class="breakeven-sub">месяцев</div>
+        <div class="breakeven-invest">Инвестиции до BE: $6K–10K</div>
+      </div>
+      <div class="breakeven-card">
+        <div class="breakeven-scenario s-realistic">Реалистичный</div>
+        <div class="breakeven-months real">12–15</div>
+        <div class="breakeven-sub">месяцев</div>
+        <div class="breakeven-invest">Инвестиции до BE: $10K–18K</div>
+      </div>
+      <div class="breakeven-card">
+        <div class="breakeven-scenario s-pessimistic">Пессимистичный</div>
+        <div class="breakeven-months pess">18–24</div>
+        <div class="breakeven-sub">месяцев</div>
+        <div class="breakeven-invest">Инвестиции до BE: $18K–30K</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RECOMMENDATION -->
+<div class="section container">
+  <div class="section-divider"></div>
+  <h2 class="section-title">Итоговая оценка и рекомендации</h2>
+  <p class="section-subtitle">Стратегия запуска и ключевые условия успеха</p>
+  <div style="display:grid;grid-template-columns:1fr 300px;gap:30px;align-items:start;">
+    <div class="recommendation">
+      <h3>Рекомендуемая рыночная последовательность</h3>
+      <div class="rec-steps">
+        <div class="rec-step">
+          <div class="step-num">1</div>
+          <div class="step-title">Старт: Индонезия</div>
+          <div class="step-desc">Bahasa Indonesia, месяцы 0–6. Самый большой рынок, наиболее liberal к AI, 230M+ мусульман.</div>
+        </div>
+        <div class="rec-step">
+          <div class="step-num">2</div>
+          <div class="step-title">Расширение: UAE + English</div>
+          <div class="step-desc">Месяцы 6–12. Добавить арабский (ОАЭ), Global English для diaspora. Высокие ставки за рекламу.</div>
+        </div>
+        <div class="rec-step">
+          <div class="step-num">3</div>
+          <div class="step-title">Масштаб: SA + Turkey</div>
+          <div class="step-desc">Месяцы 12–24. Arabic (Saudi dialect), турецкий. Наибольшие рекламные бюджеты в GCC.</div>
+        </div>
+        <div class="rec-step">
+          <div class="step-num">4</div>
+          <div class="step-title">Прозрачность</div>
+          <div class="step-desc">С первого поста. "AI fashion assistant" — не "virtual Muslim woman". Обязательный disclaimer.</div>
+        </div>
+        <div class="rec-step">
+          <div class="step-num">5</div>
+          <div class="step-title">LoRA-качество хиджаба</div>
+          <div class="step-desc">Fine-tuning для корректного hijab rendering — это технический приоритет #1. Без этого — credibility ноль.</div>
+        </div>
+        <div class="rec-step">
+          <div class="step-num">6</div>
+          <div class="step-title">Cultural Advisory</div>
+          <div class="step-desc">Минимум 1–2 мусульманки ревьюят каждый пост до публикации. Не автономный процесс.</div>
+        </div>
+      </div>
+    </div>
+    <div class="score-box">
+      <div class="big-score">7/10</div>
+      <div class="score-text">Итоговая оценка привлекательности</div>
+      <div class="score-label">Высокий потенциал при безупречном культурном исполнении</div>
+      <div style="text-align:left;width:100%;margin-top:10px;">
+        <div style="font-size:0.82em;color:var(--text-mid);line-height:1.7;">
+          <div style="display:flex;gap:8px;margin-bottom:6px;"><span style="color:var(--emerald)">+</span>Рынок $300B+, рост 6%/год</div>
+          <div style="display:flex;gap:8px;margin-bottom:6px;"><span style="color:var(--emerald)">+</span>Ниша свободна (0 конкурентов)</div>
+          <div style="display:flex;gap:8px;margin-bottom:6px;"><span style="color:var(--emerald)">+</span>ER в 2–3x выше general fashion</div>
+          <div style="display:flex;gap:8px;margin-bottom:6px;"><span style="color:var(--coral)">–</span>Высокий культурный риск</div>
+          <div style="display:flex;gap:8px;margin-bottom:6px;"><span style="color:var(--coral)">–</span>Hijab rendering — технически сложно</div>
+          <div style="display:flex;gap:8px;"><span style="color:var(--coral)">–</span>Нужна постоянная human review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--sand);padding:30px;text-align:center;font-size:0.82em;color:var(--text-light);margin-top:40px;">
+  Исследование подготовлено 3 марта 2026. Данные основаны на открытых источниках: DinarStandard, Allied Market Research, HypeAuditor, Socialblade, community analysis (Reddit r/hijabis, Twitter/X, MuslimMatters). Финансовые оценки приблизительные.
+</div>
+
+</body>
+</html>

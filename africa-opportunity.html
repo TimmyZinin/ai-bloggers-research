@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Нигерия и Африка — AI-блогеры 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+
+  :root {
+    --coral: #E8604C;
+    --coral-light: #F7A399;
+    --coral-dark: #C94535;
+    --gold: #F5A623;
+    --gold-light: #FFEAA7;
+    --gold-dark: #D4941C;
+    --emerald: #2ECC71;
+    --emerald-dark: #1A9B4B;
+    --teal: #1ABC9C;
+    --warm-white: #FFF9F5;
+    --cream: #FFF3E6;
+    --peach: #FFDAB9;
+    --sand: #F5E6CC;
+    --rose: #FFB3BA;
+    --lavender: #E8D5F5;
+    --mint: #D4F5E9;
+    --text-dark: #2D2D2D;
+    --text-mid: #5A5A5A;
+    --text-light: #8A8A8A;
+    --border: #E8E0D8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  .nav {
+    background: white;
+    padding: 12px 30px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    align-items: center;
+  }
+  .nav a {
+    text-decoration: none;
+    color: var(--text-mid);
+    font-weight: 500;
+    font-size: 0.85em;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .nav a:hover { background: var(--cream); color: var(--coral); }
+  .nav a.active {
+    background: var(--coral);
+    color: white;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #2ECC71 0%, #1ABC9C 25%, #F5A623 65%, #E8604C 100%);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.12) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(255,255,255,0.08) 0%, transparent 40%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.7} }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2em, 5vw, 3.5em);
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+  }
+  .hero-sub {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1em;
+    max-width: 650px;
+    margin: 0 auto 35px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-stat {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 16px 24px;
+    border-radius: 16px;
+    text-align: center;
+    min-width: 130px;
+  }
+  .hero-stat .num {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: white;
+    display: block;
+    line-height: 1;
+  }
+  .hero-stat .lbl {
+    font-size: 0.75em;
+    color: rgba(255,255,255,0.85);
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* LAYOUT */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+  .section {
+    padding: 60px 0;
+  }
+  .section-alt { background: white; }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9em;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    color: var(--text-mid);
+    font-size: 0.95em;
+    margin-bottom: 35px;
+  }
+  .section-label {
+    display: inline-block;
+    background: var(--coral);
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  /* CARDS */
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+
+  .card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+
+  .card-coral { border-top: 4px solid var(--coral); }
+  .card-gold { border-top: 4px solid var(--gold); }
+  .card-emerald { border-top: 4px solid var(--emerald); }
+  .card-teal { border-top: 4px solid var(--teal); }
+  .card-lavender { border-top: 4px solid #9B59B6; }
+  .card-rose { border-top: 4px solid #E74C3C; }
+
+  .card-icon {
+    font-size: 2em;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .card h3 {
+    font-size: 1.05em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+  }
+  .card p {
+    font-size: 0.88em;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  /* METRIC CARDS */
+  .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+  .metric-card {
+    background: white;
+    border-radius: 16px;
+    padding: 22px 20px;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+  }
+  .metric-card .big {
+    font-size: 2em;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .metric-card .label {
+    font-size: 0.78em;
+    color: var(--text-mid);
+    font-weight: 500;
+  }
+  .c-coral { color: var(--coral); }
+  .c-gold { color: var(--gold-dark); }
+  .c-emerald { color: var(--emerald-dark); }
+  .c-teal { color: var(--teal); }
+  .c-purple { color: #8E44AD; }
+
+  /* PLATFORM CARDS */
+  .platform-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .platform-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    flex-shrink: 0;
+  }
+  .platform-card h4 { font-size: 0.95em; font-weight: 700; margin-bottom: 4px; }
+  .platform-card p { font-size: 0.82em; color: var(--text-mid); }
+  .platform-card .users { font-size: 0.78em; font-weight: 600; color: var(--coral); margin-top: 4px; }
+
+  /* TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88em;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+  }
+  .data-table th {
+    background: var(--coral);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+  .data-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dark);
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: var(--warm-white); }
+  .data-table tr:hover td { background: var(--cream); }
+
+  /* CPM VISUALIZER */
+  .cpm-bar-wrap { margin-bottom: 14px; }
+  .cpm-label { font-size: 0.85em; font-weight: 600; margin-bottom: 6px; display: flex; justify-content: space-between; }
+  .cpm-bar { height: 32px; border-radius: 8px; display: flex; align-items: center; padding-left: 12px; color: white; font-size: 0.8em; font-weight: 700; }
+
+  /* RISK CARDS */
+  .risk-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--coral);
+  }
+  .risk-card.medium { border-left-color: var(--gold); }
+  .risk-card.low { border-left-color: var(--emerald); }
+  .risk-label {
+    font-size: 0.72em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .risk-high .risk-label { color: var(--coral); }
+  .risk-medium .risk-label { color: var(--gold-dark); }
+  .risk-low .risk-label { color: var(--emerald-dark); }
+  .risk-card h4 { font-size: 0.92em; font-weight: 700; margin-bottom: 5px; }
+  .risk-card p { font-size: 0.82em; color: var(--text-mid); }
+
+  /* STRATEGY PHASES */
+  .phase {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .phase-num {
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    background: var(--coral);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85em;
+  }
+  .phase h4 { font-size: 0.92em; font-weight: 700; margin-bottom: 8px; color: var(--text-dark); }
+  .phase p, .phase ul { font-size: 0.83em; color: var(--text-mid); }
+  .phase ul { padding-left: 16px; }
+  .phase ul li { margin-bottom: 3px; }
+
+  /* INSIGHT BOX */
+  .insight-box {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--peach) 100%);
+    border-radius: 20px;
+    padding: 28px 32px;
+    border-left: 5px solid var(--coral);
+  }
+  .insight-box h3 { font-family: 'Playfair Display', serif; font-size: 1.2em; margin-bottom: 10px; color: var(--coral-dark); }
+  .insight-box p { font-size: 0.9em; color: var(--text-dark); }
+
+  /* PILLS */
+  .pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.78em;
+    font-weight: 600;
+    margin: 3px;
+  }
+  .pill-coral { background: #FFE5E1; color: var(--coral-dark); }
+  .pill-gold { background: var(--gold-light); color: var(--gold-dark); }
+  .pill-emerald { background: var(--mint); color: var(--emerald-dark); }
+  .pill-teal { background: #D5F5EE; color: #0E8A76; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--text-dark);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 30px;
+    font-size: 0.85em;
+    margin-top: 20px;
+  }
+
+  /* TAG */
+  .tag {
+    display: inline-block;
+    background: var(--sand);
+    color: var(--text-mid);
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.75em;
+    font-weight: 500;
+  }
+
+  .divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 50px 20px 40px; }
+    .hero h1 { font-size: 1.8em; }
+    .hero-stats { gap: 12px; }
+    .section { padding: 40px 0; }
+    .nav { padding: 10px 16px; gap: 5px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html">Обзор</a>
+  <a href="saudi-luxury.html">Saudi Luxury</a>
+  <a href="satisfying-factory.html">Satisfying Factory</a>
+  <a href="modest-fashion.html">Modest Fashion</a>
+  <a href="india-deep-dive.html">Индия</a>
+  <a href="africa-opportunity.html" class="active">Африка</a>
+  <a href="ai-factory-model.html">AI Factory</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Глубокое исследование · Март 2026</div>
+  <h1>Нигерия и Африка<br>AI-блогеры на самом быстрорастущем рынке</h1>
+  <p class="hero-sub">Крупнейший цифровой рынок Африки: 230 млн человек, медианный возраст 18 лет и почти нулевая конкуренция среди AI-инфлюенсеров — окно возможностей открыто</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="num">230M</span>
+      <span class="lbl">Население</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">18 лет</span>
+      <span class="lbl">Медианный возраст</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">115M</span>
+      <span class="lbl">Интернет-пользователей</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">15–17M</span>
+      <span class="lbl">Диаспора за рубежом</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">~0</span>
+      <span class="lbl">AI-инфлюенсеров</span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1: Digital ecosystem -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">Цифровая экосистема</span>
+    <h2 class="section-title">Мобильный интернет как главный канал</h2>
+    <p class="section-sub">95%+ доступа — через мобильные устройства. Стационарный broadband практически отсутствует за пределами Лагоса и Абуджи</p>
+
+    <div class="metric-grid" style="margin-bottom: 30px;">
+      <div class="metric-card">
+        <span class="big c-emerald">95%+</span>
+        <div class="label">Мобильный интернет от всего трафика</div>
+      </div>
+      <div class="metric-card">
+        <span class="big c-coral">50-55%</span>
+        <div class="label">Internet penetration (DataReportal 2025)</div>
+      </div>
+      <div class="metric-card">
+        <span class="big c-gold">~65%</span>
+        <div class="label">Прогноз penetration к 2027</div>
+      </div>
+      <div class="metric-card">
+        <span class="big c-teal">5-10M</span>
+        <div class="label">Новых пользователей ежегодно</div>
+      </div>
+      <div class="metric-card">
+        <span class="big c-purple">$0.25-0.35</span>
+        <div class="label">Стоимость 1 GB (MTN/Airtel)</div>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card card-emerald">
+        <span class="card-icon">📱</span>
+        <h3>Transsion Holdings доминирует</h3>
+        <p>Tecno + Infinix + itel занимают 55–65% рынка смартфонов. Специально разработаны для Африки: адаптированные камеры для тёмной кожи, длительная батарея, dual SIM.</p>
+        <div style="margin-top: 12px;">
+          <span class="pill pill-emerald">Tecno 25-30%</span>
+          <span class="pill pill-gold">Infinix 18-22%</span>
+          <span class="pill pill-coral">Samsung 15-18%</span>
+        </div>
+      </div>
+      <div class="card card-gold">
+        <span class="card-icon">⚡</span>
+        <h3>Проблема электричества — критический фактор</h3>
+        <p>Нигерия генерирует ~4,000-5,000 MW на 230 млн человек. Большинство использует дизельные генераторы ($50-200/мес). Пользователи «экономят батарею» и потребляют контент в определённые часы.</p>
+      </div>
+      <div class="card card-teal">
+        <span class="card-icon">🎥</span>
+        <h3>Контент-поведение аудитории</h3>
+        <p>Предпочитают низкое качество (360p-480p). Короткие форматы экономят трафик. «Night plans» — скачивают ночью, смотрят днём. Wi-Fi в ресторанах и ТЦ — стандарт.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: Platforms -->
+<div class="section section-alt">
+  <div class="container">
+    <span class="section-label">Платформы</span>
+    <h2 class="section-title">Где живёт нигерийская аудитория</h2>
+    <p class="section-sub">WhatsApp — де-факто интернет для большинства нигерийцев. Для AI-блогеров ключевы Instagram, YouTube и TikTok</p>
+
+    <div class="grid-2" style="margin-bottom: 20px;">
+      <div class="platform-card">
+        <div class="platform-icon" style="background: #E7F9EC;">💬</div>
+        <div>
+          <h4>WhatsApp — ДОМИНАНТ</h4>
+          <p>Основной мессенджер + бизнес-инструмент. Многие тарифы включают бесплатный WhatsApp. Business каталоги, оплата, customer service — всё через WA.</p>
+          <div class="users">~90-100 млн активных пользователей</div>
+        </div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon" style="background: #FFF0E5;">▶</div>
+        <div>
+          <h4>YouTube — Монетизация доступна</h4>
+          <p>YPP полностью доступна в Нигерии с 2023. RPM $0.50-2.00 для локальной аудитории. Diaspora-аудитория поднимает RPM до $3-8. Shorts растут быстро.</p>
+          <div class="users">~30-35 млн пользователей</div>
+        </div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon" style="background: #FDE8E8;">📷</div>
+        <div>
+          <h4>Instagram — Beauty-платформа</h4>
+          <p>Городская молодёжь 18-34 со средним+ доходом. Лагос — ~40% аудитории. Reels растут быстро — формат экономит трафик. Главная платформа для beauty/fashion.</p>
+          <div class="users">~10-12 млн пользователей</div>
+        </div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon" style="background: #F0F0F0;">♪</div>
+        <div>
+          <h4>TikTok — Вирусный потенциал</h4>
+          <p>Самая молодая аудитория (15-25). Быстрый рост. Creator Fund ограничен — основной заработок через бренд-контракты. Нигерийский TikTok — один из самых активных в Африке.</p>
+          <div class="users">~20-25 млн пользователей</div>
+        </div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon" style="background: #E8F4FF;">🐦</div>
+        <div>
+          <h4>Twitter/X — TOP-5 рынок мира</h4>
+          <p>По engagement — один из самых активных рынков на планете. После бана 2021 года восстановился быстро. «Nigerian Twitter» — крайне активное сообщество с культурой мемов.</p>
+          <div class="users">~10-12 млн пользователей</div>
+        </div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon" style="background: #E8F4FF;">👥</div>
+        <div>
+          <h4>Facebook — Аудитория 30+</h4>
+          <p>Падает у молодёжи, остаётся сильным у аудитории 30+. Facebook Groups — огромная активность. Facebook Lite очень популярна (экономит трафик). Marketplace растёт.</p>
+          <div class="users">~30-35 млн MAU</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: Influencers -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">Инфлюенсеры</span>
+    <h2 class="section-title">ТОП нигерийские инфлюенсеры</h2>
+    <p class="section-sub">Цены в 5-15 раз ниже, чем в USA за аналогичную аудиторию — арбитражная возможность для AI-контента</p>
+
+    <div style="overflow-x: auto; margin-bottom: 30px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Инфлюенсер</th>
+            <th>Платформа</th>
+            <th>Подписчики</th>
+            <th>Ниша</th>
+            <th>Заработок (оценка)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Jackie Aina</strong> (диаспора)</td>
+            <td>YouTube</td>
+            <td>3.5M+</td>
+            <td>Beauty (Nigerian-American)</td>
+            <td>$10,000-50,000/видео</td>
+          </tr>
+          <tr>
+            <td><strong>Toke Makinwa</strong></td>
+            <td>IG/YouTube</td>
+            <td>3M+ IG</td>
+            <td>Lifestyle, media</td>
+            <td>$5,000-15,000/пост</td>
+          </tr>
+          <tr>
+            <td><strong>Mark Angel</strong></td>
+            <td>YouTube</td>
+            <td>10M+</td>
+            <td>Comedy skits</td>
+            <td>$10,000-30,000/мес</td>
+          </tr>
+          <tr>
+            <td><strong>Taaooma</strong></td>
+            <td>Instagram</td>
+            <td>6M+</td>
+            <td>Comedy</td>
+            <td>$5,000-10,000/пост</td>
+          </tr>
+          <tr>
+            <td><strong>Josh2Funny</strong></td>
+            <td>Instagram</td>
+            <td>5M+</td>
+            <td>Comedy</td>
+            <td>$3,000-10,000/пост</td>
+          </tr>
+          <tr>
+            <td><strong>Dimma Umeh</strong></td>
+            <td>YouTube/IG</td>
+            <td>600K+ YT</td>
+            <td>Beauty</td>
+            <td>$3,000-10,000/пост</td>
+          </tr>
+          <tr>
+            <td><strong>Sisi Yemmie</strong></td>
+            <td>YouTube</td>
+            <td>600K+</td>
+            <td>Food, lifestyle</td>
+            <td>$2,000-8,000/видео</td>
+          </tr>
+          <tr>
+            <td><strong>Noble Igwe</strong></td>
+            <td>IG/Twitter</td>
+            <td>500K+ combined</td>
+            <td>Fashion, lifestyle</td>
+            <td>$3,000-8,000/пост</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight-box">
+      <h3>Ценовой арбитраж — главная возможность</h3>
+      <p>Цены на инфлюенсер-маркетинг в Нигерии в 5-15 раз ниже, чем в USA за аналогичную аудиторию. AI-блогер с нигерийской стоимостью производства, но diaspora-аудиторией с американскими CPM ($10-25 для нигерийского контента в USA) — это идеальная модель арбитража.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: AI influencers -->
+<div class="section section-alt">
+  <div class="container">
+    <span class="section-label">AI-инфлюенсеры</span>
+    <h2 class="section-title">Рынок почти пуст — первый выиграет всё</h2>
+    <p class="section-sub">На март 2026 в Африке практически нет активных AI-виртуальных инфлюенсеров — это реальное окно возможностей</p>
+
+    <div class="grid-3" style="margin-bottom: 30px;">
+      <div class="card card-coral">
+        <span class="card-icon">💎</span>
+        <h3>Shudu Gram — главный кейс</h3>
+        <p>Создана в 2017 белым британским фотографом Cameron-James Wilson. Южноафриканская внешность. 240K+ IG. Работала с Fenty Beauty, BMW.</p>
+        <div style="margin-top: 10px; padding: 10px; background: #FFF0ED; border-radius: 10px; font-size: 0.82em;">
+          <strong style="color: var(--coral);">Урок:</strong> Backlash из-за "digital blackface" — белый мужчина монетизирует образ чернокожей женщины. Аутентичность происхождения критична.
+        </div>
+      </div>
+      <div class="card card-gold">
+        <span class="card-icon">🤖</span>
+        <h3>Почему AI не появился массово</h3>
+        <ul style="font-size: 0.85em; color: var(--text-mid); padding-left: 16px;">
+          <li>Технический барьер: GPU/подписки на AI-инструменты дороги по африканским меркам</li>
+          <li>Избыток реального таланта, который дешевле AI</li>
+          <li>Высокая чувствительность к "подделкам" (история 419-scams)</li>
+          <li>Лагосский tech-сектор фокусируется на fintech/agritech</li>
+        </ul>
+      </div>
+      <div class="card card-emerald">
+        <span class="card-icon">🌍</span>
+        <h3>AI для африканских языков</h3>
+        <p style="margin-bottom: 10px;">Нигерийский Pidgin English — де-факто лингва франка. Ни один major LLM не генерирует качественный Pidgin.</p>
+        <div style="font-size: 0.8em;">
+          <div style="display: flex; justify-content: space-between; margin: 4px 0;"><span>Yoruba (45M)</span><span class="tag">Базовый NLP</span></div>
+          <div style="display: flex; justify-content: space-between; margin: 4px 0;"><span>Hausa (80M)</span><span class="tag">Базовый NLP</span></div>
+          <div style="display: flex; justify-content: space-between; margin: 4px 0;"><span>Igbo (45M)</span><span class="tag">Минимальный</span></div>
+          <div style="display: flex; justify-content: space-between; margin: 4px 0;"><span>Pidgin</span><span class="tag">Почти отсутствует</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 5: Diaspora factor -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">Diaspora-фактор</span>
+    <h2 class="section-title">Ключевое преимущество: 15-17 млн нигерийцев за рубежом</h2>
+    <p class="section-sub">CPM для нигерийского контента, потребляемого в USA — в 5-16 раз выше, чем внутри страны</p>
+
+    <div class="grid-2" style="margin-bottom: 30px;">
+      <div>
+        <h3 style="font-size: 1em; font-weight: 700; margin-bottom: 20px; color: var(--text-dark);">Сравнение RPM по аудитории</h3>
+        <div class="cpm-bar-wrap">
+          <div class="cpm-label">
+            <span>Нигерийская аудитория (YouTube)</span>
+            <span style="color: var(--coral); font-weight: 700;">$0.50-2.00 RPM</span>
+          </div>
+          <div class="cpm-bar" style="width: 20%; background: var(--coral);">$1.25</div>
+        </div>
+        <div class="cpm-bar-wrap">
+          <div class="cpm-label">
+            <span>Диаспора в USA/UK (YouTube)</span>
+            <span style="color: var(--gold-dark); font-weight: 700;">$3.00-8.00 RPM</span>
+          </div>
+          <div class="cpm-bar" style="width: 55%; background: var(--gold);">$5.50</div>
+        </div>
+        <div class="cpm-bar-wrap">
+          <div class="cpm-label">
+            <span>Нигерийский контент, потребляемый в USA</span>
+            <span style="color: var(--emerald-dark); font-weight: 700;">$10-25 CPM</span>
+          </div>
+          <div class="cpm-bar" style="width: 100%; background: linear-gradient(90deg, var(--emerald), var(--teal));">$17.50</div>
+        </div>
+        <p style="font-size: 0.8em; color: var(--text-light); margin-top: 10px;">RPM/CPM — оценочные данные. Зависят от ниши и формата контента.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 1em; font-weight: 700; margin-bottom: 20px; color: var(--text-dark);">Где живёт диаспора</h3>
+        <div class="metric-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="metric-card">
+            <span class="big c-coral" style="font-size: 1.5em;">~1-2M</span>
+            <div class="label">USA (включая нелегальных)</div>
+          </div>
+          <div class="metric-card">
+            <span class="big c-gold" style="font-size: 1.5em;">~1M+</span>
+            <div class="label">Великобритания</div>
+          </div>
+          <div class="metric-card">
+            <span class="big c-teal" style="font-size: 1.5em;">~100K+</span>
+            <div class="label">Канада</div>
+          </div>
+          <div class="metric-card">
+            <span class="big c-purple" style="font-size: 1.5em;">~100K+</span>
+            <div class="label">ОАЭ</div>
+          </div>
+        </div>
+        <div style="margin-top: 16px; padding: 16px; background: var(--mint); border-radius: 12px; font-size: 0.85em;">
+          <strong style="color: var(--emerald-dark);">Ремиттансы:</strong> $20-25 млрд/год (World Bank) — 4% ВВП Нигерии. Диаспора активно потребляет нигерийский контент (Nollywood, Afrobeats, lifestyle).
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <h3>Стратегия для AI-блогера: Diaspora Bridge</h3>
+      <p>Создавать контент на английском (не Pidgin) — для диаспоры. Тематики: afro hair care, melanin skin, Lagos lifestyle, Nigerian cuisine. Монетизировать через YouTube/IG с diaspora-аудиторией. Бренд-контракты с компаниями, таргетирующими диаспору: African food stores, afro hair products, travel to Nigeria.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 6: Afro-beauty -->
+<div class="section section-alt">
+  <div class="container">
+    <span class="section-label">Afro-Beauty рынок</span>
+    <h2 class="section-title">$20B к 2030 — идеальная ниша для AI</h2>
+    <p class="section-sub">Natural Hair Movement + Ankara Fashion + Skincare for dark skin = глобальная аудитория с огромным affiliate-потенциалом</p>
+
+    <div class="grid-4" style="margin-bottom: 30px;">
+      <div class="metric-card">
+        <span class="big c-coral">$17-20B</span>
+        <div class="label">African beauty & personal care (2024)</div>
+      </div>
+      <div class="metric-card">
+        <span class="big c-gold">$13-15B</span>
+        <div class="label">Black haircare глобально</div>
+      </div>
+      <div class="metric-card">
+        <span class="big c-emerald">CAGR 8-10%</span>
+        <div class="label">Рост natural hair products</div>
+      </div>
+      <div class="metric-card">
+        <span class="big c-teal">20M+</span>
+        <div class="label">Постов #NaturalHair в Instagram</div>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card card-coral">
+        <span class="card-icon">💇</span>
+        <h3>Natural Hair Movement — ИДЕАЛЬНАЯ ниша</h3>
+        <p>Отказ от химического выпрямления, переход к натуральным текстурам. Глобальная аудитория: Африка + USA + UK + Caribbean. Визуальный контент, обучающий формат, множество продуктов для affiliate.</p>
+        <div style="margin-top: 10px;">
+          <span class="pill pill-coral">#TeamNatural</span>
+          <span class="pill pill-gold">#4CHair</span>
+          <span class="pill pill-emerald">#ProtectiveStyles</span>
+        </div>
+      </div>
+      <div class="card card-gold">
+        <span class="card-icon">💄</span>
+        <h3>Нигерийские бренды</h3>
+        <div style="font-size: 0.85em;">
+          <div style="padding: 6px 0; border-bottom: 1px solid var(--border);"><strong>Zaron Cosmetics</strong> — крупнейший нигерийский beauty-бренд</div>
+          <div style="padding: 6px 0; border-bottom: 1px solid var(--border);"><strong>House of Tara</strong> — makeup + beauty academy</div>
+          <div style="padding: 6px 0; border-bottom: 1px solid var(--border);"><strong>R&R Luxury</strong> — skincare (shea-масло), экспорт</div>
+          <div style="padding: 6px 0; border-bottom: 1px solid var(--border);"><strong>Nuban Beauty</strong> — premium, «Африканская роскошь»</div>
+          <div style="padding: 6px 0;"><strong>Fenty Beauty</strong> — революция 40+ оттенков</div>
+        </div>
+      </div>
+      <div class="card card-teal">
+        <span class="card-icon">👗</span>
+        <h3>Ankara & Traditional Fashion</h3>
+        <p>Нигерия — крупнейший потребитель African wax print fabric ($2-3B рынок). Online-продажи растут через Instagram и WhatsApp Business. Ankara + Western fusion — популярный формат.</p>
+        <div style="margin-top: 10px; padding: 10px; background: var(--mint); border-radius: 8px; font-size: 0.82em; color: var(--emerald-dark);">
+          AI может генерировать fashion lookbooks с Ankara patterns. Осторожно: cultural sensitivity высока.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 7: Nollywood -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">Контент-индустрия</span>
+    <h2 class="section-title">Nollywood и Afrobeats как основа</h2>
+    <p class="section-sub">Третья по объёму киноиндустрия мира + глобальный музыкальный феномен = готовая база для AI-контента</p>
+
+    <div class="grid-2">
+      <div>
+        <div class="card card-coral" style="margin-bottom: 16px;">
+          <h3>Nollywood в цифрах</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; font-size: 0.85em;">
+            <div style="text-align: center; padding: 12px; background: var(--warm-white); border-radius: 10px;">
+              <div style="font-size: 1.4em; font-weight: 800; color: var(--coral);">1,500-2,500</div>
+              <div style="color: var(--text-mid);">фильмов в год</div>
+            </div>
+            <div style="text-align: center; padding: 12px; background: var(--warm-white); border-radius: 10px;">
+              <div style="font-size: 1.4em; font-weight: 800; color: var(--coral);">$6-7B</div>
+              <div style="color: var(--text-mid);">доход индустрии</div>
+            </div>
+            <div style="text-align: center; padding: 12px; background: var(--warm-white); border-radius: 10px;">
+              <div style="font-size: 1.4em; font-weight: 800; color: var(--coral);">~1M</div>
+              <div style="color: var(--text-mid);">прямых рабочих мест</div>
+            </div>
+            <div style="text-align: center; padding: 12px; background: var(--warm-white); border-radius: 10px;">
+              <div style="font-size: 1.4em; font-weight: 800; color: var(--coral);">#3</div>
+              <div style="color: var(--text-mid);">в мире по объёму</div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-gold">
+          <h3>Топовые YouTube форматы в Нигерии</h3>
+          <ol style="font-size: 0.85em; padding-left: 16px; color: var(--text-mid); line-height: 2;">
+            <li>Comedy skits (5-15 мин) — доминирующий формат</li>
+            <li>Music videos — миллионы просмотров</li>
+            <li>Nollywood clips/episodes (20-45 мин)</li>
+            <li>"Story time" / commentary (10-20 мин)</li>
+            <li>Tech reviews (10-15 мин)</li>
+            <li>Food/cooking (10-20 мин)</li>
+            <li>"Day in my life" vlogs</li>
+            <li>Educational / "How to"</li>
+          </ol>
+        </div>
+      </div>
+      <div>
+        <div class="card card-teal" style="margin-bottom: 16px;">
+          <h3>Afrobeats — глобальный феномен</h3>
+          <div style="font-size: 0.85em;">
+            <div style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between;">
+              <span><strong>Burna Boy</strong></span><span class="tag">Grammy, 10M+ Spotify</span>
+            </div>
+            <div style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between;">
+              <span><strong>Wizkid</strong></span><span class="tag">"Essence" — Billboard Top 10</span>
+            </div>
+            <div style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between;">
+              <span><strong>Rema</strong></span><span class="tag">"Calm Down" — 2B+ streams</span>
+            </div>
+            <div style="padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between;">
+              <span><strong>Davido</strong></span><span class="tag">$5M+ за выступление</span>
+            </div>
+            <div style="padding: 8px 0; display: flex; justify-content: space-between;">
+              <span><strong>Tems, Ayra Starr, Asake</strong></span><span class="tag">Новое поколение</span>
+            </div>
+          </div>
+          <div style="margin-top: 12px; padding: 10px; background: var(--mint); border-radius: 10px; font-size: 0.82em; color: var(--emerald-dark);">
+            Afrobeats-эстетика (яркие цвета, движение, экспрессия) идеальна для визуального AI-контента
+          </div>
+        </div>
+        <div style="padding: 20px; background: linear-gradient(135deg, var(--lavender), #F0E8FF); border-radius: 16px;">
+          <h3 style="font-size: 0.95em; font-weight: 700; margin-bottom: 12px;">Крупнейшие рекламодатели</h3>
+          <div style="font-size: 0.82em; color: var(--text-dark);">
+            <div style="display: flex; align-items: center; gap: 8px; padding: 5px 0;"><span style="color: #8E44AD; font-weight: 700;">$$$</span> MTN Nigeria, Airtel, Globacom</div>
+            <div style="display: flex; align-items: center; gap: 8px; padding: 5px 0;"><span style="color: #8E44AD; font-weight: 700;">$$</span> OPay, Kuda, PalmPay, Moniepoint</div>
+            <div style="display: flex; align-items: center; gap: 8px; padding: 5px 0;"><span style="color: #8E44AD; font-weight: 700;">$$</span> Coca-Cola Nigeria, Unilever, PZ Cussons</div>
+            <div style="display: flex; align-items: center; gap: 8px; padding: 5px 0;"><span style="color: #8E44AD; font-weight: 700;">$</span> Zaron, House of Tara, Jumia, Konga</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 8: Barriers -->
+<div class="section section-alt">
+  <div class="container">
+    <span class="section-label">Барьеры и риски</span>
+    <h2 class="section-title">Серьёзные вызовы рынка</h2>
+    <p class="section-sub">Инфраструктурные, финансовые, культурные и регуляторные барьеры требуют продуманной стратегии</p>
+
+    <div class="grid-3">
+      <div class="risk-card risk-high">
+        <div class="risk-label">Высокий риск — Инфраструктура</div>
+        <h4>Электричество и интернет</h4>
+        <p>Хронические перебои электроснабжения. Медленный/нестабильный мобильный интернет за пределами крупных городов. Генераторы: $50-200/мес доп. расходы.</p>
+      </div>
+      <div class="risk-card medium risk-medium">
+        <div class="risk-label">Высокий риск — Финансы</div>
+        <h4>Naira и банковские ограничения</h4>
+        <p>Девальвация с ~460/$ до ~1500/$ в 2023. Инфляция 30%+. CBN ограничивает доступ к валюте. Решение: Payoneer, Crypto (USDT через Binance P2P).</p>
+      </div>
+      <div class="risk-card medium risk-medium">
+        <div class="risk-label">Средний риск — Культура</div>
+        <h4>Trust Deficit и "419-scam" ассоциации</h4>
+        <p>Нигерия глобально ассоциируется с мошенничеством. AI-контент может восприниматься как "ещё одна схема". Решение: максимальная прозрачность, партнёрство с известными брендами.</p>
+      </div>
+      <div class="risk-card medium risk-medium">
+        <div class="risk-label">Средний риск — Культура</div>
+        <h4>Christian South vs Muslim North</h4>
+        <p>Контент, приемлемый в Лагосе (open fashion, alcohol), может вызвать backlash на севере. Рекомендация: фокус на южную аудиторию для beauty/fashion AI-блогера.</p>
+      </div>
+      <div class="risk-card medium risk-medium">
+        <div class="risk-label">Средний риск — Регуляторный</div>
+        <h4>Блокировка платформ</h4>
+        <p>Прецедент: Twitter забанен на 7 месяцев в 2021. NITDA начинает интересоваться AI-регулированием. Решение: multi-platform присутствие, WhatsApp Channel как резервная база.</p>
+      </div>
+      <div class="risk-card low risk-low">
+        <div class="risk-label">Специфичный — AI</div>
+        <h4>Uncanny Valley для тёмной кожи</h4>
+        <p>AI-генераторы до сих пор хуже работают с dark skin tones. Нигерийская аудитория крайне требовательна к "реальности". Решение: использовать специализированные модели, human review.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 9: Optimal profile & strategy -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">Стратегия</span>
+    <h2 class="section-title">Оптимальный профиль AI-блогера и монетизация</h2>
+    <p class="section-sub">Пошаговый план от запуска до $10,000+/мес с diaspora-аудиторией</p>
+
+    <div class="grid-2" style="margin-bottom: 30px;">
+      <div class="card" style="background: linear-gradient(135deg, var(--cream), var(--peach));">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.2em; margin-bottom: 16px;">Идеальный AI-персонаж</h3>
+        <div style="font-size: 0.87em; color: var(--text-dark);">
+          <div style="display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start;">
+            <span style="font-size: 1.2em;">🙋</span>
+            <div><strong>Имя:</strong> Нигерийское женское (Adaeze, Oluchi, Adeola, Yetunde)</div>
+          </div>
+          <div style="display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start;">
+            <span style="font-size: 1.2em;">🎂</span>
+            <div><strong>Возраст:</strong> 22-26 лет (медианный возраст аудитории)</div>
+          </div>
+          <div style="display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start;">
+            <span style="font-size: 1.2em;">✨</span>
+            <div><strong>Внешность:</strong> Тёмная кожа, натуральные волосы (4B/4C texture), modern-traditional fusion стиль</div>
+          </div>
+          <div style="display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start;">
+            <span style="font-size: 1.2em;">🎯</span>
+            <div><strong>Ниша:</strong> Beauty + Natural Hair + Ankara Fashion</div>
+          </div>
+          <div style="display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start;">
+            <span style="font-size: 1.2em;">🗣</span>
+            <div><strong>Языки:</strong> English (основной) + Pidgin (engagement) + Yoruba/Igbo (аутентичность)</div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <span style="font-size: 1.2em;">📍</span>
+            <div><strong>Позиционирование:</strong> "AI-powered beauty advisor" — прозрачность с первого дня</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size: 1em; font-weight: 700; margin-bottom: 16px; color: var(--text-dark);">Платформенный приоритет</h3>
+        <div style="margin-bottom: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: white; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 8px;">
+            <div style="background: #FFE5E1; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2em; flex-shrink: 0;">📷</div>
+            <div><strong style="font-size: 0.9em;">Instagram</strong> — Beauty/fashion, visual first. Основная платформа.</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: white; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 8px;">
+            <div style="background: #FFF0E5; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2em; flex-shrink: 0;">▶</div>
+            <div><strong style="font-size: 0.9em;">YouTube Shorts + Long-form</strong> — Tutorials, монетизация через diaspora RPM $3-8.</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: white; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 8px;">
+            <div style="background: #F0F0F0; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2em; flex-shrink: 0;">♪</div>
+            <div><strong style="font-size: 0.9em;">TikTok</strong> — Виральность, молодая аудитория, dance/beauty challenges.</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: white; border-radius: 12px; border: 1px solid var(--border);">
+            <div style="background: #E8F4FF; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2em; flex-shrink: 0;">🐦</div>
+            <div><strong style="font-size: 0.9em;">Twitter/X</strong> — Engagement, brand building, Nigerian Twitter community.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size: 1em; font-weight: 700; margin-bottom: 20px; color: var(--text-dark);">Монетизация по фазам</h3>
+    <div class="grid-3">
+      <div class="phase" style="margin-top: 16px;">
+        <div class="phase-num">1</div>
+        <h4>Phase 1 — Рост аудитории (0-6 мес)</h4>
+        <ul>
+          <li>1-2 поста/день Instagram</li>
+          <li>2-3 видео/неделю YouTube</li>
+          <li>Affiliate: Jumia (2-9%), Amazon diaspora-ссылки</li>
+          <li>Fintech referrals: OPay, Kuda ($1-5/привлечённый)</li>
+        </ul>
+        <div style="margin-top: 10px; font-size: 0.8em; color: var(--coral); font-weight: 600;">Цель: 50K подписчиков</div>
+      </div>
+      <div class="phase" style="margin-top: 16px;">
+        <div class="phase-num">2</div>
+        <h4>Phase 2 — Бренд-контракты (6-12 мес)</h4>
+        <ul>
+          <li>Zaron, House of Tara: $500-2,000/пост</li>
+          <li>OPay, PalmPay: $1,000-5,000/кампания</li>
+          <li>MTN Nigeria: $2,000-10,000/кампания</li>
+          <li>YouTube монетизация с diaspora RPM</li>
+        </ul>
+        <div style="margin-top: 10px; font-size: 0.8em; color: var(--gold-dark); font-weight: 600;">Цель: $3,000-8,000/мес</div>
+      </div>
+      <div class="phase" style="margin-top: 16px;">
+        <div class="phase-num">3</div>
+        <h4>Phase 3 — Масштаб (12+ мес)</h4>
+        <ul>
+          <li>Международные бренды (L'Oreal, Shea Moisture)</li>
+          <li>YouTube diaspora $3-8 RPM</li>
+          <li>Own product line (AI-рекомендованная beauty routine)</li>
+          <li>Licensing AI-generated Ankara designs</li>
+        </ul>
+        <div style="margin-top: 10px; font-size: 0.8em; color: var(--emerald-dark); font-weight: 600;">Цель: $10,000-30,000/мес</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="section section-alt">
+  <div class="container">
+    <span class="section-label">Итоговые цифры</span>
+    <h2 class="section-title">Ключевые метрики рынка</h2>
+
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Метрика</th>
+            <th>Значение</th>
+            <th>Контекст</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Население Нигерии</td><td><strong>~230 млн</strong></td><td>Оценка 2025, UN Population Division</td></tr>
+          <tr><td>Медианный возраст</td><td><strong>~18 лет</strong></td><td>Один из самых молодых рынков мира</td></tr>
+          <tr><td>Интернет-пользователей</td><td><strong>~110-120 млн</strong></td><td>NCC / DataReportal</td></tr>
+          <tr><td>Mobile-first</td><td><strong>95%+</strong></td><td>GSMA, NCC</td></tr>
+          <tr><td>YouTube users</td><td><strong>~30-35 млн</strong></td><td>RPM доступен с 2023</td></tr>
+          <tr><td>Instagram users</td><td><strong>~10-12 млн</strong></td><td>Городская молодёжь, beauty-платформа</td></tr>
+          <tr><td>TikTok users</td><td><strong>~20-25 млн</strong></td><td>Самый быстрый рост</td></tr>
+          <tr><td>Diaspora</td><td><strong>~15-17 млн</strong></td><td>США, Великобритания, Канада, ОАЭ</td></tr>
+          <tr><td>RPM YouTube (Нигерия)</td><td><strong>$0.50-2.00</strong></td><td>Локальная аудитория</td></tr>
+          <tr><td>RPM YouTube (Diaspora)</td><td><strong>$3.00-8.00</strong></td><td>USA/UK аудитория</td></tr>
+          <tr><td>AI-инфлюенсеры в Африке</td><td><strong style="color: var(--coral);">~0-2 активных</strong></td><td>Рынок практически пуст</td></tr>
+          <tr><td>Beauty market Africa</td><td><strong>$17-20B</strong></td><td>CAGR 7-9% к 2030</td></tr>
+          <tr><td>Стоимость 1GB data</td><td><strong>~$0.25-0.35</strong></td><td>MTN/Airtel, дорого относительно доходов</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div style="padding: 24px; background: linear-gradient(135deg, var(--mint), var(--cream)); border-radius: 20px;">
+        <h3 style="font-size: 1em; font-weight: 700; color: var(--emerald-dark); margin-bottom: 12px;">Почему AI-блогер ВЫИГРАЕТ</h3>
+        <ul style="font-size: 0.85em; color: var(--text-dark); padding-left: 16px; line-height: 2;">
+          <li>First-mover advantage: рынок почти пуст</li>
+          <li>Consistency: нет "off days", drama, burnout</li>
+          <li>Scalability: контент на English + Pidgin + Yoruba</li>
+          <li>Beauty diversity: разные тона тёмной кожи</li>
+          <li>Diaspora bridge: одновременно "в Лагосе и в Лондоне"</li>
+        </ul>
+      </div>
+      <div style="padding: 24px; background: linear-gradient(135deg, #FFE5E1, var(--cream)); border-radius: 20px;">
+        <h3 style="font-size: 1em; font-weight: 700; color: var(--coral-dark); margin-bottom: 12px;">Почему может ПРОИГРАТЬ</h3>
+        <ul style="font-size: 0.85em; color: var(--text-dark); padding-left: 16px; line-height: 2;">
+          <li>Authenticity hunger: аудитория ценит "real"</li>
+          <li>"Uncanny valley" для темнокожих лиц</li>
+          <li>Живые инфлюенсеры строят реальные community</li>
+          <li>Trust deficit: Nigeria + AI = двойной барьер</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Исследование подготовлено: 3 марта 2026 · Метод: Desk research · Источники: NCC, World Bank, GSMA, DataReportal, Statista, Euromonitor</p>
+  <p style="margin-top: 6px;">Данные оценочные. Рекомендуется верификация через актуальные источники и интервью с нигерийскими маркетологами.</p>
+</div>
+
+</body>
+</html>

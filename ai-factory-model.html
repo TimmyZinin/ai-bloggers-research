@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Video Factory — Бизнес-модель 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+
+  :root {
+    --coral: #E8604C;
+    --coral-light: #F7A399;
+    --coral-dark: #C94535;
+    --gold: #F5A623;
+    --gold-light: #FFEAA7;
+    --gold-dark: #D4941C;
+    --emerald: #2ECC71;
+    --emerald-dark: #1A9B4B;
+    --teal: #1ABC9C;
+    --warm-white: #FFF9F5;
+    --cream: #FFF3E6;
+    --peach: #FFDAB9;
+    --sand: #F5E6CC;
+    --rose: #FFB3BA;
+    --lavender: #E8D5F5;
+    --mint: #D4F5E9;
+    --text-dark: #2D2D2D;
+    --text-mid: #5A5A5A;
+    --text-light: #8A8A8A;
+    --border: #E8E0D8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  .nav {
+    background: white;
+    padding: 12px 30px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    align-items: center;
+  }
+  .nav a {
+    text-decoration: none;
+    color: var(--text-mid);
+    font-weight: 500;
+    font-size: 0.85em;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .nav a:hover { background: var(--cream); color: var(--coral); }
+  .nav a.active { background: var(--coral); color: white; }
+
+  .hero {
+    background: linear-gradient(135deg, #E8604C 0%, #F5A623 35%, #2ECC71 75%, #1ABC9C 100%);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 25% 75%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 25%, rgba(255,255,255,0.1) 0%, transparent 40%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.7} }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2em, 5vw, 3.5em);
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+  }
+  .hero-sub {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1em;
+    max-width: 650px;
+    margin: 0 auto 35px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-stat {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 16px 22px;
+    border-radius: 16px;
+    text-align: center;
+    min-width: 120px;
+  }
+  .hero-stat .num { font-size: 1.7em; font-weight: 800; color: white; display: block; line-height: 1; }
+  .hero-stat .lbl { font-size: 0.75em; color: rgba(255,255,255,0.85); margin-top: 4px; display: block; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .section { padding: 60px 0; }
+  .section-alt { background: white; }
+
+  .section-title { font-family: 'Playfair Display', serif; font-size: 1.9em; color: var(--text-dark); margin-bottom: 8px; }
+  .section-sub { color: var(--text-mid); font-size: 0.95em; margin-bottom: 35px; }
+  .section-label {
+    display: inline-block;
+    background: var(--coral);
+    color: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; }
+
+  .card {
+    background: white;
+    border-radius: 20px;
+    padding: 26px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+  .card-coral { border-top: 4px solid var(--coral); }
+  .card-gold { border-top: 4px solid var(--gold); }
+  .card-emerald { border-top: 4px solid var(--emerald); }
+  .card-teal { border-top: 4px solid var(--teal); }
+  .card-lavender { border-top: 4px solid #9B59B6; }
+  .card-rose { border-top: 4px solid #E74C3C; }
+
+  .card-icon { font-size: 2em; margin-bottom: 12px; display: block; }
+  .card h3 { font-size: 1.05em; font-weight: 700; margin-bottom: 8px; color: var(--text-dark); }
+  .card p { font-size: 0.88em; color: var(--text-mid); line-height: 1.6; }
+
+  .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+  .metric-card {
+    background: white;
+    border-radius: 16px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+  }
+  .metric-card .big { font-size: 1.9em; font-weight: 800; line-height: 1; margin-bottom: 6px; display: block; }
+  .metric-card .label { font-size: 0.78em; color: var(--text-mid); font-weight: 500; }
+  .c-coral { color: var(--coral); }
+  .c-gold { color: var(--gold-dark); }
+  .c-emerald { color: var(--emerald-dark); }
+  .c-teal { color: var(--teal); }
+  .c-purple { color: #8E44AD; }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.86em;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+  }
+  .data-table th {
+    background: var(--coral);
+    color: white;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dark);
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: var(--warm-white); }
+  .data-table tr:hover td { background: var(--cream); }
+
+  /* PNL TABLE */
+  .pnl-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84em;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+  }
+  .pnl-table th {
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.85em;
+  }
+  .pnl-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pnl-table tr:last-child td { border-bottom: none; }
+
+  .model-a .pnl-table th { background: #FFF0ED; color: var(--coral-dark); }
+  .model-b .pnl-table th { background: var(--gold-light); color: var(--gold-dark); }
+  .model-c .pnl-table th { background: var(--mint); color: var(--emerald-dark); }
+
+  .model-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.78em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .badge-a { background: #FFE5E1; color: var(--coral-dark); }
+  .badge-b { background: var(--gold-light); color: var(--gold-dark); }
+  .badge-c { background: var(--mint); color: var(--emerald-dark); }
+  .badge-recommend { background: var(--emerald); color: white; }
+
+  .pl-positive { color: var(--emerald-dark); font-weight: 700; }
+  .pl-negative { color: var(--coral); font-weight: 700; }
+  .pl-total { font-weight: 800; background: var(--sand) !important; }
+
+  .pill { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.78em; font-weight: 600; margin: 3px; }
+  .pill-coral { background: #FFE5E1; color: var(--coral-dark); }
+  .pill-gold { background: var(--gold-light); color: var(--gold-dark); }
+  .pill-emerald { background: var(--mint); color: var(--emerald-dark); }
+  .pill-teal { background: #D5F5EE; color: #0E8A76; }
+  .pill-purple { background: var(--lavender); color: #6C3483; }
+
+  .insight-box {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--peach) 100%);
+    border-radius: 20px;
+    padding: 28px 32px;
+    border-left: 5px solid var(--coral);
+  }
+  .insight-box h3 { font-family: 'Playfair Display', serif; font-size: 1.2em; margin-bottom: 10px; color: var(--coral-dark); }
+  .insight-box p { font-size: 0.9em; color: var(--text-dark); }
+
+  .risk-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--coral);
+  }
+  .risk-card.medium { border-left-color: var(--gold); }
+  .risk-card.low { border-left-color: var(--emerald); }
+  .risk-label { font-size: 0.72em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+  .risk-high .risk-label { color: var(--coral); }
+  .risk-medium .risk-label { color: var(--gold-dark); }
+  .risk-low .risk-label { color: var(--emerald-dark); }
+  .risk-card h4 { font-size: 0.9em; font-weight: 700; margin-bottom: 5px; }
+  .risk-card p { font-size: 0.81em; color: var(--text-mid); }
+
+  .tech-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+  }
+  .tech-card h4 { font-size: 0.9em; font-weight: 700; margin-bottom: 10px; color: var(--text-dark); }
+  .tech-item { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 0.83em; }
+  .tech-item:last-child { border-bottom: none; }
+  .tech-price { font-weight: 600; color: var(--coral); font-size: 0.82em; }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 30px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .timeline-item { position: relative; margin-bottom: 24px; }
+  .timeline-dot { position: absolute; left: -26px; top: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--coral); border: 3px solid white; box-shadow: 0 0 0 2px var(--coral); }
+  .timeline-item h4 { font-size: 0.92em; font-weight: 700; margin-bottom: 5px; }
+  .timeline-item p { font-size: 0.83em; color: var(--text-mid); }
+  .timeline-phase { font-size: 0.72em; font-weight: 700; text-transform: uppercase; color: var(--coral); letter-spacing: 0.5px; margin-bottom: 3px; }
+
+  /* JURISDICTION COMPARE */
+  .juris-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+  }
+  .juris-card h4 { font-size: 0.9em; font-weight: 700; margin-bottom: 10px; }
+  .juris-tax { font-size: 1.6em; font-weight: 800; margin-bottom: 4px; }
+  .juris-tag { display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 0.72em; font-weight: 600; }
+
+  /* MODEL C HIGHLIGHT */
+  .model-c-wrapper {
+    background: linear-gradient(135deg, var(--mint), #C8F5E3);
+    border-radius: 24px;
+    padding: 4px;
+    box-shadow: 0 8px 40px rgba(46,204,113,0.2);
+  }
+  .model-c-inner {
+    background: white;
+    border-radius: 22px;
+    padding: 28px;
+  }
+  .recommend-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--emerald);
+    color: white;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .tag { display: inline-block; background: var(--sand); color: var(--text-mid); padding: 2px 10px; border-radius: 10px; font-size: 0.75em; font-weight: 500; }
+
+  .footer {
+    background: var(--text-dark);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 30px;
+    font-size: 0.85em;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 50px 20px 40px; }
+    .hero h1 { font-size: 1.8em; }
+    .hero-stats { gap: 12px; }
+    .section { padding: 40px 0; }
+    .nav { padding: 10px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html">Обзор</a>
+  <a href="saudi-luxury.html">Saudi Luxury</a>
+  <a href="satisfying-factory.html">Satisfying Factory</a>
+  <a href="modest-fashion.html">Modest Fashion</a>
+  <a href="india-deep-dive.html">Индия</a>
+  <a href="africa-opportunity.html">Африка</a>
+  <a href="ai-factory-model.html" class="active">AI Factory</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Deep Research Report · Март 2026</div>
+  <h1>AI Video Factory<br>Бизнес-модель масштабной фабрики контента</h1>
+  <p class="hero-sub">От TheSoul Publishing ($300-500M/год, 2000 сотрудников) к AI-фабрике из одного человека: как технологии 2026 года меняют экономику контент-производства</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="num">$300-500M</span>
+      <span class="lbl">TheSoul Publishing/год</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">$1.7B</span>
+      <span class="lbl">Jellysmack пик-оценка</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">95%</span>
+      <span class="lbl">каналов зарабатывают &lt;$100/мес</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">10-14 мес</span>
+      <span class="lbl">Break-even Модель C</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">$700K+</span>
+      <span class="lbl">Год 2 Net Profit (оценка)</span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1: Media networks -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">Медиа-сети</span>
+    <h2 class="section-title">Существующие фабрики: успехи и провалы</h2>
+    <p class="section-sub">TheSoul доказала что конвейер работает. Jellysmack доказал что зависимость от одной платформы убийственна.</p>
+
+    <div class="grid-3" style="margin-bottom: 30px;">
+      <div class="card card-coral">
+        <span class="card-icon">🏭</span>
+        <h3>TheSoul Publishing — эталон</h3>
+        <p style="margin-bottom: 12px;">5-Minute Crafts, Bright Side, 123 GO!, Slick Slime Sam. Крупнейшая контент-фабрика в мире.</p>
+        <div style="font-size: 0.83em; color: var(--text-dark);">
+          <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border);"><span>Каналов</span><strong>150+</strong></div>
+          <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border);"><span>Подписчиков</span><strong>200M+</strong></div>
+          <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border);"><span>Сотрудников</span><strong>2,000+</strong></div>
+          <div style="display: flex; justify-content: space-between; padding: 4px 0;"><span>Доход (оц.)</span><strong>$300-500M/год</strong></div>
+        </div>
+        <div style="margin-top: 12px; padding: 10px; background: var(--mint); border-radius: 10px; font-size: 0.8em; color: var(--emerald-dark);">
+          AI может заменить большую часть из 2000 сотрудников этой фабрики
+        </div>
+      </div>
+      <div class="card card-rose">
+        <span class="card-icon">📉</span>
+        <h3>Jellysmack — поучительный крах</h3>
+        <p style="margin-bottom: 12px;">Пик $1.7B в 2021 → фактически свернулся к 2024.</p>
+        <div style="font-size: 0.83em; color: var(--text-dark);">
+          <div style="padding: 5px 0; border-bottom: 1px solid var(--border);">Facebook сократил CPM после Reels pivot</div>
+          <div style="padding: 5px 0; border-bottom: 1px solid var(--border);">Авансы авторам не окупились</div>
+          <div style="padding: 5px 0; border-bottom: 1px solid var(--border);">Зависимость от одной платформы = смерть</div>
+          <div style="padding: 5px 0;">SoftBank сократил финансирование после 2022</div>
+        </div>
+        <div style="margin-top: 12px; padding: 10px; background: #FFE5E1; border-radius: 10px; font-size: 0.8em; color: var(--coral-dark);">
+          Урок: MCN-модель с авансами авторам крайне рискованна
+        </div>
+      </div>
+      <div class="card card-teal">
+        <span class="card-icon">🔧</span>
+        <h3>AIR Media Tech</h3>
+        <p style="margin-bottom: 12px;">MCN + технологическая платформа для авторов. СНГ-авторы + глобальная экспансия.</p>
+        <div style="font-size: 0.83em; color: var(--text-dark);">
+          <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border);"><span>Каналов в сети</span><strong>3,000+</strong></div>
+          <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border);"><span>Подписчиков</span><strong>900M+</strong></div>
+          <div style="display: flex; justify-content: space-between; padding: 4px 0;"><span>Доход (оц.)</span><strong>$30-50M/год</strong></div>
+        </div>
+        <div style="margin-top: 12px; padding: 10px; background: #D5F5EE; border-radius: 10px; font-size: 0.8em; color: #0E8A76;">
+          Урок: Авторы становятся умнее и уходят из MCN
+        </div>
+      </div>
+    </div>
+
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Компания</th>
+            <th>Каналов</th>
+            <th>Подписчиков</th>
+            <th>Команда</th>
+            <th>Доход (оц.)</th>
+            <th>Модель</th>
+            <th>Статус</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TheSoul Publishing</strong></td>
+            <td>150+</td>
+            <td>200M+</td>
+            <td>2,000+</td>
+            <td>$300-500M/год</td>
+            <td>Собственная фабрика</td>
+            <td><span class="pill pill-emerald">Работает</span></td>
+          </tr>
+          <tr>
+            <td><strong>Jellysmack</strong></td>
+            <td>500+ (партнёры)</td>
+            <td>N/A</td>
+            <td>500 → &lt;100</td>
+            <td>Пик ~$200M</td>
+            <td>MCN + advance</td>
+            <td><span class="pill pill-coral">Свернулся</span></td>
+          </tr>
+          <tr>
+            <td><strong>AIR Media Tech</strong></td>
+            <td>3,000+</td>
+            <td>900M+</td>
+            <td>~200</td>
+            <td>$30-50M</td>
+            <td>MCN + tech</td>
+            <td><span class="pill pill-emerald">Работает</span></td>
+          </tr>
+          <tr>
+            <td><strong>Jungle Creations</strong></td>
+            <td>10+</td>
+            <td>60M+</td>
+            <td>~100</td>
+            <td>$20-40M</td>
+            <td>Нишевые бренды</td>
+            <td><span class="pill pill-emerald">Работает</span></td>
+          </tr>
+          <tr>
+            <td><strong>Brat TV</strong></td>
+            <td>5+</td>
+            <td>10M+</td>
+            <td>~50</td>
+            <td>$10-30M</td>
+            <td>Scripted series</td>
+            <td><span class="pill pill-emerald">Работает</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: AI factories -->
+<div class="section section-alt">
+  <div class="container">
+    <span class="section-label">AI-фабрики</span>
+    <h2 class="section-title">Кто уже делает AI-контент в масштабе</h2>
+    <p class="section-sub">AI YouTube Automation — уже сформировавшаяся индустрия с экосистемой курсов, инструментов и агентств</p>
+
+    <div style="overflow-x: auto; margin-bottom: 30px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Тип канала</th>
+            <th>Подписчики</th>
+            <th>AI-стек</th>
+            <th>Доход (оц./мес)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AI-animated stories</strong> (Reddit, scary)</td>
+            <td>100K-2M</td>
+            <td>ChatGPT + ElevenLabs + Midjourney + CapCut</td>
+            <td>$2,000-20,000</td>
+          </tr>
+          <tr>
+            <td><strong>Satisfying/Oddly Satisfying AI</strong></td>
+            <td>50K-500K</td>
+            <td>Runway/Kling + ambient music</td>
+            <td>$500-5,000</td>
+          </tr>
+          <tr>
+            <td><strong>AI News/Tech каналы</strong></td>
+            <td>100K-1M</td>
+            <td>GPT + ElevenLabs + stock footage</td>
+            <td>$3,000-30,000</td>
+          </tr>
+          <tr>
+            <td><strong>Meditation/Ambient</strong></td>
+            <td>50K-300K</td>
+            <td>Stable Diffusion + Suno AI</td>
+            <td>$1,000-10,000</td>
+          </tr>
+          <tr>
+            <td><strong>AI исторические каналы</strong></td>
+            <td>100K-500K</td>
+            <td>GPT + Midjourney + ElevenLabs</td>
+            <td>$2,000-15,000</td>
+          </tr>
+          <tr>
+            <td><strong>AI факты/quiz</strong></td>
+            <td>200K-1M+</td>
+            <td>GPT + TTS + Canva automated</td>
+            <td>$5,000-30,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-3">
+      <div class="card card-coral">
+        <span class="card-icon">💰</span>
+        <h3>Виртуальные инфлюенсеры — B2B рынок</h3>
+        <p style="margin-bottom: 12px;">Бренды нанимают агентства для создания и ведения виртуальных инфлюенсеров.</p>
+        <div style="font-size: 0.83em;">
+          <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border);"><span>Рынок 2025 (оц.)</span><strong>$4-6 млрд</strong></div>
+          <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border);"><span>Прогноз к 2028</span><strong>$15-20 млрд</strong></div>
+          <div style="display: flex; justify-content: space-between; padding: 4px 0;"><span>Активных персонажей</span><strong>~200</strong></div>
+        </div>
+      </div>
+      <div class="card card-gold">
+        <span class="card-icon">🌟</span>
+        <h3>Lil Miquela — главный кейс</h3>
+        <p style="margin-bottom: 10px;">Создана Brud (2016). 2.7M подписчиков в Instagram.</p>
+        <div style="font-size: 0.83em;">
+          <div style="padding: 4px 0; border-bottom: 1px solid var(--border);">Brand deals: Prada, Calvin Klein, Samsung</div>
+          <div style="padding: 4px 0; border-bottom: 1px solid var(--border);">Цена кампании: $100K-300K (оц.)</div>
+          <div style="padding: 4px 0; border-bottom: 1px solid var(--border);">Заработала $10M+ на brand deals</div>
+          <div style="padding: 4px 0;">Инвестиции Brud: $125M+ (Sequoia, Founders Fund)</div>
+        </div>
+      </div>
+      <div class="card card-teal">
+        <span class="card-icon">⚠️</span>
+        <h3>Платформенные баны — реальная картина</h3>
+        <p style="margin-bottom: 10px;">Платформы не банят за AI-контент. Банят за:</p>
+        <ul style="font-size: 0.83em; color: var(--text-mid); padding-left: 16px;">
+          <li>Отсутствие маркировки realistic AI</li>
+          <li>Spam/mass-upload (20+ видео/день)</li>
+          <li>Reused/low-value контент</li>
+          <li>Impersonation (имитация реальных людей)</li>
+        </ul>
+        <div style="margin-top: 10px; padding: 8px; background: var(--mint); border-radius: 8px; font-size: 0.8em; color: var(--emerald-dark);">
+          Маркировка будет обязательной, бан AI-контента — маловероятен
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: B2B Pricing -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">B2B-модель</span>
+    <h2 class="section-title">Агентства и ценообразование</h2>
+    <p class="section-sub">B2B даёт стабильный cashflow, B2C даёт масштаб. Гибридная модель — оптимальна.</p>
+
+    <div class="grid-2" style="margin-bottom: 30px;">
+      <div>
+        <h3 style="font-size: 1em; font-weight: 700; margin-bottom: 16px;">Прайс на создание AI-персонажа</h3>
+        <div style="font-size: 0.85em;">
+          <div style="padding: 12px 14px; background: white; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+            <div><strong>Basic</strong> — дизайн + 10-20 первых постов + гайдлайны</div>
+            <span style="color: var(--coral); font-weight: 700; white-space: nowrap; margin-left: 10px;">$5K-15K</span>
+          </div>
+          <div style="padding: 12px 14px; background: white; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+            <div><strong>Premium</strong> — + видео, голос, анимация, стратегия</div>
+            <span style="color: var(--gold-dark); font-weight: 700; white-space: nowrap; margin-left: 10px;">$15K-50K</span>
+          </div>
+          <div style="padding: 12px 14px; background: white; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+            <div><strong>Enterprise</strong> — + custom tech, real-time rendering, AR</div>
+            <span style="color: var(--emerald-dark); font-weight: 700; white-space: nowrap; margin-left: 10px;">$50K-200K</span>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1em; font-weight: 700; margin: 20px 0 16px;">Ежемесячное ведение</h3>
+        <div style="font-size: 0.85em;">
+          <div style="padding: 12px 14px; background: white; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+            <div><strong>Basic</strong> — 8-12 постов/мес + community management</div>
+            <span style="color: var(--coral); font-weight: 700; white-space: nowrap; margin-left: 10px;">$1K-3K/мес</span>
+          </div>
+          <div style="padding: 12px 14px; background: white; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+            <div><strong>Premium</strong> — 15-20 постов + видео + stories + engagement</div>
+            <span style="color: var(--gold-dark); font-weight: 700; white-space: nowrap; margin-left: 10px;">$3K-8K/мес</span>
+          </div>
+          <div style="padding: 12px 14px; background: white; border-radius: 12px; border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+            <div><strong>Enterprise</strong> — Daily + real-time events + brand collabs</div>
+            <span style="color: var(--emerald-dark); font-weight: 700; white-space: nowrap; margin-left: 10px;">$8K-25K/мес</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size: 1em; font-weight: 700; margin-bottom: 16px;">B2B vs B2C — сравнение</h3>
+        <div style="overflow-x: auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Показатель</th>
+                <th>B2B (agency)</th>
+                <th>B2C (own channels)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Gross Margin</td><td>60-80%</td><td>70-90%</td></tr>
+              <tr><td>Стабильность дохода</td><td><span class="pill pill-emerald">Высокая</span></td><td><span class="pill pill-coral">Низкая</span></td></tr>
+              <tr><td>Масштабируемость</td><td>Линейная</td><td>Экспоненциальная</td></tr>
+              <tr><td>Привлечение клиентов</td><td>Дорогое (B2B sales)</td><td>Органическое</td></tr>
+              <tr><td>Time to revenue</td><td>1-3 мес</td><td>3-12 мес</td></tr>
+              <tr><td>Revenue ceiling (малая команда)</td><td>$500K-5M/год</td><td>$100K-2M/год</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top: 20px; padding: 20px; background: var(--lavender); border-radius: 16px;">
+          <h3 style="font-size: 0.95em; font-weight: 700; color: #6C3483; margin-bottom: 12px;">ТОП агентства-конкуренты</h3>
+          <div style="font-size: 0.83em; color: var(--text-dark);">
+            <div style="padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.5);"><strong>Brud (Lil Miquela)</strong> — USA, $10-30M/год оц.</div>
+            <div style="padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.5);"><strong>Sidus Studio X (Rozy)</strong> — Корея, $3-10M/год оц.</div>
+            <div style="padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.5);"><strong>Aww Inc (Imma)</strong> — Япония, $5-15M/год оц.</div>
+            <div style="padding: 5px 0;"><strong>Superplastic (Janky)</strong> — USA, IP + merch + brand deals</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: P&L Models -->
+<div class="section section-alt">
+  <div class="container">
+    <span class="section-label">Экономика масштаба</span>
+    <h2 class="section-title">3 бизнес-модели — детальный P&amp;L</h2>
+    <p class="section-sub">Реальные расчёты доходов и расходов с break-even анализом. Все значения оценочные.</p>
+
+    <!-- Model A -->
+    <div style="margin-bottom: 40px;" class="model-a">
+      <span class="model-badge badge-a">Модель A</span>
+      <h3 style="font-size: 1.15em; font-weight: 700; margin-bottom: 5px;">Satisfying/ASMR фабрика — 10 каналов</h3>
+      <p style="font-size: 0.88em; color: var(--text-mid); margin-bottom: 20px;">Satisfying compilations, ASMR Sleep, Ambient Worlds, AI Art — контент с минимальными требованиями к качеству AI и стабильным CPM</p>
+
+      <div class="grid-2">
+        <div>
+          <h4 style="font-size: 0.9em; font-weight: 700; margin-bottom: 12px; color: var(--text-dark);">Операционные расходы/мес</h4>
+          <table class="pnl-table">
+            <thead><tr><th>Статья</th><th>Сумма/мес</th></tr></thead>
+            <tbody>
+              <tr><td>AI API costs (30 Shorts/день + 10 Long/день)</td><td>$3,000-8,000</td></tr>
+              <tr><td>Серверная инфраструктура (GPU)</td><td>$500-1,500</td></tr>
+              <tr><td>Хранение (~5 TB/мес прирост)</td><td>$100-300</td></tr>
+              <tr><td>SaaS подписки (InVideo, ElevenLabs, MJ)</td><td>$500-1,000</td></tr>
+              <tr><td>YouTube management tools (TubeBuddy x10)</td><td>$100-500</td></tr>
+              <tr><td>Human oversight (0.5-1 FTE)</td><td>$1,000-3,000</td></tr>
+              <tr class="pl-total"><td><strong>ИТОГО OpEx (среднее)</strong></td><td><strong>~$9,000/мес</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h4 style="font-size: 0.9em; font-weight: 700; margin-bottom: 12px; color: var(--text-dark);">Прогноз P&amp;L по годам</h4>
+          <table class="pnl-table">
+            <thead><tr><th>Показатель</th><th>Год 1</th><th>Год 2 (оц.)</th></tr></thead>
+            <tbody>
+              <tr><td>Revenue AdSense</td><td>$140K-330K</td><td>$500K-1.2M</td></tr>
+              <tr><td>Revenue Sponsorships</td><td>$10K-30K</td><td>$50K-150K</td></tr>
+              <tr class="pl-total"><td><strong>Total Revenue</strong></td><td><strong>$150K-360K</strong></td><td><strong>$550K-1.35M</strong></td></tr>
+              <tr><td>OpEx</td><td class="pl-negative">-$108K</td><td class="pl-negative">-$130K</td></tr>
+              <tr><td>CapEx</td><td class="pl-negative">-$10K</td><td class="pl-negative">-$5K</td></tr>
+              <tr class="pl-total"><td><strong>Net Profit</strong></td><td><strong class="pl-positive">$32K-242K</strong></td><td><strong class="pl-positive">$415K-1.2M</strong></td></tr>
+              <tr><td>Net Margin</td><td>21-67%</td><td>75-89%</td></tr>
+            </tbody>
+          </table>
+          <div style="margin-top: 12px; padding: 12px; background: #FFE5E1; border-radius: 10px; font-size: 0.82em; color: var(--coral-dark);">
+            Break-even: месяц 11-12 при средних показателях. При вирусном росте — месяц 6-8.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Model B -->
+    <div style="margin-bottom: 40px;" class="model-b">
+      <span class="model-badge badge-b">Модель B</span>
+      <h3 style="font-size: 1.15em; font-weight: 700; margin-bottom: 5px;">AI-аватар фабрика — 5 персонажей, 5 регионов</h3>
+      <p style="font-size: 0.88em; color: var(--text-mid); margin-bottom: 20px;">Nora (Saudi/GCC), Dinda (Indonesia), Priya (India), Sofia (LatAm), Luna (Global/Korea) — мультирегиональные AI-инфлюенсеры</p>
+
+      <div class="grid-2">
+        <div>
+          <h4 style="font-size: 0.9em; font-weight: 700; margin-bottom: 12px; color: var(--text-dark);">Стоимость создания 5 персонажей</h4>
+          <table class="pnl-table">
+            <thead><tr><th>Компонент (на персонажа)</th><th>Стоимость</th></tr></thead>
+            <tbody>
+              <tr><td>AI character design (Midjourney/SDXL)</td><td>$200-500</td></tr>
+              <tr><td>Voice cloning (ElevenLabs)</td><td>$50-100</td></tr>
+              <tr><td>Video avatar setup (HeyGen/D-ID)</td><td>$100-300</td></tr>
+              <tr><td>Backstory + content strategy</td><td>$200</td></tr>
+              <tr><td>Initial content library (50 posts)</td><td>$500-1,500</td></tr>
+              <tr class="pl-total"><td><strong>ИТОГО на 5 персонажей</strong></td><td><strong>$5,750-14,000</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h4 style="font-size: 0.9em; font-weight: 700; margin-bottom: 12px; color: var(--text-dark);">Прогноз P&amp;L по годам</h4>
+          <table class="pnl-table">
+            <thead><tr><th>Показатель</th><th>Год 1</th><th>Год 2 (оц.)</th></tr></thead>
+            <tbody>
+              <tr><td>Revenue Brand Deals</td><td>$60K-150K</td><td>$300K-800K</td></tr>
+              <tr><td>Revenue Affiliate/Organic</td><td>$10K-30K</td><td>$50K-150K</td></tr>
+              <tr class="pl-total"><td><strong>Total Revenue</strong></td><td><strong>$70K-180K</strong></td><td><strong>$350K-950K</strong></td></tr>
+              <tr><td>OpEx</td><td class="pl-negative">-$96K</td><td class="pl-negative">-$120K</td></tr>
+              <tr><td>CapEx</td><td class="pl-negative">-$14K</td><td class="pl-negative">-$5K</td></tr>
+              <tr class="pl-total"><td><strong>Net Profit</strong></td><td><strong>-$40K до +$70K</strong></td><td><strong class="pl-positive">$225K-825K</strong></td></tr>
+              <tr><td>Net Margin</td><td>Отр. — 39%</td><td>64-87%</td></tr>
+            </tbody>
+          </table>
+          <div style="margin-top: 12px; padding: 12px; background: var(--gold-light); border-radius: 10px; font-size: 0.82em; color: var(--gold-dark);">
+            Break-even: месяц 12-14. Saudi/GCC аватар (Nora) — потенциально самый доходный благодаря высоким CPM.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Model C - RECOMMENDED -->
+    <div class="model-c-wrapper">
+      <div class="model-c-inner model-c">
+        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 5px;">
+          <span class="model-badge badge-c">Модель C</span>
+          <span class="recommend-badge">★ Рекомендуемая</span>
+        </div>
+        <h3 style="font-size: 1.2em; font-weight: 700; margin-bottom: 5px;">Гибридная модель — Satisfying + AI-аватары</h3>
+        <p style="font-size: 0.88em; color: var(--text-mid); margin-bottom: 20px;">Satisfying/ASMR фабрика обеспечивает cashflow с месяца 6-8, пока AI-аватары набирают аудиторию. Общая инфраструктура снижает затраты на 24%.</p>
+
+        <div class="grid-2">
+          <div>
+            <h4 style="font-size: 0.9em; font-weight: 700; margin-bottom: 12px;">Синергия расходов</h4>
+            <table class="pnl-table">
+              <thead><tr><th>Статья</th><th>A</th><th>B</th><th>C (гибрид)</th></tr></thead>
+              <tbody>
+                <tr><td>AI APIs</td><td>$3K-8K</td><td>$1.7K-6.1K</td><td>$4K-12K</td></tr>
+                <tr><td>SaaS</td><td>$600-1.5K</td><td>$300-800</td><td>$700-1.8K</td></tr>
+                <tr><td>Human</td><td>$1K-3K</td><td>$3K-6K</td><td>$3K-7K</td></tr>
+                <tr class="pl-total"><td><strong>ИТОГО/мес</strong></td><td><strong>$9K</strong></td><td><strong>$8K</strong></td><td><strong>$13K (-24%)</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h4 style="font-size: 0.9em; font-weight: 700; margin-bottom: 12px;">Годовой P&amp;L гибридной модели</h4>
+            <table class="pnl-table">
+              <thead><tr><th>Показатель</th><th>Год 1</th><th>Год 2 (оц.)</th></tr></thead>
+              <tbody>
+                <tr><td>Revenue A (satisfying)</td><td>$150K-360K</td><td>$550K-1.35M</td></tr>
+                <tr><td>Revenue B (avatars)</td><td>$70K-180K</td><td>$350K-950K</td></tr>
+                <tr class="pl-total"><td><strong>Total Revenue</strong></td><td><strong>$220K-540K</strong></td><td><strong>$900K-2.3M</strong></td></tr>
+                <tr><td>OpEx</td><td class="pl-negative">-$156K</td><td class="pl-negative">-$190K</td></tr>
+                <tr><td>CapEx</td><td class="pl-negative">-$20K</td><td class="pl-negative">-$8K</td></tr>
+                <tr class="pl-total"><td><strong>Net Profit</strong></td><td><strong class="pl-positive">$44K-364K</strong></td><td><strong class="pl-positive">$702K-2.1M</strong></td></tr>
+                <tr><td>Net Margin</td><td>20-67%</td><td><strong style="color: var(--emerald-dark);">78-91%</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Models comparison -->
+    <div style="margin-top: 30px; overflow-x: auto;">
+      <h3 style="font-size: 1em; font-weight: 700; margin-bottom: 16px;">Сравнение всех трёх моделей</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Метрика</th>
+            <th>A: Satisfying (10 каналов)</th>
+            <th>B: AI-аватары (5 персонажей)</th>
+            <th>C: Гибрид (рекомендуется)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CapEx (старт)</td><td>$10K</td><td>$14K</td><td>$20K</td></tr>
+          <tr><td>Месячный OpEx</td><td>$9K</td><td>$8K</td><td>$13K</td></tr>
+          <tr><td>Break-even</td><td>11-12 мес</td><td>12-14 мес</td><td>10-12 мес</td></tr>
+          <tr><td>Год 1 Net Profit</td><td>$32K-242K</td><td>-$40K до +$70K</td><td><strong>$44K-364K</strong></td></tr>
+          <tr><td>Год 2 Net Profit (оц.)</td><td>$415K-1.2M</td><td>$225K-825K</td><td><strong style="color: var(--emerald-dark);">$702K-2.1M</strong></td></tr>
+          <tr><td>Уровень риска</td><td>Средний</td><td>Высокий</td><td><span class="pill pill-gold">Средний</span></td></tr>
+          <tr><td>Масштабируемость</td><td>Высокая</td><td>Средняя</td><td><span class="pill pill-emerald">Высокая</span></td></tr>
+          <tr><td>Рекомендация</td><td>Начинать с этого</td><td>Добавить на 3-4 мес</td><td><span class="pill pill-emerald">Целевая модель</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 5: Tech stack -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">Техстек</span>
+    <h2 class="section-title">Технический стек фабрики</h2>
+    <p class="section-sub">Три варианта инфраструктуры в зависимости от масштаба: API-only для старта, GPU cluster для 50+ каналов</p>
+
+    <div class="grid-3" style="margin-bottom: 30px;">
+      <div class="tech-card">
+        <div style="background: var(--mint); border-radius: 10px; padding: 8px 12px; margin-bottom: 14px; font-size: 0.8em; font-weight: 700; color: var(--emerald-dark);">Вариант 1: API-only (рекомендуется для старта)</div>
+        <div class="tech-item"><span>Hetzner VPS (8 cores, 64GB)</span><span class="tech-price">$50-80/мес</span></div>
+        <div class="tech-item"><span>Backblaze B2 (5 TB)</span><span class="tech-price">$25/мес</span></div>
+        <div class="tech-item"><span>AI APIs (Runway, ElevenLabs и др.)</span><span class="tech-price">$3K-8K/мес</span></div>
+        <div class="tech-item"><span>Cloudflare CDN</span><span class="tech-price">Бесплатно</span></div>
+        <div style="margin-top: 12px; padding: 8px; background: var(--cream); border-radius: 8px; font-size: 0.82em; font-weight: 700; color: var(--emerald-dark);">ИТОГО: $3,075-8,105/мес</div>
+      </div>
+      <div class="tech-card">
+        <div style="background: var(--gold-light); border-radius: 10px; padding: 8px 12px; margin-bottom: 14px; font-size: 0.8em; font-weight: 700; color: var(--gold-dark);">Вариант 2: Hybrid GPU + API (10+ каналов)</div>
+        <div class="tech-item"><span>RunPod/Vast.ai (A100 40GB)</span><span class="tech-price">$300-600/мес</span></div>
+        <div class="tech-item"><span>SDXL, Whisper (self-hosted)</span><span class="tech-price">$0</span></div>
+        <div class="tech-item"><span>Cloud APIs (Runway, ElevenLabs)</span><span class="tech-price">$1K-3K/мес</span></div>
+        <div class="tech-item"><span>Backblaze B2 (10 TB)</span><span class="tech-price">$50/мес</span></div>
+        <div style="margin-top: 12px; padding: 8px; background: var(--cream); border-radius: 8px; font-size: 0.82em; font-weight: 700; color: var(--gold-dark);">ИТОГО: $1,400-3,730/мес</div>
+      </div>
+      <div class="tech-card">
+        <div style="background: var(--lavender); border-radius: 10px; padding: 8px 12px; margin-bottom: 14px; font-size: 0.8em; font-weight: 700; color: #6C3483;">Вариант 3: Full GPU (50+ каналов)</div>
+        <div class="tech-item"><span>4x A100 (dedicated, Hetzner/OVH)</span><span class="tech-price">$2K-4K/мес</span></div>
+        <div class="tech-item"><span>S3-compatible хранилище (50 TB)</span><span class="tech-price">$250/мес</span></div>
+        <div class="tech-item"><span>Kubernetes cluster</span><span class="tech-price">$200-400/мес</span></div>
+        <div class="tech-item"><span>ElevenLabs (минимально)</span><span class="tech-price">$300-500/мес</span></div>
+        <div style="margin-top: 12px; padding: 8px; background: var(--cream); border-radius: 8px; font-size: 0.82em; font-weight: 700; color: #6C3483;">ИТОГО: $2,770-5,170/мес</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <h3 style="font-size: 1em; font-weight: 700; margin-bottom: 16px;">ТОП AI-инструменты (Q1 2026)</h3>
+        <div style="overflow-x: auto;">
+          <table class="data-table">
+            <thead><tr><th>Инструмент</th><th>Назначение</th><th>Цена</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Kling AI</strong></td><td>Video generation</td><td>$5-65/мес</td></tr>
+              <tr><td><strong>Runway ML Gen-3</strong></td><td>Высококачественное видео</td><td>$15-95/мес</td></tr>
+              <tr><td><strong>Sora (ChatGPT Pro)</strong></td><td>Топ-качество видео</td><td>$200/мес</td></tr>
+              <tr><td><strong>HeyGen</strong></td><td>AI-аватары лидер</td><td>$29-199/мес</td></tr>
+              <tr><td><strong>ElevenLabs</strong></td><td>AI Voice лидер</td><td>$5-99/мес</td></tr>
+              <tr><td><strong>Midjourney v6+</strong></td><td>Изображения, thumbnails</td><td>$10-60/мес</td></tr>
+              <tr><td><strong>Suno AI / Udio</strong></td><td>AI музыка</td><td>Free-$30/мес</td></tr>
+              <tr><td><strong>Synthesia</strong></td><td>Бизнес-аватары (160+ языков)</td><td>$29-249/мес</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size: 1em; font-weight: 700; margin-bottom: 16px;">Ключевые метрики для мониторинга</h3>
+        <div style="font-size: 0.85em;">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: white; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 6px;">
+            <span>CTR (Click-Through Rate)</span>
+            <div style="text-align: right;"><span class="pill pill-emerald">Target: &gt;5%</span> <span class="pill pill-coral">Red: &lt;3%</span></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: white; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 6px;">
+            <span>AVD (Average View Duration)</span>
+            <div style="text-align: right;"><span class="pill pill-emerald">Target: &gt;40%</span> <span class="pill pill-coral">Red: &lt;25%</span></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: white; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 6px;">
+            <span>RPM (Revenue per 1K views)</span>
+            <div style="text-align: right;"><span class="pill pill-emerald">Target: &gt;$3</span> <span class="pill pill-coral">Red: &lt;$1</span></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: white; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 6px;">
+            <span>Sub conversion</span>
+            <div style="text-align: right;"><span class="pill pill-emerald">Target: &gt;2%</span> <span class="pill pill-coral">Red: &lt;0.5%</span></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: white; border-radius: 10px; border: 1px solid var(--border);">
+            <span>Upload success rate</span>
+            <div style="text-align: right;"><span class="pill pill-emerald">Target: 100%</span> <span class="pill pill-coral">Red: &lt;95%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 6: Jurisdictions -->
+<div class="section section-alt">
+  <div class="container">
+    <span class="section-label">Юрисдикции</span>
+    <h2 class="section-title">Где регистрировать компанию</h2>
+    <p class="section-sub">Налогообложение, withholding tax на YouTube, стоимость регистрации и практические рекомендации</p>
+
+    <div class="grid-3" style="margin-bottom: 20px;">
+      <div class="juris-card">
+        <h4>UAE (Dubai/RAK FTZ)</h4>
+        <div class="juris-tax c-emerald">0-9%</div>
+        <p style="font-size: 0.83em; color: var(--text-mid); margin-bottom: 10px;">0% до 375K AED. Digital nomad friendly. YouTube платит без withholding. Требует physical presence/agent.</p>
+        <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+          <span class="juris-tag" style="background: var(--mint); color: var(--emerald-dark);">US withholding: 0%</span>
+          <span class="juris-tag" style="background: #FFE5E1; color: var(--coral-dark);">Setup: $5K-15K</span>
+        </div>
+      </div>
+      <div class="juris-card">
+        <h4>Estonia (e-Residency)</h4>
+        <div class="juris-tax c-gold">0-20%</div>
+        <p style="font-size: 0.83em; color: var(--text-mid); margin-bottom: 10px;">Удалённая регистрация. EU legal framework. 0% на нераспределённую прибыль. 20% при распределении.</p>
+        <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+          <span class="juris-tag" style="background: var(--gold-light); color: var(--gold-dark);">US withholding: 10%</span>
+          <span class="juris-tag" style="background: var(--mint); color: var(--emerald-dark);">Setup: $500-2K</span>
+        </div>
+      </div>
+      <div class="juris-card">
+        <h4>Грузия (ИП/LLC)</h4>
+        <div class="juris-tax c-teal">1%</div>
+        <p style="font-size: 0.83em; color: var(--text-mid); margin-bottom: 10px;">1% для IT. Простая регистрация. Дешёвая жизнь. Ограниченный banking. Хорошо для старта.</p>
+        <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+          <span class="juris-tag" style="background: #D5F5EE; color: #0E8A76;">US withholding: 0%</span>
+          <span class="juris-tag" style="background: var(--mint); color: var(--emerald-dark);">Setup: $200-500</span>
+        </div>
+      </div>
+      <div class="juris-card">
+        <h4>UK LTD</h4>
+        <div class="juris-tax c-coral">19-25%</div>
+        <p style="font-size: 0.83em; color: var(--text-mid); margin-bottom: 10px;">Простая регистрация. AI-контент МОЖЕТ быть защищён авторским правом (CDPA 1988). YouTube нативно.</p>
+        <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+          <span class="juris-tag" style="background: var(--mint); color: var(--emerald-dark);">US withholding: 0%</span>
+          <span class="juris-tag" style="background: #FFE5E1; color: var(--coral-dark);">Setup: $100-500</span>
+        </div>
+      </div>
+      <div class="juris-card">
+        <h4>US LLC (Wyoming/Delaware)</h4>
+        <div class="juris-tax c-purple">0-37%</div>
+        <p style="font-size: 0.83em; color: var(--text-mid); margin-bottom: 10px;">YouTube payments без проблем. Банковские счета, credibility. Налогообложение сложное (pass-through).</p>
+        <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+          <span class="juris-tag" style="background: var(--lavender); color: #6C3483;">Pass-through tax</span>
+          <span class="juris-tag" style="background: #FFE5E1; color: var(--coral-dark);">Setup: $500-2K</span>
+        </div>
+      </div>
+      <div class="juris-card" style="background: linear-gradient(135deg, var(--cream), white);">
+        <h4 style="color: var(--coral-dark);">Рекомендации</h4>
+        <div style="font-size: 0.83em; color: var(--text-dark);">
+          <div style="padding: 6px 0; border-bottom: 1px solid var(--border);"><strong>Мин. бюджет:</strong> Грузия или Сербия (ИП) — 1-3% налог</div>
+          <div style="padding: 6px 0; border-bottom: 1px solid var(--border);"><strong>Средний бюджет:</strong> Estonia e-Residency — 0% на реинвестирование</div>
+          <div style="padding: 6px 0;"><strong>&gt;$500K/год:</strong> UAE Free Zone — 0-9% + prestige</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 7: Scale roadmap -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">Масштабирование</span>
+    <h2 class="section-title">От 1 до 200 каналов — роадмап</h2>
+    <p class="section-sub">Поэтапный план с командой, инфраструктурой и финансовыми целями на каждом этапе</p>
+
+    <div class="grid-2">
+      <div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-phase">Фаза 1 — Месяц 1-2</div>
+            <h4>MVP: 3 satisfying/ASMR канала</h4>
+            <p>Базовый pipeline (скрипт → генерация → upload). 3-5 Shorts/день/канал + 1 long-form/день. Один основатель справляется. Бюджет: $3K setup + $3K/мес.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--gold);"></div>
+            <div class="timeline-phase" style="color: var(--gold-dark);">Фаза 2 — Месяц 3-4</div>
+            <h4>Scale Satisfying: 7-10 каналов</h4>
+            <p>Автоматизировать pipeline (Celery + Redis). A/B тестирование thumbnails. Настроить мониторинг (Grafana). Бюджет: $7-9K/мес.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--emerald);"></div>
+            <div class="timeline-phase" style="color: var(--emerald-dark);">Фаза 3 — Месяц 4-6</div>
+            <h4>Add AI-аватары: 2-3 персонажа</h4>
+            <p>Saudi, Global, LatAm — регионы с высоким CPM. Instagram + TikTok. Начало outreach к брендам. Бюджет: $10-13K/мес.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--teal);"></div>
+            <div class="timeline-phase" style="color: var(--teal);">Фаза 4 — Месяц 6-12</div>
+            <h4>Optimize &amp; Monetize</h4>
+            <p>Данные analytics → оптимизация. Нанять 1-2 content managers. Активные brand deals. Зарегистрировать компанию. Target: break-even к месяцу 10-12.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: #9B59B6;"></div>
+            <div class="timeline-phase" style="color: #8E44AD;">Фаза 5 — Год 2</div>
+            <h4>Scale: 20-50 каналов</h4>
+            <p>Full-time команда (5-10 человек). B2B services (создание аватаров для брендов). Target: $50K-100K/мес net profit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size: 1em; font-weight: 700; margin-bottom: 16px;">Потенциал 200 каналов (Год 2+)</h3>
+        <div class="metric-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+          <div class="metric-card">
+            <span class="big c-coral" style="font-size: 1.5em;">$400K-2M</span>
+            <div class="label">AdSense/мес (оц.)</div>
+          </div>
+          <div class="metric-card">
+            <span class="big c-gold" style="font-size: 1.5em;">$100K-500K</span>
+            <div class="label">Brand deals/мес</div>
+          </div>
+          <div class="metric-card">
+            <span class="big c-teal" style="font-size: 1.5em;">$50K-200K</span>
+            <div class="label">B2B services/мес</div>
+          </div>
+          <div class="metric-card">
+            <span class="big c-emerald" style="font-size: 1.5em;">$6.6M-32M</span>
+            <div class="label">Оценочный доход/год</div>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1em; font-weight: 700; margin-bottom: 12px;">Exit-стратегии</h3>
+        <div style="font-size: 0.85em;">
+          <div style="padding: 12px; background: white; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 8px;">
+            <strong>Продажа каналов</strong> — 24-48x месячного дохода на FameSwap/прямые сделки. 50 каналов x $3K/мес = $3.6M-7.2M exit.
+          </div>
+          <div style="padding: 12px; background: white; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 8px;">
+            <strong>Продажа компании</strong> — медиа-компании (Warner, Disney Digital), MCN, PE. Мультипликатор 3-8x revenue. $5M revenue → $15M-40M exit.
+          </div>
+          <div style="padding: 12px; background: white; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 8px;">
+            <strong>SaaS pivot</strong> — внутренний pipeline → SaaS для других creators. ARR $1-10M → exit 5-15x = $5M-150M. Наиболее ценный выход.
+          </div>
+          <div style="padding: 12px; background: white; border-radius: 12px; border: 1px solid var(--border);">
+            <strong>IPO</strong> — реалистично при $50M+ ARR и устойчивом росте. Timeline: 5-7 лет.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 8: Risk matrix -->
+<div class="section section-alt">
+  <div class="container">
+    <span class="section-label">Матрица рисков</span>
+    <h2 class="section-title">10 ключевых рисков фабрики</h2>
+    <p class="section-sub">Платформенный риск — главный. Никогда не зависеть от одной платформы. Каждый канал должен присутствовать на 2-3 платформах.</p>
+
+    <div class="grid-3">
+      <div class="risk-card risk-high">
+        <div class="risk-label">Высокий — Платформенный</div>
+        <h4>YouTube меняет алгоритм</h4>
+        <p>Прецедент: TheSoul потеряла 20-30% просмотров после изменений 2022-2023. Mitigation: мультиплатформенность, диверсификация ниш.</p>
+      </div>
+      <div class="risk-card risk-high">
+        <div class="risk-label">Высокий — Конкурентный</div>
+        <h4>Низкий барьер входа</h4>
+        <p>CapEx всего $10-20K. Через 2-3 года рынок насытится. Mitigation: начать сейчас (first-mover), инвестировать в бренд, создать экосистему.</p>
+      </div>
+      <div class="risk-card risk-high">
+        <div class="risk-label">Высокий — Операционный</div>
+        <h4>Key person risk</h4>
+        <p>Вся система держится на одном человеке. Mitigation: документация, максимальная автоматизация, найм дублёров ключевых функций.</p>
+      </div>
+      <div class="risk-card medium risk-medium">
+        <div class="risk-label">Средний — Платформенный</div>
+        <h4>CPM продолжает падать</h4>
+        <p>Faceless каналы: $1-3 CPM vs $5-15 для face-on-camera. Mitigation: B2B revenue (brand deals), affiliate, merchandise.</p>
+      </div>
+      <div class="risk-card medium risk-medium">
+        <div class="risk-label">Средний — Платформенный</div>
+        <h4>Бан каналов за AI-контент</h4>
+        <p>Баны за spam, reused content, impersonation — не за AI per se. Mitigation: маркировка, ограничение upload rate, уникальность контента.</p>
+      </div>
+      <div class="risk-card medium risk-medium">
+        <div class="risk-label">Средний — Регуляторный</div>
+        <h4>Законы об AI-контенте</h4>
+        <p>EU AI Act требует маркировки. Бан маловероятен. Mitigation: маркировка "Created with AI assistance", прозрачность, лояльная юрисдикция.</p>
+      </div>
+      <div class="risk-card medium risk-medium">
+        <div class="risk-label">Средний — Репутационный</div>
+        <h4>"AI spam farm" ассоциация</h4>
+        <p>Негативное восприятие "контент-фермы". Mitigation: качественный контент, human curation, B2B positioning.</p>
+      </div>
+      <div class="risk-card medium risk-medium">
+        <div class="risk-label">Средний — Финансовый</div>
+        <h4>Долгий ramp-up</h4>
+        <p>Break-even только через 10-14 месяцев. Mitigation: bootstrap-friendly модель, satisfying = быстрый cashflow, минимальный CapEx.</p>
+      </div>
+      <div class="risk-card low risk-low">
+        <div class="risk-label">Низкий — Технологический</div>
+        <h4>AI-тулы дорожают</h4>
+        <p>Маловероятно — конкуренция растёт. Mitigation: self-hosted модели, альтернативные провайдеры, долгосрочные подписки.</p>
+      </div>
+      <div class="risk-card low risk-low">
+        <div class="risk-label">Средний — Технологический</div>
+        <h4>AI-тулы commoditize</h4>
+        <p>Технология перестаёт быть конкурентным преимуществом. Mitigation: фокус на стратегии и бренде, не на технологии. Данные — новый ров.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 9: Key conclusions -->
+<div class="section">
+  <div class="container">
+    <span class="section-label">Выводы</span>
+    <h2 class="section-title">7 главных выводов исследования</h2>
+
+    <div class="grid-2" style="margin-bottom: 30px;">
+      <div style="padding: 24px; background: linear-gradient(135deg, var(--mint), #C8F5E3); border-radius: 20px;">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: var(--emerald-dark); margin-bottom: 16px;">Success Factors</h3>
+        <div style="font-size: 0.85em; color: var(--text-dark);">
+          <div style="display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(46,204,113,0.3); align-items: flex-start;">
+            <span style="color: var(--emerald); font-weight: 700; font-size: 1.1em;">1</span>
+            <span><strong>Качество &gt; Количество.</strong> 5 каналов с retention 50%+ лучше 20 с retention 20%</span>
+          </div>
+          <div style="display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(46,204,113,0.3); align-items: flex-start;">
+            <span style="color: var(--emerald); font-weight: 700; font-size: 1.1em;">2</span>
+            <span><strong>Human curation обязателен.</strong> 100% автоматизация = низкое качество. Нужен человек в loop для QA</span>
+          </div>
+          <div style="display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(46,204,113,0.3); align-items: flex-start;">
+            <span style="color: var(--emerald); font-weight: 700; font-size: 1.1em;">3</span>
+            <span><strong>Мультиплатформенность.</strong> YouTube + TikTok + Instagram минимум. Снижает platform risk</span>
+          </div>
+          <div style="display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(46,204,113,0.3); align-items: flex-start;">
+            <span style="color: var(--emerald); font-weight: 700; font-size: 1.1em;">4</span>
+            <span><strong>Data-driven.</strong> Решения на основе analytics, не интуиции. KPI по каждому каналу</span>
+          </div>
+          <div style="display: flex; gap: 10px; padding: 8px 0; align-items: flex-start;">
+            <span style="color: var(--emerald); font-weight: 700; font-size: 1.1em;">5</span>
+            <span><strong>Диверсифицированный доход.</strong> AdSense + sponsors + affiliate + B2B services</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="insight-box" style="margin-bottom: 16px;">
+          <h3>Timing оптимальный — Q1 2026</h3>
+          <p>AI-тулы достаточно зрелые. Рынок ещё не перенасыщен. Платформы не запретили AI-контент. Барьер входа всего $10-20K. <strong>Начать СЕЙЧАС.</strong> Через 2 года барьер будет значительно выше.</p>
+        </div>
+        <div style="padding: 20px; background: white; border-radius: 16px; border: 1px solid var(--border);">
+          <h3 style="font-size: 0.95em; font-weight: 700; margin-bottom: 14px;">Satisfying/ASMR — лучшая стартовая ниша</h3>
+          <div style="font-size: 0.83em; color: var(--text-mid);">
+            <div style="padding: 5px 0; border-bottom: 1px solid var(--border);">Минимальные требования к качеству AI-генерации</div>
+            <div style="padding: 5px 0; border-bottom: 1px solid var(--border);">Высокий watch time (алгоритм YouTube любит)</div>
+            <div style="padding: 5px 0; border-bottom: 1px solid var(--border);">Стабильный CPM $2-7</div>
+            <div style="padding: 5px 0; border-bottom: 1px solid var(--border);">Быстрый органический рост через Shorts</div>
+            <div style="padding: 5px 0;">Break-even 11-12 месяцев при $9K/мес OpEx</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding: 28px; background: linear-gradient(135deg, #FFE5E1, var(--cream), var(--mint)); border-radius: 24px; text-align: center;">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.4em; margin-bottom: 16px; color: var(--text-dark);">Итоговая рекомендация</h3>
+      <p style="max-width: 700px; margin: 0 auto; font-size: 0.95em; color: var(--text-mid); line-height: 1.8;">
+        Запуск с <strong>3 Satisfying-каналов (Модель A)</strong> → масштабирование до 10 каналов → добавление <strong>2-3 AI-аватаров (Модель B)</strong> к месяцу 4-6 → выход на <strong>Гибридную модель C</strong> с целевым break-even на месяце 10-12. Год 2: $700K-2.1M net profit при успешном масштабировании.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+        <span class="pill pill-coral">CapEx старт: $20K</span>
+        <span class="pill pill-gold">OpEx/мес: $13K</span>
+        <span class="pill pill-emerald">Break-even: 10-12 мес</span>
+        <span class="pill pill-teal">Год 2 Net: $700K+</span>
+        <span class="pill pill-purple">Net Margin Год 2: 78-91%</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Исследование: AI Video Factory — Deep Research Report · 3 марта 2026 · Все доходы и расходы — оценочные значения</p>
+  <p style="margin-top: 6px;">Источники: Crunchbase, Statista, отраслевые отчёты, Reddit/Twitter дискуссии, публичные кейсы компаний</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India AI Influencer Deep Dive 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+
+  :root {
+    --coral: #E8604C;
+    --coral-light: #F7A399;
+    --coral-dark: #C94535;
+    --gold: #F5A623;
+    --gold-light: #FFEAA7;
+    --gold-dark: #D4941C;
+    --emerald: #2ECC71;
+    --emerald-dark: #1A9B4B;
+    --teal: #1ABC9C;
+    --warm-white: #FFF9F5;
+    --cream: #FFF3E6;
+    --peach: #FFDAB9;
+    --sand: #F5E6CC;
+    --rose: #FFB3BA;
+    --lavender: #E8D5F5;
+    --mint: #D4F5E9;
+    --text-dark: #2D2D2D;
+    --text-mid: #5A5A5A;
+    --text-light: #8A8A8A;
+    --border: #E8E0D8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav a:hover { opacity: 0.7; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #F5A623 0%, #FF8E53 35%, #E8604C 70%, #C94535 100%);
+    padding: 90px 40px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 25% 65%, rgba(255,255,255,0.18) 0%, transparent 50%),
+                radial-gradient(circle at 75% 25%, rgba(255,255,255,0.12) 0%, transparent 50%);
+  }
+  .hero-flag {
+    font-size: 5em;
+    position: relative;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.15));
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8em;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    position: relative;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+  .hero .subtitle {
+    font-size: 1.3em;
+    color: rgba(255,255,255,0.92);
+    font-weight: 300;
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto 25px;
+  }
+  .hero .meta {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .hero .meta span {
+    background: rgba(255,255,255,0.22);
+    backdrop-filter: blur(10px);
+    padding: 8px 22px;
+    border-radius: 30px;
+    color: white;
+    font-size: 0.9em;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  /* SECTION */
+  .section { padding: 60px 0; }
+  .section-alt { background: var(--cream); }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3em;
+    font-weight: 800;
+    color: var(--coral-dark);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .section-subtitle {
+    font-size: 1.05em;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .section-divider {
+    width: 60px; height: 4px;
+    background: linear-gradient(90deg, var(--coral), var(--gold));
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+
+  /* KEY METRICS */
+  .key-metrics {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    margin: -45px auto 0;
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    padding: 0 30px;
+  }
+  .metric-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.09);
+    transition: transform 0.3s;
+  }
+  .metric-card:hover { transform: translateY(-5px); }
+  .metric-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--coral), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+  }
+  .metric-label {
+    font-size: 0.8em;
+    color: var(--text-mid);
+    margin-top: 7px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* GRID LAYOUTS */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+  /* CARDS */
+  .card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 10px 35px rgba(0,0,0,0.1); }
+
+  /* INFLUENCER CARDS */
+  .influencer-card {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    border-top: 5px solid var(--coral);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .influencer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+  .influencer-card.gold { border-top-color: var(--gold); }
+  .influencer-card.teal { border-top-color: var(--teal); }
+  .influencer-card.lavender { border-top-color: #B39DDB; }
+  .influencer-avatar {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8em;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--cream), var(--peach));
+  }
+  .influencer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+  .influencer-handle {
+    font-size: 0.88em;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .influencer-tag {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .tag-active { background: #D4F5E9; color: var(--emerald-dark); }
+  .tag-declining { background: #FFF3CD; color: #856404; }
+  .tag-inactive { background: #F5E6E6; color: #9B2335; }
+  .tag-campaign { background: var(--lavender); color: #5C35A0; }
+
+  .stat-row {
+    display: flex; justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88em;
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: var(--text-light); }
+  .stat-value { font-weight: 600; color: var(--text-dark); }
+
+  .brand-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .brand-tag {
+    background: var(--cream);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    color: var(--text-mid);
+    font-weight: 500;
+  }
+
+  /* TABLES */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    font-size: 0.9em;
+  }
+  .data-table th {
+    background: linear-gradient(135deg, var(--coral-dark), var(--coral));
+    color: white;
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+    letter-spacing: 0.3px;
+  }
+  .data-table td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dark);
+    vertical-align: top;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--warm-white); }
+  .data-table tr:nth-child(even) td { background: #FDFAF8; }
+  .data-table tr:nth-child(even):hover td { background: var(--warm-white); }
+
+  /* PROGRESS BARS */
+  .progress-wrap { margin-bottom: 16px; }
+  .progress-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.88em;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .progress-track {
+    height: 10px;
+    background: var(--sand);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(90deg, var(--coral), var(--gold));
+    transition: width 1s ease;
+  }
+  .progress-fill.green { background: linear-gradient(90deg, var(--teal), var(--emerald)); }
+  .progress-fill.gold { background: linear-gradient(90deg, var(--gold-dark), var(--gold)); }
+
+  /* NICHE SCORE CARDS */
+  .niche-card {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    border-left: 5px solid var(--coral);
+    transition: transform 0.3s;
+  }
+  .niche-card:hover { transform: translateY(-3px); }
+  .niche-card.gold-border { border-left-color: var(--gold); }
+  .niche-card.emerald-border { border-left-color: var(--emerald); }
+  .niche-card.teal-border { border-left-color: var(--teal); }
+  .niche-score {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    font-weight: 900;
+    color: var(--coral);
+    margin-bottom: 4px;
+  }
+  .niche-score.gold-text { color: var(--gold-dark); }
+  .niche-score.green-text { color: var(--emerald-dark); }
+  .niche-score.teal-text { color: #0E8F7A; }
+  .niche-name {
+    font-size: 1.05em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+  }
+  .niche-meta { font-size: 0.82em; color: var(--text-light); margin-bottom: 10px; }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.72em;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .badge-low { background: #D4F5E9; color: var(--emerald-dark); }
+  .badge-mid { background: #FFF3CD; color: #856404; }
+  .badge-high { background: #F5E6E6; color: #9B2335; }
+  .badge-hot { background: linear-gradient(135deg, var(--coral), var(--gold)); color: white; }
+
+  /* ROADMAP */
+  .roadmap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .roadmap::before {
+    content: '';
+    position: absolute;
+    top: 40px; left: 10%;
+    width: 80%; height: 3px;
+    background: linear-gradient(90deg, var(--coral), var(--gold), var(--emerald), var(--teal));
+    z-index: 0;
+  }
+  .roadmap-phase {
+    text-align: center;
+    padding: 20px 15px;
+    position: relative;
+    z-index: 1;
+  }
+  .phase-dot {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4em;
+    margin: 0 auto 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    font-weight: 700;
+    color: white;
+  }
+  .phase-dot.p1 { background: var(--coral); }
+  .phase-dot.p2 { background: var(--gold); }
+  .phase-dot.p3 { background: var(--emerald); }
+  .phase-dot.p4 { background: var(--teal); }
+  .phase-months {
+    font-size: 0.78em;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .phase-title {
+    font-weight: 700;
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+  }
+  .phase-goal {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 0.82em;
+    color: var(--text-mid);
+    margin-bottom: 10px;
+  }
+  .phase-items { list-style: none; text-align: left; font-size: 0.8em; color: var(--text-mid); }
+  .phase-items li { padding: 4px 0; padding-left: 16px; position: relative; }
+  .phase-items li::before { content: '→'; position: absolute; left: 0; color: var(--coral); font-weight: 700; }
+
+  /* COMPARISON TABLE */
+  .comparison-highlight { background: #FFF3CD !important; font-weight: 700; }
+  .val-high { color: var(--emerald-dark); font-weight: 700; }
+  .val-low { color: var(--coral); font-weight: 700; }
+  .val-mid { color: var(--gold-dark); font-weight: 600; }
+
+  /* RISK MATRIX */
+  .risk-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.05);
+    border-left: 4px solid;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .risk-card.critical { border-left-color: var(--coral-dark); }
+  .risk-card.high { border-left-color: var(--coral); }
+  .risk-card.medium { border-left-color: var(--gold); }
+  .risk-card.low { border-left-color: var(--emerald); }
+  .risk-level {
+    font-size: 0.72em;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .risk-level.critical { background: #F5E6E6; color: var(--coral-dark); }
+  .risk-level.high { background: #FFE8E5; color: var(--coral); }
+  .risk-level.medium { background: #FFF3CD; color: #856404; }
+  .risk-level.low { background: #D4F5E9; color: var(--emerald-dark); }
+  .risk-text h4 { font-size: 0.95em; font-weight: 700; margin-bottom: 4px; }
+  .risk-text p { font-size: 0.82em; color: var(--text-mid); }
+
+  /* ECONOMICS TABLE */
+  .econ-phase {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    margin-bottom: 0;
+  }
+  .econ-header {
+    padding: 14px 20px;
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, var(--coral-dark), var(--coral));
+  }
+  .econ-row {
+    padding: 12px 20px;
+    display: grid;
+    grid-template-columns: 120px 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    font-size: 0.85em;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+  }
+  .econ-row:last-child { border-bottom: none; }
+  .econ-row:hover { background: var(--warm-white); }
+  .period-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 0.78em;
+    font-weight: 700;
+    background: var(--cream);
+    color: var(--coral-dark);
+  }
+
+  /* BRAND GRID */
+  .brand-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .brand-item {
+    background: white;
+    border-radius: 14px;
+    padding: 16px 14px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
+  }
+  .brand-item:hover { transform: translateY(-3px); }
+  .brand-item .brand-name { font-weight: 700; font-size: 0.88em; color: var(--text-dark); margin-bottom: 4px; }
+  .brand-item .brand-cat { font-size: 0.75em; color: var(--text-light); }
+  .brand-item .brand-budget { font-size: 0.78em; color: var(--coral); font-weight: 600; margin-top: 6px; }
+
+  /* LANGUAGE BARS */
+  .lang-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+
+  /* OPPORTUNITY BOX */
+  .opportunity-box {
+    background: linear-gradient(135deg, var(--gold-light), var(--cream));
+    border: 2px solid var(--gold);
+    border-radius: 20px;
+    padding: 30px 35px;
+    margin-top: 30px;
+  }
+  .opportunity-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    color: var(--gold-dark);
+    margin-bottom: 12px;
+  }
+  .opportunity-items { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+  .opp-item {
+    background: white;
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 0.88em;
+    font-weight: 500;
+    color: var(--text-dark);
+    border-left: 3px solid var(--gold);
+  }
+
+  /* COST TABLE */
+  .cost-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.07);
+  }
+  .cost-header {
+    background: linear-gradient(135deg, var(--coral-dark), #E8604C);
+    color: white;
+    padding: 18px 24px;
+    font-weight: 700;
+    font-size: 0.9em;
+    display: grid;
+    grid-template-columns: 1fr 100px 100px 100px;
+    gap: 10px;
+  }
+  .cost-row {
+    padding: 12px 24px;
+    display: grid;
+    grid-template-columns: 1fr 100px 100px 100px;
+    gap: 10px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88em;
+    align-items: center;
+  }
+  .cost-row:last-child { border-bottom: none; background: var(--cream); font-weight: 700; }
+  .cost-row:hover { background: var(--warm-white); }
+  .cost-row:last-child:hover { background: var(--cream); }
+
+  /* INSIGHT BOX */
+  .insight {
+    background: linear-gradient(135deg, var(--coral), var(--coral-dark));
+    color: white;
+    border-radius: 18px;
+    padding: 24px 28px;
+    margin-top: 25px;
+    font-size: 0.95em;
+    line-height: 1.7;
+  }
+  .insight strong { font-weight: 800; }
+
+  /* PLATFORM CARDS */
+  .platform-card {
+    background: white;
+    border-radius: 20px;
+    padding: 26px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    text-align: center;
+    border-top: 4px solid var(--coral);
+  }
+  .platform-card.yt { border-top-color: var(--coral); }
+  .platform-card.ig { border-top-color: var(--gold); }
+  .platform-card.moj { border-top-color: var(--teal); }
+  .platform-card.josh { border-top-color: var(--emerald); }
+  .platform-icon { font-size: 2.5em; margin-bottom: 10px; }
+  .platform-name { font-weight: 800; font-size: 1.1em; margin-bottom: 4px; }
+  .platform-mau { font-family: 'Playfair Display', serif; font-size: 2em; font-weight: 900; background: linear-gradient(135deg, var(--coral), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .platform-sub { font-size: 0.78em; color: var(--text-light); }
+  .platform-monetize {
+    margin-top: 12px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 0.78em;
+    font-weight: 600;
+  }
+  .monetize-strong { background: #D4F5E9; color: var(--emerald-dark); }
+  .monetize-weak { background: #FFF3CD; color: #856404; }
+
+  /* FESTIVAL TIMELINE */
+  .festival-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .festival-item {
+    background: white;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--coral);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .festival-name { font-weight: 700; font-size: 0.88em; }
+  .festival-period { font-size: 0.76em; color: var(--text-light); margin-top: 2px; }
+  .festival-spike {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3em;
+    font-weight: 900;
+    color: var(--coral);
+  }
+
+  /* PROFILE CARD */
+  .profile-box {
+    background: linear-gradient(135deg, #FFF3E6, #FFF9F5);
+    border: 2px solid var(--coral-light);
+    border-radius: 24px;
+    padding: 35px;
+  }
+  .profile-avatar {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--coral), var(--gold));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(232,96,76,0.3);
+  }
+  .profile-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+  .profile-desc { font-size: 0.95em; color: var(--text-mid); margin-bottom: 20px; }
+  .profile-params { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .profile-param {
+    background: white;
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .profile-param .p-label { font-size: 0.76em; color: var(--text-light); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .profile-param .p-value { font-weight: 700; font-size: 0.92em; color: var(--text-dark); }
+
+  /* FOOTER */
+  footer {
+    background: var(--text-dark);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 30px;
+    font-size: 0.85em;
+  }
+  footer strong { color: white; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .key-metrics { grid-template-columns: repeat(3, 1fr); }
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+    .roadmap { grid-template-columns: 1fr 1fr; }
+    .roadmap::before { display: none; }
+    .brand-grid { grid-template-columns: repeat(3, 1fr); }
+    .festival-grid { grid-template-columns: 1fr 1fr; }
+    .profile-params { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.6em; }
+    .econ-header, .econ-row { grid-template-columns: 100px 1fr 1fr 1fr; }
+    .econ-header span:nth-child(5), .econ-row span:nth-child(5) { display: none; }
+  }
+  @media (max-width: 600px) {
+    .grid-2, .grid-4 { grid-template-columns: 1fr; }
+    .key-metrics { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 2em; }
+    .brand-grid { grid-template-columns: repeat(2, 1fr); }
+    .cost-header, .cost-row { grid-template-columns: 1fr 80px 80px; }
+    .cost-header span:last-child, .cost-row span:last-child { display: none; }
+    .lang-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav style="position:sticky;top:0;z-index:1000;background:white;box-shadow:0 2px 10px rgba(0,0,0,0.08);padding:12px 30px;display:flex;gap:15px;flex-wrap:wrap;align-items:center;font-family:'Inter',sans-serif;font-size:0.85em;">
+  <a href="index.html" style="color:#E8604C;font-weight:700;text-decoration:none;font-size:1.1em;">🔬 AI-Блогеры</a>
+  <a href="saudi-luxury.html" style="color:#2D2D2D;text-decoration:none;padding:5px 12px;border-radius:20px;background:#FFF3E6;">🇸🇦 Saudi Luxury</a>
+  <a href="satisfying-factory.html" style="color:#2D2D2D;text-decoration:none;padding:5px 12px;border-radius:20px;background:#FFF3E6;">🏭 Satisfying Factory</a>
+  <a href="modest-fashion.html" style="color:#2D2D2D;text-decoration:none;padding:5px 12px;border-radius:20px;background:#FFF3E6;">🧕 Modest Fashion</a>
+  <a href="india-deep-dive.html" style="color:#2D2D2D;text-decoration:none;padding:5px 12px;border-radius:20px;background:#FFF3E6;font-weight:600;">🇮🇳 India</a>
+  <a href="africa-opportunity.html" style="color:#2D2D2D;text-decoration:none;padding:5px 12px;border-radius:20px;background:#FFF3E6;">🌍 Africa</a>
+  <a href="ai-factory-model.html" style="color:#2D2D2D;text-decoration:none;padding:5px 12px;border-radius:20px;background:#FFF3E6;">⚙️ AI Factory</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-flag">🇮🇳</div>
+  <h1>India: AI Influencer Deep Dive</h1>
+  <p class="subtitle">Крупнейший рынок YouTube в мире. Ранняя стадия virtual influencer. Окно возможностей — 2026.</p>
+  <div class="meta">
+    <span>500M+ YouTube MAU</span>
+    <span>$5B+ Digital Ad Market</span>
+    <span>2–3 конкурента</span>
+    <span>Breakeven: 5–9 мес.</span>
+    <span>Март 2026</span>
+  </div>
+</section>
+
+<!-- KEY METRICS STRIP -->
+<div class="key-metrics">
+  <div class="metric-card">
+    <div class="metric-value">500M+</div>
+    <div class="metric-label">YouTube MAU — #1 рынок мира</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">360M+</div>
+    <div class="metric-label">Instagram MAU — топ-2 глобально</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">$12.5B</div>
+    <div class="metric-label">Общий рекламный рынок 2024</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">300K</div>
+    <div class="metric-label">Kyra — лидер рынка (ничтожно мало)</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">8.5/10</div>
+    <div class="metric-label">Рейтинг ниши plus-size fashion</div>
+  </div>
+</div>
+
+<!-- SECTION 1: MARKET SCALE -->
+<section class="section" style="padding-top:80px;">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Масштаб рынка</h2>
+    <p class="section-subtitle">Индия — уникальное сочетание максимальной аудитории и минимальной конкуренции AI-инфлюенсеров</p>
+
+    <div class="grid-3" style="margin-bottom:30px;">
+      <div class="card">
+        <div style="font-size:2em;margin-bottom:10px;">📱</div>
+        <div style="font-size:0.8em;color:var(--text-light);text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:10px;">Интернет и смартфоны</div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Интернет-пользователи</span><span style="color:var(--coral);font-weight:700;">900M+</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:64%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Пользователи смартфонов</span><span style="color:var(--coral);font-weight:700;">750M+</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:54%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>YouTube MAU</span><span style="color:var(--coral);font-weight:700;">500M+</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:36%"></div></div>
+        </div>
+        <div style="font-size:0.78em;color:var(--text-light);margin-top:10px;">Стоимость данных: $0.17/GB — самая низкая в мире (эффект Jio с 2016)</div>
+      </div>
+
+      <div class="card">
+        <div style="font-size:2em;margin-bottom:10px;">📺</div>
+        <div style="font-size:0.8em;color:var(--text-light);text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:10px;">YouTube India</div>
+        <div class="stat-row">
+          <span class="stat-label">MAU</span>
+          <span class="stat-value" style="color:var(--coral);">500M+ (#1 мире)</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">DAU (оценка)</span>
+          <span class="stat-value">250–300M</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Ср. время просмотра/день</span>
+          <span class="stat-value">40–50 мин</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Каналы 1M+ подписчиков</span>
+          <span class="stat-value">5,000+</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Shorts (глоб. просм./день)</span>
+          <span class="stat-value">50B+</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Доля Индии в Shorts</span>
+          <span class="stat-value">30–35%</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">YouTube Premium</span>
+          <span class="stat-value">INR 129/мес (~$1.5)</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size:2em;margin-bottom:10px;">💰</div>
+        <div style="font-size:0.8em;color:var(--text-light);text-transform:uppercase;font-weight:700;letter-spacing:0.5px;margin-bottom:10px;">Рекламный рынок</div>
+        <div class="stat-row">
+          <span class="stat-label">Общий рынок 2024</span>
+          <span class="stat-value">$12.5B</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Digital ad spend 2024</span>
+          <span class="stat-value">$5.0–5.4B</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Digital share</span>
+          <span class="stat-value">~40%</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Рост digital YoY</span>
+          <span class="stat-value" style="color:var(--emerald-dark);">25–28%</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Video ad spend 2024</span>
+          <span class="stat-value">$1.7–1.9B</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Influencer marketing 2024</span>
+          <span class="stat-value">$300–360M</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Influencer market рост</span>
+          <span class="stat-value" style="color:var(--emerald-dark);">25–30%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Media Penetration -->
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.5em;font-weight:800;color:var(--text-dark);margin-bottom:20px;">Проникновение социальных сетей (2025)</h3>
+    <div class="grid-4">
+      <div class="metric-card" style="border-top:3px solid var(--coral);">
+        <div style="font-size:1.8em;margin-bottom:6px;">📺</div>
+        <div class="metric-value" style="font-size:1.8em;">500M+</div>
+        <div class="metric-label">YouTube<br>34% населения</div>
+      </div>
+      <div class="metric-card" style="border-top:3px solid var(--gold);">
+        <div style="font-size:1.8em;margin-bottom:6px;">📸</div>
+        <div class="metric-value" style="font-size:1.8em;">360M+</div>
+        <div class="metric-label">Instagram<br>25% населения</div>
+      </div>
+      <div class="metric-card" style="border-top:3px solid var(--emerald);">
+        <div style="font-size:1.8em;margin-bottom:6px;">💬</div>
+        <div class="metric-value" style="font-size:1.8em;">500M+</div>
+        <div class="metric-label">WhatsApp<br>34% населения</div>
+      </div>
+      <div class="metric-card" style="border-top:3px solid var(--teal);">
+        <div style="font-size:1.8em;margin-bottom:6px;">📘</div>
+        <div class="metric-value" style="font-size:1.8em;">350M+</div>
+        <div class="metric-label">Facebook<br>24% населения</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: AI INFLUENCERS LANDSCAPE -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Существующие AI-инфлюенсеры</h2>
+    <p class="section-subtitle">Рынок РАННИЙ, но НЕ пустой. 2–3 активных проекта при аудитории 1.4B человек — это исторический шанс</p>
+
+    <div class="grid-2" style="margin-bottom:30px;">
+      <!-- Kyra -->
+      <div class="influencer-card">
+        <div class="influencer-avatar">🌟</div>
+        <div class="influencer-name">Kyra</div>
+        <div class="influencer-handle">@kyraonig</div>
+        <span class="influencer-tag tag-active">Флагман рынка</span>
+        <div style="font-size:0.82em;color:var(--text-mid);margin-bottom:14px;">Создатель: FUTR Studios (Мумбаи) · Запуск: январь 2022 · "India's first meta-influencer"</div>
+        <div class="stat-row">
+          <span class="stat-label">Instagram подписчики</span>
+          <span class="stat-value" style="color:var(--coral);">~300K+</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Engagement rate</span>
+          <span class="stat-value" style="color:var(--emerald-dark);">3–5% (выше среднего)</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Позиционирование</span>
+          <span class="stat-value">22 года, Дели, lifestyle</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Доход за коллаб</span>
+          <span class="stat-value">$1,200–6,000/пост</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">YouTube</span>
+          <span class="stat-value" style="color:var(--coral-dark);">НЕТ (критический пробел)</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Видеоконтент</span>
+          <span class="stat-value" style="color:var(--coral-dark);">Ограниченные Reels</span>
+        </div>
+        <div class="brand-tags">
+          <span class="brand-tag">boAt</span>
+          <span class="brand-tag">Amazon Prime</span>
+          <span class="brand-tag">Sugar Cosmetics</span>
+          <span class="brand-tag">Bewakoof</span>
+          <span class="brand-tag">Noise</span>
+          <span class="brand-tag">MamaEarth</span>
+          <span class="brand-tag">iQOO</span>
+          <span class="brand-tag">Renault India</span>
+        </div>
+        <div class="insight" style="margin-top:18px;padding:16px 20px;font-size:0.84em;">
+          <strong>Ключевой вывод:</strong> 300K подписчиков — ничтожно мало для рынка, где топ beauty-блогеры имеют 10–50M. Доказала готовность брендов платить, но НЕ доказала масштабируемость.
+        </div>
+      </div>
+
+      <!-- Other influencers -->
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <div class="influencer-card gold">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div class="influencer-avatar" style="min-width:52px;width:52px;height:52px;font-size:1.4em;margin-bottom:0;">👗</div>
+            <div style="flex:1;">
+              <div class="influencer-name" style="font-size:1.15em;">Naina</div>
+              <div class="influencer-handle">@naina.avtr</div>
+              <span class="influencer-tag tag-declining">Снижение активности</span>
+              <div style="font-size:0.82em;color:var(--text-mid);">Avtr Meta Labs · 2022 · Virtual fashion influencer, Gen-Z стиль</div>
+              <div class="stat-row" style="margin-top:8px;">
+                <span class="stat-label">Подписчики</span>
+                <span class="stat-value">30–50K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="influencer-card teal">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div class="influencer-avatar" style="min-width:52px;width:52px;height:52px;font-size:1.4em;margin-bottom:0;">🌸</div>
+            <div style="flex:1;">
+              <div class="influencer-name" style="font-size:1.15em;">Sana</div>
+              <div class="influencer-handle">@sana.virtual</div>
+              <span class="influencer-tag tag-inactive">Нет тракции</span>
+              <div style="font-size:0.82em;color:var(--text-mid);">OML · ~2023 · Попытка South India virtual influencer</div>
+              <div class="stat-row" style="margin-top:8px;">
+                <span class="stat-label">Подписчики</span>
+                <span class="stat-value">&lt;10K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="influencer-card lavender">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div class="influencer-avatar" style="min-width:52px;width:52px;height:52px;font-size:1.4em;margin-bottom:0;">🎬</div>
+            <div style="flex:1;">
+              <div class="influencer-name" style="font-size:1.15em;">Ira</div>
+              <div class="influencer-handle">@ira.virtual</div>
+              <span class="influencer-tag tag-inactive">Прекратила обновления</span>
+              <div style="font-size:0.82em;color:var(--text-mid);">Неизвестный стартап · 2022–2023 · Bollywood-стиль</div>
+              <div class="stat-row" style="margin-top:8px;">
+                <span class="stat-label">Подписчики</span>
+                <span class="stat-value">5–15K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="background:linear-gradient(135deg,#FFF9F5,#FFF3E6);border:2px dashed var(--coral-light);">
+          <div style="font-size:1.5em;margin-bottom:8px;">🎯</div>
+          <div style="font-weight:700;color:var(--coral-dark);margin-bottom:8px;">Незанятая ниша: ВИДЕО</div>
+          <div style="font-size:0.88em;color:var(--text-mid);">
+            Kyra — только фото. Ни один virtual influencer в Индии не имеет полноценного YouTube-канала с видеоконтентом. Это критический пробел для входа в 2026.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Companies Table -->
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.5em;font-weight:800;color:var(--text-dark);margin-bottom:20px;">Компании в пространстве</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Компания</th>
+          <th>Описание</th>
+          <th>Финансирование</th>
+          <th>Статус</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>FUTR Studios</strong> (Мумбаи)</td>
+          <td>Создатели Kyra. "India's leading virtual influencer agency"</td>
+          <td>Не раскрыто</td>
+          <td><span class="badge badge-mid">Активны (малый масштаб)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Avtr Meta Labs</strong></td>
+          <td>Создатели Naina + services по созданию virtual influencers для брендов</td>
+          <td>Не раскрыто</td>
+          <td><span class="badge badge-mid">Активны</span></td>
+        </tr>
+        <tr>
+          <td><strong>Rephrase.ai</strong> (Бангалор)</td>
+          <td>AI-видео генерация, digital avatars для корпоратов</td>
+          <td>$10.6M Series A</td>
+          <td><span class="badge badge-low">B2B, не инфлюенсеры</span></td>
+        </tr>
+        <tr>
+          <td><strong>Gan.ai</strong> (Мумбаи)</td>
+          <td>Персонализированное AI-видео для маркетинга</td>
+          <td>~$5.5M</td>
+          <td><span class="badge badge-low">Инструмент</span></td>
+        </tr>
+        <tr>
+          <td><strong>Murf.ai</strong> (Бангалор)</td>
+          <td>AI voice-over, включая хинди/тамильский</td>
+          <td>$40M+ финансирования</td>
+          <td><span class="badge badge-low">Инструмент (использовать)</span></td>
+        </tr>
+        <tr>
+          <td><strong>AI Monk Labs</strong></td>
+          <td>AI-маркетинг для брендов, не virtual influencers напрямую</td>
+          <td>Не раскрыто</td>
+          <td><span class="badge badge-mid">Агентство</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 3: WHY UNDERSERVED -->
+<section class="section">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Почему рынок недообслужен</h2>
+    <p class="section-subtitle">Сравнение проникновения AI-инфлюенсеров на ключевых рынках мира</p>
+
+    <div class="grid-2" style="margin-bottom:30px;">
+      <div class="card">
+        <h3 style="font-weight:700;margin-bottom:20px;color:var(--text-dark);">Индия vs ведущие рынки YouTube</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Рынок</th>
+              <th>YouTube MAU</th>
+              <th>AI-инфлюенсеры</th>
+              <th>CPM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#FFF3CD;">
+              <td><strong>🇮🇳 Индия</strong></td>
+              <td class="val-high">500M+</td>
+              <td class="val-low">2–3 (Kyra 300K)</td>
+              <td class="val-low">$0.5–2</td>
+            </tr>
+            <tr>
+              <td>🇺🇸 США</td>
+              <td>250M</td>
+              <td class="val-mid">Сотни</td>
+              <td class="val-high">$5–15</td>
+            </tr>
+            <tr>
+              <td>🇧🇷 Бразилия</td>
+              <td>150M</td>
+              <td class="val-low">5–10</td>
+              <td class="val-mid">$1–4</td>
+            </tr>
+            <tr>
+              <td>🇯🇵 Япония</td>
+              <td>80M</td>
+              <td class="val-mid">20–30</td>
+              <td class="val-high">$3–8</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3 style="font-weight:700;margin-bottom:20px;color:var(--text-dark);">Revenue per 1M просмотров</h3>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>🇺🇸 США</span><span style="color:var(--emerald-dark);font-weight:700;">$5,000–15,000</span></div>
+          <div class="progress-track"><div class="progress-fill green" style="width:100%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>🇯🇵 Япония</span><span style="color:var(--gold-dark);font-weight:700;">$3,000–8,000</span></div>
+          <div class="progress-track"><div class="progress-fill gold" style="width:65%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>🇧🇷 Бразилия</span><span style="color:var(--gold-dark);font-weight:700;">$1,000–4,000</span></div>
+          <div class="progress-track"><div class="progress-fill gold" style="width:35%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>🇮🇳 Индия</span><span style="color:var(--coral);font-weight:700;">$500–2,000</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:15%"></div></div>
+        </div>
+        <div style="margin-top:16px;padding:14px;background:var(--cream);border-radius:12px;font-size:0.85em;color:var(--text-mid);">
+          <strong style="color:var(--coral-dark);">Стратегия компенсации:</strong> низкий CPM компенсируется в 2x–5x большей аудиторией + низкой конкуренцией + мульти-платформенностью
+        </div>
+      </div>
+    </div>
+
+    <div class="opportunity-box">
+      <h3>Почему Индия — стратегическая ставка</h3>
+      <div style="font-size:0.95em;color:var(--text-mid);margin-bottom:5px;">Уникальное сочетание факторов, которое не повторится через 2–3 года</div>
+      <div class="opportunity-items">
+        <div class="opp-item">500M+ YouTube-пользователей — ни один рынок не дает такой потенциал охвата</div>
+        <div class="opp-item">Digital ad spend растет 25%+ YoY — CPM будет расти по мере развития рынка</div>
+        <div class="opp-item">Virtual influencer рынок почти пуст: 2–3 игрока vs сотни в США</div>
+        <div class="opp-item">Индия привычна к "идеальным" Bollywood-образам — виртуальный персонаж не вызовет rejection</div>
+        <div class="opp-item">AI может покрыть 10+ языков одним персонажем — уникальное конкурентное преимущество</div>
+        <div class="opp-item">12+ крупных фестивалей в год = постоянные контент-пики и рост трафика</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: NICHE ANALYSIS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Анализ ниш</h2>
+    <p class="section-subtitle">Оценка по критериям: конкуренция, CPM, AI-пригодность, монетизационный потенциал</p>
+
+    <!-- Niche score cards -->
+    <div class="grid-4" style="margin-bottom:30px;">
+      <div class="niche-card">
+        <div class="niche-score" style="color:var(--coral-dark);">8.5<span style="font-size:0.5em;">/10</span></div>
+        <div class="niche-name">Plus-size / Inclusive Fashion</div>
+        <div class="niche-meta">Почти пустая ниша в Индии</div>
+        <span class="badge badge-low">Конкуренция: НИЗКАЯ</span>
+        <div style="font-size:0.8em;color:var(--text-mid);margin-top:10px;">AI идеально подходит: виртуальный манекен может быть любого размера. D&I бюджеты брендов. Недооцененная аудитория.</div>
+      </div>
+      <div class="niche-card gold-border">
+        <div class="niche-score gold-text">8.5<span style="font-size:0.5em;">/10</span></div>
+        <div class="niche-name">Saree Styling</div>
+        <div class="niche-meta">Огромная аудитория, everyday wear</div>
+        <span class="badge badge-mid">Конкуренция: СРЕДНЯЯ</span>
+        <div style="font-size:0.8em;color:var(--text-mid);margin-top:10px;">Виртуальный манекен для демонстрации стилей. Affiliate Myntra/Ajio. Никаких физических ограничений.</div>
+      </div>
+      <div class="niche-card emerald-border">
+        <div class="niche-score green-text">8<span style="font-size:0.5em;">/10</span></div>
+        <div class="niche-name">Sustainable Fashion</div>
+        <div class="niche-meta">Растущий интерес, мало контента</div>
+        <span class="badge badge-low">Конкуренция: НИЗКАЯ</span>
+        <div style="font-size:0.8em;color:var(--text-mid);margin-top:10px;">ESG-бюджеты брендов. Образовательный формат. Высокий engagement среди городской молодежи.</div>
+      </div>
+      <div class="niche-card teal-border">
+        <div class="niche-score teal-text">8<span style="font-size:0.5em;">/10</span></div>
+        <div class="niche-name">Vedic Astrology (Jyotish)</div>
+        <div class="niche-meta">70–80% верят в астрологию</div>
+        <span class="badge badge-mid">Конкуренция: СРЕДНЯЯ</span>
+        <div style="font-size:0.8em;color:var(--text-mid);margin-top:10px;">Математическая система — легко автоматизировать. Astrotalk 50M+ скачиваний. Монетизация консультациями.</div>
+      </div>
+    </div>
+
+    <!-- Full niche table -->
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Ниша</th>
+          <th>Конкуренция</th>
+          <th>CPM</th>
+          <th>AI-пригодность</th>
+          <th>Монетизация</th>
+          <th>Итого</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Plus-size Fashion</strong></td>
+          <td><span class="badge badge-low">НИЗКАЯ</span></td>
+          <td>$$</td>
+          <td><span class="badge badge-hot">ОЧЕНЬ ВЫСОКАЯ</span></td>
+          <td>D&I бюджеты брендов</td>
+          <td><strong style="color:var(--coral-dark);">8.5/10</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Sustainable Fashion</strong></td>
+          <td><span class="badge badge-low">НИЗКАЯ</span></td>
+          <td>$$</td>
+          <td><span class="badge badge-hot">ВЫСОКАЯ</span></td>
+          <td>ESG-бюджеты</td>
+          <td><strong style="color:var(--coral);">8/10</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Vedic Astrology</strong></td>
+          <td><span class="badge badge-mid">СРЕДНЯЯ</span></td>
+          <td>$$</td>
+          <td><span class="badge badge-hot">ОЧЕНЬ ВЫСОКАЯ</span></td>
+          <td>Консультации, apps</td>
+          <td><strong style="color:var(--coral);">8/10</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Saree Styling</strong></td>
+          <td><span class="badge badge-mid">СРЕДНЯЯ</span></td>
+          <td>$$</td>
+          <td><span class="badge badge-hot">ВЫСОКАЯ</span></td>
+          <td>Affiliates + бренды</td>
+          <td><strong style="color:var(--coral);">7/10</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Skincare Education</strong></td>
+          <td><span class="badge badge-mid">СРЕДНЯЯ</span></td>
+          <td>$$</td>
+          <td><span class="badge badge-hot">ВЫСОКАЯ</span></td>
+          <td>AdSense + бренды</td>
+          <td><strong style="color:var(--gold-dark);">7/10</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Finance / Education</strong></td>
+          <td><span class="badge badge-high">ВЫСОКАЯ</span></td>
+          <td>$$$$</td>
+          <td><span class="badge badge-hot">ВЫСОКАЯ</span></td>
+          <td>AdSense + курсы</td>
+          <td><strong style="color:var(--gold-dark);">7/10</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Mythology / History</strong></td>
+          <td><span class="badge badge-mid">СРЕДНЯЯ</span></td>
+          <td>$–$$</td>
+          <td><span class="badge badge-hot">ОЧЕНЬ ВЫСОКАЯ</span></td>
+          <td>AdSense + книги</td>
+          <td><strong style="color:var(--gold-dark);">7/10</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Tech Reviews</strong></td>
+          <td><span class="badge badge-high">ВЫСОКАЯ</span></td>
+          <td>$$$</td>
+          <td><span class="badge badge-mid">СРЕДНЯЯ</span></td>
+          <td>AdSense + affiliates</td>
+          <td><strong style="color:var(--text-mid);">6/10</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Optimal profile -->
+    <div style="margin-top:35px;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.7em;font-weight:800;color:var(--text-dark);margin-bottom:20px;">Оптимальный профиль AI-блогера для Индии</h3>
+      <div class="grid-2">
+        <div class="profile-box">
+          <div class="profile-avatar">🌺</div>
+          <div class="profile-name" style="background:linear-gradient(135deg,var(--coral),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Ananya / Priya / Meera</div>
+          <div class="profile-desc">India's first AI fashion advisor — sustainable, inclusive, authentic</div>
+          <div class="profile-params">
+            <div class="profile-param">
+              <div class="p-label">Внешность</div>
+              <div class="p-value">Индийская женщина, средний skin tone, 23–26 лет</div>
+            </div>
+            <div class="profile-param">
+              <div class="p-label">Основная ниша</div>
+              <div class="p-value">Sustainable + Inclusive Fashion (saree, indo-western, plus-size)</div>
+            </div>
+            <div class="profile-param">
+              <div class="p-label">Побочная ниша</div>
+              <div class="p-value">Skincare education (Ayurvedic + Korean)</div>
+            </div>
+            <div class="profile-param">
+              <div class="p-label">Язык</div>
+              <div class="p-value">Hinglish (основной) + English субтитры</div>
+            </div>
+            <div class="profile-param">
+              <div class="p-label">Платформы</div>
+              <div class="p-value">YouTube (Shorts + long-form) + Instagram (Reels)</div>
+            </div>
+            <div class="profile-param">
+              <div class="p-label">Частота</div>
+              <div class="p-value">5 Shorts/Reels в день + 2 long-form/нед</div>
+            </div>
+            <div class="profile-param">
+              <div class="p-label">Раскрытие AI</div>
+              <div class="p-value">Открыто — уникальное позиционирование</div>
+            </div>
+            <div class="profile-param">
+              <div class="p-label">Фестивальный контент</div>
+              <div class="p-value">Обязателен (Diwali, Navratri, Holi, Eid)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 style="font-weight:700;margin-bottom:16px;color:var(--text-dark);">CPM по нишам (YouTube India)</h4>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Finance / Insurance</span><span style="color:var(--emerald-dark);font-weight:700;">$3–8</span></div>
+            <div class="progress-track"><div class="progress-fill green" style="width:90%"></div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Technology / Reviews</span><span style="color:var(--emerald-dark);font-weight:700;">$2–5</span></div>
+            <div class="progress-track"><div class="progress-fill green" style="width:65%"></div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Education</span><span style="color:var(--gold-dark);font-weight:700;">$1.5–4</span></div>
+            <div class="progress-track"><div class="progress-fill gold" style="width:50%"></div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Beauty / Fashion</span><span style="color:var(--gold-dark);font-weight:700;">$0.5–2.5</span></div>
+            <div class="progress-track"><div class="progress-fill gold" style="width:30%"></div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Cooking / Food</span><span style="color:var(--coral);font-weight:700;">$0.5–2.0</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:25%"></div></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>Entertainment / Vlogs</span><span style="color:var(--coral);font-weight:700;">$0.3–1.5</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:18%"></div></div>
+          </div>
+          <div style="margin-top:14px;padding:12px 16px;background:var(--cream);border-radius:12px;font-size:0.82em;color:var(--text-mid);">
+            <strong>Средний RPM India:</strong> $0.5–2.0 (vs $3–8 США). Long-form контент повышает RPM до $0.50–2.00 против $0.03–0.10 для Shorts.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: LANGUAGE STRATEGY -->
+<section class="section">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Языковая стратегия</h2>
+    <p class="section-subtitle">Индия — 22 официальных языка. Правильный выбор языка = разница между 100M и 500M+ аудиторией</p>
+
+    <div class="lang-grid" style="margin-bottom:30px;">
+      <div class="card">
+        <h4 style="font-weight:700;margin-bottom:16px;">Языковой ландшафт (YouTube доля)</h4>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Hindi</span><span style="color:var(--coral);font-weight:700;">~40% · 600M+ носителей</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:80%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>English</span><span style="color:var(--coral);font-weight:700;">~20% · CPM высокий</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:40%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Telugu</span><span style="color:var(--gold-dark);font-weight:700;">~10% · 85M+ носителей</span></div>
+          <div class="progress-track"><div class="progress-fill gold" style="width:20%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Tamil</span><span style="color:var(--gold-dark);font-weight:700;">~10% · 80M+ носителей</span></div>
+          <div class="progress-track"><div class="progress-fill gold" style="width:20%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Bengali</span><span style="color:var(--text-light);font-weight:700;">~5% · 250M+ носителей</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:10%;background:#D4D0CB"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Marathi</span><span style="color:var(--text-light);font-weight:700;">~5% · 85M+ носителей</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:10%;background:#D4D0CB"></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4 style="font-weight:700;margin-bottom:16px;">Сравнение языковых стратегий</h4>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Стратегия</th>
+              <th>CPM</th>
+              <th>Охват</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>English only</strong></td>
+              <td>$2–5</td>
+              <td>100–150M</td>
+            </tr>
+            <tr>
+              <td><strong>Hindi only</strong></td>
+              <td>$0.5–1.5</td>
+              <td>350M+</td>
+            </tr>
+            <tr class="comparison-highlight">
+              <td><strong>Hinglish (РЕКОМЕНДАЦИЯ)</strong></td>
+              <td>$1–3</td>
+              <td>300M+</td>
+            </tr>
+            <tr>
+              <td><strong>Hinglish + дубляж</strong></td>
+              <td>$1–3</td>
+              <td><strong>500M+</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top:18px;padding:16px;background:var(--mint);border-radius:14px;border-left:4px solid var(--emerald);">
+          <div style="font-weight:700;color:var(--emerald-dark);margin-bottom:8px;">Hinglish — де-факто язык индийского интернета</div>
+          <div style="font-size:0.85em;color:var(--text-mid);">80%+ контента топ-инфлюенсеров — Hinglish. Пример: "Yaar, ye foundation mujhe bohot pasand aayi, like seriously, coverage is amazing"</div>
+        </div>
+
+        <div style="margin-top:14px;padding:14px;background:var(--cream);border-radius:12px;font-size:0.84em;color:var(--text-mid);">
+          <strong>AI-дубляж (ElevenLabs / Murf.ai):</strong> Хинди — отличное качество · Tamil/Telugu — среднее, улучшается · Стоимость: $0.01–0.05 за минуту
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: PLATFORM STRATEGY -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Платформенная стратегия</h2>
+    <p class="section-subtitle">После бана TikTok в 2020 рынок short-video взорвался. Монетизация сильно различается по платформам.</p>
+
+    <div class="grid-4" style="margin-bottom:30px;">
+      <div class="platform-card yt">
+        <div class="platform-icon">📺</div>
+        <div class="platform-name">YouTube</div>
+        <div class="platform-mau">500M+</div>
+        <div class="platform-sub">Shorts + long-form · DAU 250–300M</div>
+        <div class="platform-monetize monetize-strong">Основная монетизация · RPM $0.5–2.0</div>
+      </div>
+      <div class="platform-card ig">
+        <div class="platform-icon">📸</div>
+        <div class="platform-name">Instagram</div>
+        <div class="platform-mau">360M+</div>
+        <div class="platform-sub">Reels · 80%+ смотрят ежедневно</div>
+        <div class="platform-monetize monetize-strong">Бренд-контракты · CPM $0.5–3.0</div>
+      </div>
+      <div class="platform-card moj">
+        <div class="platform-icon">🎵</div>
+        <div class="platform-name">Moj</div>
+        <div class="platform-mau">160–200M</div>
+        <div class="platform-sub">ShareChat · Creator Fund</div>
+        <div class="platform-monetize monetize-weak">Присутствие да, монетизация слабая</div>
+      </div>
+      <div class="platform-card josh">
+        <div class="platform-icon">🎬</div>
+        <div class="platform-name">Josh</div>
+        <div class="platform-mau">150–180M</div>
+        <div class="platform-sub">VerSe Innovation · Dailyhunt</div>
+        <div class="platform-monetize monetize-weak">Дополнительный охват, позже</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <strong>Стратегия платформ:</strong> YouTube = основной источник дохода (AdSense + brand integrations). Instagram = бренд-контракты + Reels virality. Moj/Josh = дополнительный охват в Фазе 4, монетизация минимальная. Moj и Josh — крупные платформы, но монетизация для создателей в разы хуже YouTube/Instagram.
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: UNIT ECONOMICS -->
+<section class="section">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Unit-экономика</h2>
+    <p class="section-subtitle">Стоимость производства, revenue модель и breakeven анализ для AI-блогера в Индии</p>
+
+    <!-- Costs -->
+    <h3 style="font-weight:700;font-size:1.2em;margin-bottom:18px;color:var(--text-dark);">Стоимость производства контента (ежемесячно)</h3>
+    <div class="cost-card" style="margin-bottom:30px;">
+      <div class="cost-header">
+        <span>Инструмент</span>
+        <span>USD/мес</span>
+        <span>INR/мес</span>
+        <span>Примечание</span>
+      </div>
+      <div class="cost-row">
+        <span>AI-изображения (Midjourney/Flux)</span>
+        <span>$30</span>
+        <span>INR 2,500</span>
+        <span>Pro plan</span>
+      </div>
+      <div class="cost-row">
+        <span>AI-видео (Runway/Pika)</span>
+        <span>$100–200</span>
+        <span>INR 8,000–16,000</span>
+        <span>Ключевая статья</span>
+      </div>
+      <div class="cost-row">
+        <span>AI-голос (ElevenLabs)</span>
+        <span>$22–99</span>
+        <span>INR 1,800–8,000</span>
+        <span>Hinglish voice</span>
+      </div>
+      <div class="cost-row">
+        <span>Lip-sync (D-ID / HeyGen)</span>
+        <span>$50–200</span>
+        <span>INR 4,000–16,000</span>
+        <span>Для видеоконтента</span>
+      </div>
+      <div class="cost-row">
+        <span>Редактирование (CapCut Pro)</span>
+        <span>$8</span>
+        <span>INR 650</span>
+        <span>Shorts/Reels edit</span>
+      </div>
+      <div class="cost-row">
+        <span>Music / SFX (Epidemic Sound)</span>
+        <span>$15</span>
+        <span>INR 1,250</span>
+        <span>Royalty-free</span>
+      </div>
+      <div class="cost-row">
+        <span>Hosting / Infrastructure</span>
+        <span>$20–50</span>
+        <span>INR 1,600–4,000</span>
+        <span>Storage, CDN</span>
+      </div>
+      <div class="cost-row">
+        <span>AI-дубляж (региональные языки)</span>
+        <span>$50–100</span>
+        <span>INR 4,000–8,000</span>
+        <span>Tamil / Telugu</span>
+      </div>
+      <div class="cost-row" style="background:var(--cream);">
+        <span><strong>ИТОГО минимум</strong></span>
+        <span><strong style="color:var(--coral-dark);">$295–400</strong></span>
+        <span><strong>INR 24–33K</strong></span>
+        <span>базовый сценарий</span>
+      </div>
+      <div class="cost-row" style="background:#FFF3CD;border-bottom:none;">
+        <span><strong>ИТОГО оптимальный</strong></span>
+        <span><strong style="color:var(--coral-dark);">$500–700</strong></span>
+        <span><strong>INR 41–58K</strong></span>
+        <span>полный стек</span>
+      </div>
+    </div>
+
+    <!-- Revenue projections -->
+    <h3 style="font-weight:700;font-size:1.2em;margin-bottom:18px;color:var(--text-dark);">Revenue модель — YouTube India (5 Shorts/Reels в день)</h3>
+    <div class="econ-phase" style="margin-bottom:25px;">
+      <div class="econ-header">
+        <span>Период</span>
+        <span>Подписчики</span>
+        <span>Views/мес</span>
+        <span>YouTube Rev/мес</span>
+        <span>Бренд-контракты</span>
+      </div>
+      <div class="econ-row">
+        <span class="period-badge">Мес 1–3</span>
+        <span>0–5K</span>
+        <span>100K–500K</span>
+        <span style="color:var(--coral);">$10–150</span>
+        <span>$0</span>
+      </div>
+      <div class="econ-row">
+        <span class="period-badge">Мес 4–6</span>
+        <span>5–20K</span>
+        <span>500K–2M</span>
+        <span style="color:var(--gold-dark);">$100–1,000</span>
+        <span>$0–500</span>
+      </div>
+      <div class="econ-row">
+        <span class="period-badge">Мес 7–12</span>
+        <span>20–100K</span>
+        <span>2–10M</span>
+        <span style="color:var(--emerald-dark);">$600–7,000</span>
+        <span style="color:var(--emerald-dark);">$500–2,000</span>
+      </div>
+      <div class="econ-row">
+        <span class="period-badge">Мес 12–18</span>
+        <span>100–500K</span>
+        <span>10–50M</span>
+        <span style="color:var(--emerald-dark);">$5,000–50,000</span>
+        <span style="color:var(--emerald-dark);">$2,000–10,000</span>
+      </div>
+      <div class="econ-row" style="background:linear-gradient(90deg,#D4F5E9,#FFF9F5);">
+        <span class="period-badge" style="background:linear-gradient(135deg,var(--emerald-dark),var(--teal));color:white;">Мес 18–24</span>
+        <span><strong>500K–2M</strong></span>
+        <span><strong>50–200M</strong></span>
+        <span><strong style="color:var(--emerald-dark);">$25K–300K</strong></span>
+        <span><strong style="color:var(--emerald-dark);">$10K–50K</strong></span>
+      </div>
+    </div>
+
+    <!-- Breakeven -->
+    <div class="grid-2">
+      <div class="card">
+        <h4 style="font-weight:700;margin-bottom:16px;">Breakeven анализ (затраты $600/мес)</h4>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>При CPM $2.00 → нужно 300K views</span><span style="color:var(--emerald-dark);font-weight:700;">Мес 3–5</span></div>
+          <div class="progress-track"><div class="progress-fill green" style="width:100%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>При CPM $1.00 → нужно 600K views</span><span style="color:var(--emerald-dark);font-weight:700;">Мес 5–7</span></div>
+          <div class="progress-track"><div class="progress-fill gold" style="width:75%"></div></div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>При CPM $0.50 → нужно 1.2M views</span><span style="color:var(--coral);font-weight:700;">Мес 6–9</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:50%"></div></div>
+        </div>
+        <div style="margin-top:14px;padding:14px;background:linear-gradient(135deg,var(--gold-light),var(--cream));border-radius:12px;text-align:center;">
+          <div style="font-family:'Playfair Display',serif;font-size:2em;font-weight:900;color:var(--gold-dark);">5–9 мес.</div>
+          <div style="font-size:0.85em;color:var(--text-mid);">Breakeven при агрессивной публикации и CPM $0.50–1.00</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4 style="font-weight:700;margin-bottom:16px;">Дополнительная монетизация (при 500K подписчиков)</h4>
+        <div class="stat-row">
+          <span class="stat-label">Бренд-контракты (Instagram)</span>
+          <span class="stat-value" style="color:var(--emerald-dark);">$5,000–15,000</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Бренд-контракты (YouTube)</span>
+          <span class="stat-value" style="color:var(--emerald-dark);">$3,000–10,000</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Affiliate (Amazon, Myntra, Nykaa)</span>
+          <span class="stat-value" style="color:var(--gold-dark);">$500–3,000</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Merchandise (print-on-demand)</span>
+          <span class="stat-value">$200–1,000</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Курсы / Digital products</span>
+          <span class="stat-value">$500–5,000</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">YouTube Super Chat / Stickers</span>
+          <span class="stat-value">$200–2,000</span>
+        </div>
+        <div style="margin-top:14px;padding:14px;background:var(--cream);border-radius:12px;font-size:0.85em;color:var(--text-mid);">
+          <strong>Целевой доход к 18–24 мес.:</strong> <span style="color:var(--coral-dark);font-weight:700;">$10,000–30,000/мес</span> при 1M+ подписчиков (совокупно по всем каналам)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: BRANDS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Ключевые бренды для сотрудничества</h2>
+    <p class="section-subtitle">D2C бренды — ниже порог входа. Enterprise — крупнее бюджеты. Начинать с D2C.</p>
+
+    <h3 style="font-weight:700;font-size:1.1em;margin-bottom:16px;color:var(--text-dark);">D2C бренды (старт, проще войти)</h3>
+    <div class="brand-grid" style="margin-bottom:28px;">
+      <div class="brand-item">
+        <div style="font-size:1.5em;margin-bottom:6px;">💄</div>
+        <div class="brand-name">Nykaa</div>
+        <div class="brand-cat">Beauty marketplace</div>
+        <div class="brand-budget">INR 50–100 Cr/год</div>
+      </div>
+      <div class="brand-item">
+        <div style="font-size:1.5em;margin-bottom:6px;">🌿</div>
+        <div class="brand-name">Mamaearth</div>
+        <div class="brand-cat">Natural beauty</div>
+        <div class="brand-budget">INR 100+ Cr/год</div>
+      </div>
+      <div class="brand-item">
+        <div style="font-size:1.5em;margin-bottom:6px;">💋</div>
+        <div class="brand-name">Sugar Cosmetics</div>
+        <div class="brand-cat">Makeup</div>
+        <div class="brand-budget">INR 30–50 Cr/год</div>
+      </div>
+      <div class="brand-item">
+        <div style="font-size:1.5em;margin-bottom:6px;">☕</div>
+        <div class="brand-name">mCaffeine</div>
+        <div class="brand-cat">Skincare</div>
+        <div class="brand-budget">INR 10–20 Cr/год</div>
+      </div>
+      <div class="brand-item">
+        <div style="font-size:1.5em;margin-bottom:6px;">🌱</div>
+        <div class="brand-name">Plum Goodness</div>
+        <div class="brand-cat">Clean beauty</div>
+        <div class="brand-budget">INR 10–20 Cr/год</div>
+      </div>
+      <div class="brand-item">
+        <div style="font-size:1.5em;margin-bottom:6px;">👕</div>
+        <div class="brand-name">Bewakoof</div>
+        <div class="brand-cat">Fashion</div>
+        <div class="brand-budget">INR 20–30 Cr/год</div>
+      </div>
+      <div class="brand-item">
+        <div style="font-size:1.5em;margin-bottom:6px;">👗</div>
+        <div class="brand-name">Urbanic</div>
+        <div class="brand-cat">Fashion</div>
+        <div class="brand-budget">INR 10–20 Cr/год</div>
+      </div>
+      <div class="brand-item">
+        <div style="font-size:1.5em;margin-bottom:6px;">🎵</div>
+        <div class="brand-name">boAt</div>
+        <div class="brand-cat">Audio / lifestyle</div>
+        <div class="brand-budget">INR 50+ Cr/год</div>
+      </div>
+      <div class="brand-item">
+        <div style="font-size:1.5em;margin-bottom:6px;">⌚</div>
+        <div class="brand-name">Noise</div>
+        <div class="brand-cat">Wearables</div>
+        <div class="brand-budget">INR 30+ Cr/год</div>
+      </div>
+      <div class="brand-item">
+        <div style="font-size:1.5em;margin-bottom:6px;">🎒</div>
+        <div class="brand-name">Mokobara</div>
+        <div class="brand-cat">Bags / travel</div>
+        <div class="brand-budget">INR 5–10 Cr/год</div>
+      </div>
+    </div>
+
+    <h3 style="font-weight:700;font-size:1.1em;margin-bottom:16px;color:var(--text-dark);">Enterprise бренды (цель к 12–18 месяцу)</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Бренд</th>
+          <th>Категория</th>
+          <th>Примечания</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Myntra</strong> (Flipkart)</td>
+          <td>Fashion marketplace</td>
+          <td>Крупнейший fashion e-commerce · affiliate + paid integrations</td>
+        </tr>
+        <tr>
+          <td><strong>AJIO</strong> (Reliance)</td>
+          <td>Fashion</td>
+          <td>Aggressive digital marketing, растущий бюджет</td>
+        </tr>
+        <tr>
+          <td><strong>L'Oreal India</strong></td>
+          <td>Beauty</td>
+          <td>Активно работают с инфлюенсерами, открыты к AI-экспериментам</td>
+        </tr>
+        <tr>
+          <td><strong>HUL</strong> (Hindustan Unilever)</td>
+          <td>FMCG</td>
+          <td>Dove, Lakme, TRESemme — огромные бюджеты на beauty</td>
+        </tr>
+        <tr>
+          <td><strong>Amazon India</strong></td>
+          <td>Marketplace</td>
+          <td>Fashion + beauty categories, affiliate + sponsored</td>
+        </tr>
+        <tr>
+          <td><strong>Samsung India</strong></td>
+          <td>Electronics</td>
+          <td>Active in lifestyle marketing, интерес к AI-инфлюенсерам</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 9: CULTURAL FACTORS -->
+<section class="section">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Культурные факторы и риски</h2>
+    <p class="section-subtitle">Индия — многоконфессиональная страна. Одна ошибка в контенте = массовый backlash. Обязательно знать перед запуском.</p>
+
+    <div class="grid-2" style="margin-bottom:30px;">
+      <div>
+        <h3 style="font-weight:700;font-size:1.1em;margin-bottom:16px;">Фестивальный контент-календарь — пики трафика</h3>
+        <div class="festival-grid">
+          <div class="festival-item" style="border-left-color:var(--gold);">
+            <div>
+              <div class="festival-name">Diwali</div>
+              <div class="festival-period">Октябрь–ноябрь</div>
+            </div>
+            <div class="festival-spike" style="color:var(--gold-dark);">+100%</div>
+          </div>
+          <div class="festival-item" style="border-left-color:var(--coral);">
+            <div>
+              <div class="festival-name">Wedding season</div>
+              <div class="festival-period">Ноябрь–февраль</div>
+            </div>
+            <div class="festival-spike">+60%</div>
+          </div>
+          <div class="festival-item" style="border-left-color:var(--gold);">
+            <div>
+              <div class="festival-name">Navratri</div>
+              <div class="festival-period">Сентябрь–октябрь</div>
+            </div>
+            <div class="festival-spike" style="color:var(--gold-dark);">+50%</div>
+          </div>
+          <div class="festival-item" style="border-left-color:var(--teal);">
+            <div>
+              <div class="festival-name">Holi</div>
+              <div class="festival-period">Март</div>
+            </div>
+            <div class="festival-spike" style="color:var(--teal);">+30%</div>
+          </div>
+          <div class="festival-item" style="border-left-color:var(--emerald);">
+            <div>
+              <div class="festival-name">Eid</div>
+              <div class="festival-period">Зависит от луны</div>
+            </div>
+            <div class="festival-spike" style="color:var(--emerald-dark);">+30%</div>
+          </div>
+          <div class="festival-item">
+            <div>
+              <div class="festival-name">Valentine's Day</div>
+              <div class="festival-period">Февраль</div>
+            </div>
+            <div class="festival-spike" style="color:var(--coral-light);">+15%</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-weight:700;font-size:1.1em;margin-bottom:16px;">Матрица рисков</h3>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="risk-card critical">
+            <span class="risk-level critical">КРИТИЧНО</span>
+            <div class="risk-text">
+              <h4>Религиозный backlash</h4>
+              <p>Образы богов, сакральные символы, политически чувствительные темы. Индия — 80% Hindu + 14% Muslim. Митигация: строгий content review, никакой религиозной тематики.</p>
+            </div>
+          </div>
+          <div class="risk-card high">
+            <span class="risk-level high">ВЫСОКИЙ</span>
+            <div class="risk-text">
+              <h4>Colorism controversy</h4>
+              <p>Fair & Lovely → Glow & Lovely. ASCI запретил skin lightening рекламу с негативными образами. Skin tone персонажа — критический выбор. Показывать diversity.</p>
+            </div>
+          </div>
+          <div class="risk-card medium">
+            <span class="risk-level medium">СРЕДНИЙ</span>
+            <div class="risk-text">
+              <h4>Uncanny valley rejection</h4>
+              <p>Гипер-реализм вызывает дискомфорт. Решение: стилизация "aspirational but approachable", не копировать реальных людей, сильный storytelling.</p>
+            </div>
+          </div>
+          <div class="risk-card medium">
+            <span class="risk-level medium">СРЕДНИЙ</span>
+            <div class="risk-text">
+              <h4>Медленный рост дохода (низкий CPM)</h4>
+              <p>RPM $0.5–2.0 против $5–15 в США. Митигация: multi-platform + brand deals + affiliates = не зависеть только от AdSense.</p>
+            </div>
+          </div>
+          <div class="risk-card low">
+            <span class="risk-level low">НИЗКИЙ</span>
+            <div class="risk-text">
+              <h4>Регуляции (AI disclosure)</h4>
+              <p>Пока нет специального закона для virtual influencers. ASCI обязывает маркировать рекламу. Рекомендация: раскрывать AI с первого дня — compliance + УТП.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What NOT to do -->
+    <div style="background:linear-gradient(135deg,#FFF3E6,var(--warm-white));border:2px solid var(--coral-light);border-radius:20px;padding:30px;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5em;font-weight:800;color:var(--coral-dark);margin-bottom:18px;">Что НЕ делать</h3>
+      <div class="grid-2">
+        <div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2em;flex-shrink:0;">🚫</span>
+              <span style="font-size:0.9em;color:var(--text-dark);"><strong>Не делать гипер-реалистичный рендер</strong> — в Индии работает "aspirational but approachable"</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2em;flex-shrink:0;">🚫</span>
+              <span style="font-size:0.9em;color:var(--text-dark);"><strong>Не использовать только English</strong> — потеря 70% аудитории</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2em;flex-shrink:0;">🚫</span>
+              <span style="font-size:0.9em;color:var(--text-dark);"><strong>Не копировать Kyra</strong> — она в "luxury lifestyle", нужен другой позишининг</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2em;flex-shrink:0;">🚫</span>
+              <span style="font-size:0.9em;color:var(--text-dark);"><strong>Не промотировать skin lightening</strong> — ethical landmine, ASCI запретил</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2em;flex-shrink:0;">🚫</span>
+              <span style="font-size:0.9em;color:var(--text-dark);"><strong>Не трогать религию и политику</strong> — даже намек = вирусный скандал</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2em;flex-shrink:0;">🚫</span>
+              <span style="font-size:0.9em;color:var(--text-dark);"><strong>Не игнорировать региональные языки</strong> — Tamil Nadu + Andhra Pradesh = 200M+ людей</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2em;flex-shrink:0;">🚫</span>
+              <span style="font-size:0.9em;color:var(--text-dark);"><strong>Не игнорировать wedding season</strong> — это 40% годового fashion/beauty трафика</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="font-size:1.2em;flex-shrink:0;">🚫</span>
+              <span style="font-size:0.9em;color:var(--text-dark);"><strong>Beef в контенте — ТАБУ</strong> — даже в кулинарии при pan-India аудитории</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 10: ROADMAP -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-divider"></div>
+    <h2 class="section-title">Дорожная карта: 24 месяца</h2>
+    <p class="section-subtitle">От нулевой аудитории до 1M+ подписчиков и $10–30K/мес revenue</p>
+
+    <div class="roadmap" style="margin-bottom:40px;">
+      <div class="roadmap-phase">
+        <div class="phase-dot p1">1</div>
+        <div class="phase-months">Месяцы 1–3</div>
+        <div class="phase-title">Launch & Foundation</div>
+        <div class="phase-goal">Цель: 5–10K подписчиков</div>
+        <ul class="phase-items">
+          <li>Создание персонажа (Midjourney/Flux)</li>
+          <li>Запуск Instagram + YouTube Shorts</li>
+          <li>5 Reels/Shorts в день</li>
+          <li>Saree styling tips</li>
+          <li>Bollywood-inspired looks</li>
+          <li>Budget fashion контент</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase">
+        <div class="phase-dot p2">2</div>
+        <div class="phase-months">Месяцы 4–6</div>
+        <div class="phase-title">Growth</div>
+        <div class="phase-goal">Цель: 50–100K подписчиков</div>
+        <ul class="phase-items">
+          <li>Добавить long-form YouTube (2/нед)</li>
+          <li>Hinglish AI-озвучка (ElevenLabs)</li>
+          <li>Первые бренд-питчи (D2C)</li>
+          <li>Фестивальный контент</li>
+          <li>Bewakoof, Urbanic, Nykaa</li>
+          <li>Instagram Stories + Highlights</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase">
+        <div class="phase-dot p3">3</div>
+        <div class="phase-months">Месяцы 7–12</div>
+        <div class="phase-title">Monetization</div>
+        <div class="phase-goal">Цель: 200–500K · Breakeven</div>
+        <ul class="phase-items">
+          <li>Регулярные бренд-контракты</li>
+          <li>Affiliate: Amazon, Myntra, Nykaa</li>
+          <li>Дубляж Tamil/Telugu (новые аудитории)</li>
+          <li>Первые enterprise питчи</li>
+          <li>Astrology или skincare as побочная ниша</li>
+          <li>$500–2,000/мес brand deals</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase">
+        <div class="phase-dot p4">4</div>
+        <div class="phase-months">Месяцы 12–24</div>
+        <div class="phase-title">Scale</div>
+        <div class="phase-goal">Цель: 1M+ · $10–30K/мес</div>
+        <ul class="phase-items">
+          <li>Выход на Moj/Josh</li>
+          <li>Собственный бренд / merchandise</li>
+          <li>Expansion в beauty/skincare</li>
+          <li>AI-powered interactive features</li>
+          <li>Enterprise бренды (Myntra, L'Oreal)</li>
+          <li>Regional micro-audiences</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Final summary -->
+    <div style="background:linear-gradient(135deg,var(--coral-dark),var(--coral),var(--gold));border-radius:24px;padding:40px;color:white;text-align:center;">
+      <div style="font-size:2.5em;margin-bottom:12px;">🎯</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2em;font-weight:900;margin-bottom:12px;">Индия: окно возможностей — 2026</div>
+      <div style="font-size:1.05em;opacity:0.9;max-width:700px;margin:0 auto 24px;line-height:1.7;">
+        500M+ YouTube-пользователей. Только 2–3 конкурента в virtual influencer пространстве. Kyra (300K) доказала, что бренды готовы платить. Видео — незанятая ниша. Через 1–2 года рынок закроется.
+      </div>
+      <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+        <div style="background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);border-radius:16px;padding:16px 24px;border:1px solid rgba(255,255,255,0.3);">
+          <div style="font-size:1.8em;font-weight:900;">$400–600</div>
+          <div style="font-size:0.85em;opacity:0.85;">Стоимость в месяц</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);border-radius:16px;padding:16px 24px;border:1px solid rgba(255,255,255,0.3);">
+          <div style="font-size:1.8em;font-weight:900;">5–9 мес.</div>
+          <div style="font-size:0.85em;opacity:0.85;">До breakeven</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);border-radius:16px;padding:16px 24px;border:1px solid rgba(255,255,255,0.3);">
+          <div style="font-size:1.8em;font-weight:900;">$10–30K</div>
+          <div style="font-size:0.85em;opacity:0.85;">Revenue к 24 месяцу</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);border-radius:16px;padding:16px 24px;border:1px solid rgba(255,255,255,0.3);">
+          <div style="font-size:1.8em;font-weight:900;">1M+</div>
+          <div style="font-size:0.85em;opacity:0.85;">Потенциальных подписчиков</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>AI-Блогеры: Глобальное Исследование 2026</strong> · India Deep Dive · Март 2026<br>
+  <span style="margin-top:6px;display:block;">Источники: GroupM, Dentsu India, EY, KPMG, DataReportal, YouTube официальные данные, прямое исследование рынка</span>
+</footer>
+
+</body>
+</html>
