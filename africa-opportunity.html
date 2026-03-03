@@ -771,14 +771,24 @@
 <body>
 
 <!-- NAVIGATION -->
-<nav class="nav">
-  <a href="index.html" class="nav-brand">🔬 AI-Блогеры</a>
-  <a href="saudi-luxury.html" class="nav-link">🇸🇦 Saudi Luxury</a>
-  <a href="satisfying-factory.html" class="nav-link">🏭 Satisfying Factory</a>
-  <a href="modest-fashion.html" class="nav-link">🧕 Modest Fashion</a>
-  <a href="india-deep-dive.html" class="nav-link">🇮🇳 India</a>
-  <a href="africa-opportunity.html" class="nav-link active">🌍 Africa</a>
-  <a href="ai-factory-model.html" class="nav-link">⚙️ AI Factory</a>
+<style>
+  .site-nav{position:sticky;top:0;z-index:1000;background:white;box-shadow:0 2px 12px rgba(0,0,0,0.1);padding:10px 24px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-family:'Inter',sans-serif;font-size:0.85em;}
+  .site-nav a{text-decoration:none;padding:9px 18px;border-radius:12px;font-weight:500;border:2px solid #E8E0D8;background:#FFF9F5;color:#5A5A5A;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(0,0,0,0.04);}
+  .site-nav a:hover{background:#FFF3E6;border-color:#F5A623;color:#2D2D2D;box-shadow:0 3px 8px rgba(245,166,35,0.2);transform:translateY(-1px);}
+  .site-nav a.active{background:linear-gradient(135deg,#E8604C,#F5A623);color:white;border-color:transparent;font-weight:700;box-shadow:0 3px 10px rgba(232,96,76,0.3);}
+  .site-nav a.active:hover{box-shadow:0 4px 14px rgba(232,96,76,0.4);}
+  .site-nav a.brand{font-weight:800;font-size:1.1em;border:none;background:none;box-shadow:none;color:#E8604C;padding:9px 12px;}
+  .site-nav a.brand:hover{background:rgba(232,96,76,0.08);box-shadow:none;}
+</style>
+<nav class="site-nav">
+  <a href="index.html" class="brand">🔬 AI-Блогеры</a>
+  <a href="index.html">📊 Обзор</a>
+  <a href="saudi-luxury.html">🇸🇦 Saudi Luxury</a>
+  <a href="satisfying-factory.html">🏭 Satisfying Factory</a>
+  <a href="modest-fashion.html">🧕 Modest Fashion</a>
+  <a href="india-deep-dive.html">🇮🇳 India</a>
+  <a href="africa-opportunity.html" class="active">🌍 Africa</a>
+  <a href="ai-factory-model.html">⚙️ AI Factory</a>
 </nav>
 
 <!-- HERO -->
